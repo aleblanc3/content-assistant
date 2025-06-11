@@ -1,0 +1,65 @@
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+@Component({
+  selector: 'ca-header',
+  imports: [CommonModule],
+  template: `
+  <header id="header">
+  <div class="row">
+    <div class="col-lg-3 col-md-4 col-sm-6 col-6 text-start">
+      <img
+        class="img-fluid fip-colour"
+        src="cra-logo.png"
+        width="471"
+        height="38"
+        alt="Government of Canada"
+        priority="true"
+      />
+    </div>
+    <div class="col-lg-9 col-md-8 col-sm-6 col-6 text-end lang-toggle">
+      <div class="language-picker-area">
+        <div class="picker-label"></div>
+        <a
+          style="cursor: pointer"
+          class="langs"
+          tabindex="0">
+          Français (fix this!)
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+  `,
+  styles: `
+    :host {
+      display: block;
+    }
+    .lang-toggle a:link {
+      text-color: black
+    }
+    .lang-toggle a:visited {
+      color: #000
+    }
+    .lang-toggle a:hover {
+      color: #00f
+    }
+    .language-picker-area {
+      display: flex;
+      justify-content: flex-end;
+    }
+    .picker-label {
+      margin-right: 20px;
+    }
+    .language-picker {
+      width: 100px;
+    }
+    .langs, .langs:hover, .langs:visited {
+      text-decoration: underline;
+      color: #2e5ea7;
+    }
+  `
+})
+export class HeaderComponent {
+
+}
