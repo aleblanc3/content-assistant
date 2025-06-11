@@ -1,13 +1,30 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { LocalStorageService } from './local-storage.service';
 
 @Component({
   selector: 'ca-api-key',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './api-key.component.html',
   styles: ``
 })
 export class ApiKeyComponent {
-  saveValue(value: string) {
-         console.log(value);
+  saveAPI(value: string) {
+        this.localStore.saveData('apiKey', value);
+        console.log('The saved API key is: ', this.localStore.getData('apiKey'));
        }
+  removeAPI(value: string) {
+        this.localStore.removeData('apiKey');
+        console.log('The saved API key is: ', this.localStore.getData('apiKey'));
+         
+       }
+
+      constructor(public localStore: LocalStorageService) {
+
+  }
+  ngOnInit(): void {
+    //this.localStore.saveData('apiKey', ''); //clears value on init (for testing)
+    console.log('The initial API key is: ', this.localStore.getData('apiKey'));
+  }
+
 }

@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "predeploy": "ng build --configuration production --base-href /content-assistant/",
+    "deploy": "npx angular-cli-ghpages --dir=dist/content-assistant/browser --no-silent"
   },
   "private": true,
   "dependencies": {

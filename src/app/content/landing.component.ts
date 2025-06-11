@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
-import {ApiKeyComponent} from '../common/api-key.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'ca-landing',
-  imports: [ApiKeyComponent],
+  imports: [CommonModule],
   template: `
     <p>
       landing works!
     </p>
-    <ca-api-key></ca-api-key>
   `,
   styles: ``
 })
