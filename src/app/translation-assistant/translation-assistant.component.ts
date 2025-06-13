@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { TranslateModule } from "@ngx-translate/core";
 
 @Component({
   selector: 'ca-translation-assistant',
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './translation-assistant.component.html',
   styles: ``
 })

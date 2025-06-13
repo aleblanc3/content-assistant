@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslateModule } from "@ngx-translate/core";
 
 @Component({
   selector: 'ca-footer',
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   template: `
     <footer class="container">
     <div class="d-flex justify-content-between align-items-end mt-auto pb-4">

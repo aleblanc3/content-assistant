@@ -1,13 +1,16 @@
 import { Component } from '@angular/core';
+import { TranslateModule, TranslateService } from "@ngx-translate/core";
 
 @Component({
   selector: 'ca-about',
-  imports: [],
+  imports: [TranslateModule],
   template: `
-    <p>The DDPD GenAI Project is tracking progress towards various use cases to improve web optimization using generative artificial intelligence tools.</p>
+    <h1 id="wb-cont">{{ 'title.about' | translate}}</h1>
+    <p>{{'about.content' | translate }}</p>    
   `,
   styles: ``
 })
 export class AboutComponent {
-
+  constructor(){}
+  
 }

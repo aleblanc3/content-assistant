@@ -23,7 +23,7 @@ export class ApiKeyComponent {
 
   }
   ngOnInit(): void {
-    //this.localStore.saveData('apiKey', ''); //clears value on init (for testing)
+    //this.localStore.saveData('apiKey', ''); //clears value on init (for testing) <-- can also be used to set initial value for universal api key
     console.log('The initial API key is: ', this.localStore.getData('apiKey'));
   }
 

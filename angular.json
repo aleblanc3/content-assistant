@@ -7,6 +7,14 @@
   "newProjectRoot": "projects",
   "projects": {
     "content-assistant": {
+      "i18n": {
+        "sourceLocale": "en-CA",
+        "locales": {
+          "fr": {
+            "translation": "src/locale/messages.fr.json"
+          }
+        }
+      },
       "projectType": "application",
       "schematics": {},
       "root": "",

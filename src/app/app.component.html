@@ -1,7 +1,7 @@
 <body vocab="http://schema.org/" typeof="WebPage" class="container">
   <ca-header></ca-header>
   <ca-sidebar></ca-sidebar>
-  <h1 id="wb-cont">{{ titleService.getTitle() }}</h1>
+  <!--h1 id="wb-cont">{{ titleService.getTitle() | translate}}</h1-->
    <ca-api-key></ca-api-key>
   <router-outlet *ngIf="this.localStore.getData('apiKey') != null"></router-outlet>
 </body>

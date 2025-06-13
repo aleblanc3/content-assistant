@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslateModule, TranslateService } from "@ngx-translate/core";
 
 @Component({
   selector: 'ca-header',
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   template: `
   <header id="header">
   <div class="row">
@@ -20,11 +21,19 @@ import { CommonModule } from '@angular/common';
     <div class="col-lg-9 col-md-8 col-sm-6 col-6 text-end lang-toggle">
       <div class="language-picker-area">
         <div class="picker-label"></div>
+        <!--a
+          style="cursor: pointer"
+          class="langs"
+          tabindex="0"
+          (click)="this.langToggle.selectLanguage()"> 
+          {{ 'opp.lang' | translate }}
+        </a-->
         <a
           style="cursor: pointer"
           class="langs"
-          tabindex="0">
-          Français (fix this!)
+          tabindex="0"
+          (click)="selectLanguage()"> 
+          {{ 'opp.lang' | translate }}
         </a>
       </div>
     </div>
@@ -61,5 +70,19 @@ import { CommonModule } from '@angular/common';
   `
 })
 export class HeaderComponent {
+  // constructor(public langToggle: LangToggleService){} //putting the code below into a service works but we aren't calling it anywhere else
+  constructor(private translate: TranslateService) {
+    this.translate.addLangs(['en', 'fr']);
+    this.translate.setDefaultLang('en');
+    this.translate.use(this.translate.getBrowserLang() || "en");
+  }
+
+  selectLanguage(): void {
+    var oppLang = ""
+    if (this.translate.currentLang == "en") { oppLang = "fr" }
+    else { oppLang = "en" }
+    this.translate.use(oppLang);
+    //console.log(`The opp lang is: ${oppLang}`);
+  }
 
 }

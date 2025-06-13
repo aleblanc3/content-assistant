@@ -1,4 +1,5 @@
-<button id="api-key-reset-btn" class="my-2" *ngIf="this.localStore.getData('apiKey') != null" (click)="removeAPI('apiKey')">Change API key</button>
+<button id="api-key-reset-btn" class="my-2" *ngIf="this.localStore.getData('apiKey') != null"
+    (click)="removeAPI('apiKey')">Change API key</button>
 
 <div id="api-key-entry" *ngIf="this.localStore.getData('apiKey') == null">
     <h3 class="card-title h5 modal-icon-alignment pb-2 ng-star-inserted">Enter the GenAI API key</h3>
@@ -31,9 +32,3 @@
     </ol>
 
 </div>
-    <!--input type="text" [(ngModel)]="inputValue" placeholder="Enter value">
-       <button (click)="saveToLocalStorage()">Save</button>
-       <button (click)="loadFromLocalStorage()">Load</button>
-       <p>Stored Value: {{ storedValue }}</p-->
-
-

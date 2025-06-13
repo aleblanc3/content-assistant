@@ -8,7 +8,9 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "predeploy": "ng build --configuration production --base-href /content-assistant/",
-    "deploy": "npx angular-cli-ghpages --dir=dist/content-assistant/browser --no-silent"
+    "deploy": "npx angular-cli-ghpages --dir=dist/content-assistant/browser --no-silent",
+    "i18n:init": "ngx-translate-extract --input ./src --output ./public/i18n/template.json --key-as-default-value --replace --format json",
+    "i18n:extract": "ngx-translate-extract --input ./src --output ./public/i18n/en.json ./public/i18n/fr.json --clean --format json"
   },
   "private": true,
   "dependencies": {
@@ -20,6 +22,8 @@
     "@angular/platform-browser-dynamic": "^19.2.0",
     "@angular/router": "^19.2.0",
     "@ng-bootstrap/ng-bootstrap": "^18.0.0",
+    "@ngx-translate/core": "^16.0.4",
+    "@ngx-translate/http-loader": "^16.0.1",
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.3",
     "rxjs": "~7.8.0",
@@ -31,7 +35,9 @@
     "@angular/cli": "^19.2.14",
     "@angular/compiler-cli": "^19.2.0",
     "@angular/localize": "^19.2.0",
+    "@colsen1991/ngx-translate-extract-marker": "^3.0.1",
     "@types/jasmine": "~5.1.0",
+    "@vendure/ngx-translate-extract": "^9.4.0",
     "angular-cli-ghpages": "^2.0.3",
     "jasmine-core": "~5.6.0",
     "karma": "~6.4.0",
