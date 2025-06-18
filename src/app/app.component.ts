@@ -9,6 +9,7 @@ import {FooterComponent} from './template/footer.component';
 import {ApiKeyComponent} from './common/api-key.component';
 import {LocalStorageService} from './services/local-storage.service';
 import {CustomTitleStrategy} from './common/custom-title-strategy';
+import { PrimeNG } from 'primeng/config';
 
 
 @Component({
@@ -20,6 +21,10 @@ import {CustomTitleStrategy} from './common/custom-title-strategy';
 export class AppComponent {
   title = 'GenAI Content Assistant';
   
-  constructor(public CustomTitle: CustomTitleStrategy, public titleService: Title, public localStore: LocalStorageService) {}
+  constructor(public CustomTitle: CustomTitleStrategy, public titleService: Title, public localStore: LocalStorageService, private primeng: PrimeNG) {}
+
+  ngOnInit() {
+        this.primeng.ripple.set(true);
+    }
   
 }
