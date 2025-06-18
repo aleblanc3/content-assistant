@@ -2,7 +2,6 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from "@ngx-translate/core";
 import { FormsModule, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { PageAssistantService } from "../../../../code-to-integrate/page-assistant.service";
 import { DomSanitizer, SafeResourceUrl, SafeHtml } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
 import { InputTextModule } from 'primeng/inputtext';
@@ -16,7 +15,6 @@ import { MessageModule } from 'primeng/message';
   styles: ``
 })
 export class PageAssistantComponent {
-  pageAssistantService = inject(PageAssistantService);
 
   //Initialize stuff
   source: string = '';
