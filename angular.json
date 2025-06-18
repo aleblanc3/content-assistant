@@ -40,6 +40,7 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/diff2html/bundles/css/diff2html.min.css",
               "src/styles.css"
             ],
             "scripts": []

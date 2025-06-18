@@ -1,10 +1,10 @@
 import { Routes } from '@angular/router';
-import { LandingComponent } from './content/landing.component';
-import { NotFoundComponent } from './content/not-found.component';
-import { PageAssistantComponent } from './page-assistant/page-assistant.component';
-import { ImageAssistantComponent } from './image-assistant/image-assistant.component';
-import { TranslationAssistantComponent } from './translation-assistant/translation-assistant.component';
-import { AboutComponent } from './content/about.component';
+import { LandingComponent } from './views/static/landing.component';
+import { NotFoundComponent } from './views/static/not-found.component';
+import { PageAssistantComponent } from './views/page-assistant/page-assistant.component';
+import { ImageAssistantComponent } from './views/image-assistant/image-assistant.component';
+import { TranslationAssistantComponent } from './views/translation-assistant/translation-assistant.component';
+import { AboutComponent } from './views/static/about.component';
 
 export const routes: Routes = [    
     {
@@ -35,7 +35,7 @@ export const routes: Routes = [
         path: 'translation-assistant',
         component: TranslationAssistantComponent,
         title: 'title.translation',
-        data: { lang: 'fr' },
+        data: { lang: 'en' },
     },
     {
         path: 'about-us',
