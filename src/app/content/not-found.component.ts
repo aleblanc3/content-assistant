@@ -5,8 +5,7 @@ import { TranslateModule } from "@ngx-translate/core";
   selector: 'ca-not-found',
   imports: [TranslateModule],
   template: `
-    <h1 id="wb-cont">{{ 'title.404' | translate}}</h1>
-    <p>{{'404.content' | translate }}</p>  
+    <span [innerHTML]="'404.message' | translate"></span>
   `,
   styles: ``
 })

@@ -55,7 +55,7 @@ body {
 }
 
 body.container {
-    min-height: 70vh;    
+    min-height: 70vh;
     display: flex;
     flex-direction: column;
 }
@@ -838,7 +838,7 @@ h6,
 
 img,
 svg {
-	vertical-align: middle
+    vertical-align: middle
 }
 
 .justify-content-start {
@@ -1344,6 +1344,927 @@ strong {
 small {
     font-size: .875em
 }
-@font-face{font-family:'Lato';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/lato/v24/S6uyw4BMUTPHjxAwXjeu.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'Lato';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/lato/v24/S6uyw4BMUTPHjx4wXg.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}@font-face{font-family:'Noto Sans';font-style:normal;font-weight:400;font-stretch:100%;src:url(https://fonts.gstatic.com/s/notosans/v38/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyD9A-9X6VLKzA.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}@font-face{font-family:'Noto Sans';font-style:normal;font-weight:400;font-stretch:100%;src:url(https://fonts.gstatic.com/s/notosans/v38/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyD9A-9e6VLKzA.woff2) format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}@font-face{font-family:'Noto Sans';font-style:normal;font-weight:400;font-stretch:100%;src:url(https://fonts.gstatic.com/s/notosans/v38/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyD9A-9b6VLKzA.woff2) format('woff2');unicode-range:U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B09;}@font-face{font-family:'Noto Sans';font-style:normal;font-weight:400;font-stretch:100%;src:url(https://fonts.gstatic.com/s/notosans/v38/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyD9A-9W6VLKzA.woff2) format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Noto Sans';font-style:normal;font-weight:400;font-stretch:100%;src:url(https://fonts.gstatic.com/s/notosans/v38/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyD9A-9Z6VLKzA.woff2) format('woff2');unicode-range:U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;}@font-face{font-family:'Noto Sans';font-style:normal;font-weight:400;font-stretch:100%;src:url(https://fonts.gstatic.com/s/notosans/v38/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyD9A-9V6VLKzA.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'Noto Sans';font-style:normal;font-weight:400;font-stretch:100%;src:url(https://fonts.gstatic.com/s/notosans/v38/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyD9A-9U6VLKzA.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'Noto Sans';font-style:normal;font-weight:400;font-stretch:100%;src:url(https://fonts.gstatic.com/s/notosans/v38/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyD9A-9a6VI.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
-@font-face{font-family:'Material Icons';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/materialicons/v142/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');}.material-icons{font-family:'Material Icons';font-weight:normal;font-style:normal;font-size:24px;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;word-wrap:normal;direction:ltr;-webkit-font-feature-settings:'liga';-webkit-font-smoothing:antialiased;}
-@font-face{font-family:'Material Icons Outlined';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/materialiconsoutlined/v109/gok-H7zzDkdnRel8-DQ6KAXJ69wP1tGnf4ZGhUce.woff2) format('woff2');}.material-icons-outlined{font-family:'Material Icons Outlined';font-weight:normal;font-style:normal;font-size:24px;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;word-wrap:normal;direction:ltr;-webkit-font-feature-settings:'liga';-webkit-font-smoothing:antialiased;}
+
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/lato/v24/S6uyw4BMUTPHjxAwXjeu.woff2) format('woff2');
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/lato/v24/S6uyw4BMUTPHjx4wXg.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-stretch: 100%;
+    src: url(https://fonts.gstatic.com/s/notosans/v38/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyD9A-9X6VLKzA.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-stretch: 100%;
+    src: url(https://fonts.gstatic.com/s/notosans/v38/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyD9A-9e6VLKzA.woff2) format('woff2');
+    unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-stretch: 100%;
+    src: url(https://fonts.gstatic.com/s/notosans/v38/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyD9A-9b6VLKzA.woff2) format('woff2');
+    unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B09;
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-stretch: 100%;
+    src: url(https://fonts.gstatic.com/s/notosans/v38/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyD9A-9W6VLKzA.woff2) format('woff2');
+    unicode-range: U+1F00-1FFF;
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-stretch: 100%;
+    src: url(https://fonts.gstatic.com/s/notosans/v38/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyD9A-9Z6VLKzA.woff2) format('woff2');
+    unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-stretch: 100%;
+    src: url(https://fonts.gstatic.com/s/notosans/v38/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyD9A-9V6VLKzA.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-stretch: 100%;
+    src: url(https://fonts.gstatic.com/s/notosans/v38/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyD9A-9U6VLKzA.woff2) format('woff2');
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-stretch: 100%;
+    src: url(https://fonts.gstatic.com/s/notosans/v38/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyD9A-9a6VI.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/materialicons/v142/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+}
+
+@font-face {
+    font-family: 'Material Icons Outlined';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/materialiconsoutlined/v109/gok-H7zzDkdnRel8-DQ6KAXJ69wP1tGnf4ZGhUce.woff2) format('woff2');
+}
+
+.material-icons-outlined {
+    font-family: 'Material Icons Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+}
+
+
+.tabs {
+    -webkit-overflow-scrolling: touch;
+    align-items: stretch;
+    display: flex;
+    font-size: 1rem;
+    justify-content: space-between;
+    overflow: hidden;
+    overflow-x: auto;
+    white-space: nowrap
+}
+
+.tabs li>* {
+    align-items: center;
+    border-bottom-color: #c4c4c4;
+    border-bottom-style: solid;
+    border-bottom-width: 0px;
+    color: #4a4a4a;
+    display: flex;
+    justify-content: center;
+    margin-bottom: -1px;
+    padding: .5em 1em;
+    vertical-align: top;
+    text-decoration: none
+}
+
+.tabs li>*:hover {
+    background-color: #e3f2fd;
+    cursor: pointer
+}
+
+.tabs li {
+    display: block
+}
+
+.tabs li .active {
+    border-bottom-color: #a7a72e;
+    border-width: 4px;
+    color: #a7a72e
+}
+
+.tabs ul {
+    align-items: center;
+    border-bottom-color: #c4c4c4;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    padding-left: 0;
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 0;
+    justify-content: flex-start
+}
+
+
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030
+}
+
+.fixed-bottom {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1030
+}
+
+.sticky-top {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1020
+}
+
+@media (min-width:576px) {
+    .sticky-sm-top {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        z-index: 1020
+    }
+}
+
+@media (min-width:768px) {
+    .sticky-md-top {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        z-index: 1020
+    }
+}
+
+@media (min-width:992px) {
+    .sticky-lg-top {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        z-index: 1020
+    }
+}
+
+@media (min-width:1200px) {
+    .sticky-xl-top {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+    }
+}
+
+@media (min-width:1400px) {
+    .sticky-xxl-top {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        z-index: 1020
+    }
+}
+
+.visually-hidden,
+.visually-hidden-focusable:not(:focus):not(:focus-within) {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important
+}
+
+.label {
+    transform: translate(23px, 13px) !important
+}
+
+.hidden {
+    display: none !important
+}
+
+
+/* from ca-styles.css */
+
+strong {
+    font-weight: bold;
+}
+
+/* Button Styling */
+button {
+    background: #a7a72e;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    margin: 5px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+button:hover {
+    background: #78782f;
+}
+
+button i {
+    font-size: 16px;
+}
+
+.strong {
+    font-weight: bold;
+}
+
+.small {
+    font-size: 0.85em;
+    /* Smaller than normal text */
+}
+
+.error-msg {
+    display: flex;
+    align-items: center;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+    padding: 10px 15px;
+    margin-top: 10px;
+    font-size: 14px;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.error-msg i {
+    margin-right: 8px;
+    color: #721c24;
+}
+
+.error-msg .close-btn {
+    margin-left: auto;
+    color: #721c24;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+    transition: color 0.2s ease;
+}
+
+.error-msg .close-btn:hover {
+    color: #491217;
+}
+
+
+.body-pd {
+    /*padding-left: calc(var(--nav-width) + 178px);*/
+    padding-right: calc(var(--nav-width) - 4px);
+}
+
+.r-navbar {
+    position: fixed;
+    top: 10%;
+    right: 0;
+    width: 0;
+    /*height: 300px;*/
+    background-color: var(--first-color);
+    /* padding: .5rem 1rem 1rem; */
+    transition: width .4s;
+    z-index: var(--z-fixed);
+    background-color: #f8f9f8;
+    /* Black fallback color */
+    border-left: 2px solid black;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    border-radius: 25px 0 0 25px;
+
+}
+
+.r-navbar.expanded {
+    width: 250px;
+    padding: .5rem 1rem 1rem;
+}
+
+.r-navbar-toggle {
+    z-index: 1000;
+    /* Ensure it's above the sidebar */
+}
+
+.toggle-btn {
+    position: absolute;
+    left: -31px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 60px;
+    background: black;
+    color: white;
+    border-radius: 10px 0 0 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* GenAI tools menu */
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */
+    height: 100%;
+    width: 0%;
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    right: 0;
+    top: 0;
+    background-color: rgb(255, 255, 255);
+    /* Black fallback color */
+    background-color: rgba(255, 255, 255, 1);
+    /* Black w/opacity */
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    transition: 0.5s;
+    /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+    position: relative;
+    top: 25%;
+    /* 25% from the top */
+    width: 100%;
+    /* 100% width */
+    text-align: center;
+    /* Centered text/links */
+    margin-top: 30px;
+    /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    /* Display block instead of inline */
+    transition: 0.3s;
+    /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover,
+.overlay a:focus {
+    color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+    .overlay a {
+        font-size: 20px
+    }
+
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+streamlit-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.streamlit-embed {
+    width: 100%;
+    height: 800px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .streamlit-embed {
+        height: 600px;
+    }
+}
+
+.generated-report {
+    text-align: left;
+}
+
+#loading-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.spinner {
+    width: 24px;
+    height: 24px;
+    border: 4px solid #ccc;
+    border-top-color: #a7a72e;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/*Checkbox and radio styles*/
+/*Includes a "checkbox-small" and "label-small" variation to give smaller versions*/
+/* Container for radio button and label */
+.radio-container,
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Hide the default radio and checkbox */
+input[type="radio"],
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 34px;
+    height: 34px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    /* Default to circular for radios */
+    position: relative;
+    cursor: pointer;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* Change checkboxes to square */
+input[type="checkbox"] {
+    border-radius: 6px;
+}
+
+/* Style the checked state for radio buttons */
+input[type="radio"]:checked::before {
+    content: '';
+    width: 26px;
+    height: 26px;
+    background-color: #a7a72e;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Style the checked state for checkboxes */
+input[type="checkbox"]:checked::before {
+    content: '\2713';
+    /* Unicode checkmark */
+    color: green;
+    font-size: 24px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Label styling */
+label {
+    line-height: 40px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* Container for custom checkbox */
+.checkbox-small {
+    display: none;
+    /* Hide the default checkbox */
+}
+
+/* Style for the custom checkbox when unchecked */
+.checkbox-small+.label-small {
+    position: relative;
+    padding-left: 25px;
+    /* Space for custom checkbox */
+    cursor: pointer;
+    font-size: 14px;
+    /* Adjust label size as needed */
+}
+
+/* Custom checkbox (using the label's pseudo-element) */
+.checkbox-small+.label-small::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    /* Size of the custom checkbox */
+    height: 20px;
+    border: 1.5px solid #000;
+    border-radius: 3px;
+    /* Optional: rounded corners */
+    background-color: white;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Style for when the checkbox is checked */
+.checkbox-small:checked+.label-small::before {
+    content: '\2713';
+    /* Unicode checkmark character */
+    color: green;
+    /* Color for checkmark */
+    text-align: center;
+    line-height: 20px;
+    /* Center the checkmark vertically */
+    font-size: 14px;
+    /* Adjust checkmark size */
+}
+
+/* Optional: Hover effect */
+.checkbox-small+.label-small:hover::before {
+    border-color: #666;
+    /* Darker border on hover */
+}
+
+
+/* Smaller label variant */
+.label-small {
+    font-size: 14px;
+    line-height: normal;
+    margin-top: 5px;
+}
+
+
+
+/* Toolbar container - ensure it stays on top */
+.toolbar {
+    display: flex;
+    justify-content: flex-end;
+    background-color: #f5f5f5;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-bottom: none;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    width: 100%;
+    /* Ensure it spans the full width */
+}
+
+.full-width {
+    width: 100%;
+}
+
+.overlay-content {
+    padding-left: 100px;
+    padding-right: 15px;
+}
+
+.sidebyside-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.sidebyside-wrapper select {
+    height: 25px;
+}
+
+/* Wrapper to ensure the toolbar is stacked above the iframe */
+.sidebyside-container {
+    display: flex;
+    flex-direction: column;
+    /* Stack toolbar and iframe vertically */
+    width: 100%;
+    /*Default full, but js to toggle 50%*/
+    border: 1px solid black;
+    text-align: left;
+}
+
+.sidebyside-report {
+    padding: 10px;
+}
+
+/* Iframe styling */
+iframe {
+    width: 100%;
+    /* Ensure the iframe stretches within its container */
+    height: 800px;
+    border: 1px solid #ddd;
+}
+
+/* Toolbar buttons */
+.toolbar-button {
+    background: none;
+    border: 1px solid black;
+    cursor: pointer;
+    font-size: 18px;
+    margin-left: 10px;
+    color: #333;
+    transition: all 0.3s ease;
+    width: 41px;
+    padding: 8px;
+    /* Add padding to improve clickability */
+    border-radius: 4px;
+    /* Slight rounding for the corners */
+}
+
+/* Hover effect */
+.toolbar-button:hover {
+    background-color: #f0f0f0;
+    /* Light gray background on hover */
+    color: #000;
+    /* Darker text color on hover */
+    transform: scale(1.1);
+    /* Slightly enlarge the button */
+}
+
+/* Active (click) effect */
+.toolbar-button:active {
+    background-color: #d3d3d3;
+    /* Slightly darker gray when clicked */
+    transform: scale(0.95);
+    /* Shrink the button when clicked for tactile feedback */
+}
+
+/* Focus (keyboard or mouse focus) effect */
+.toolbar-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(79, 121, 166, 0.6);
+    /* Add a soft blue outline when focused */
+}
+
+.inline-checkbox-container {
+    display: flex;
+    gap: 10px;
+    /* Adds spacing between checkboxes */
+    align-items: center;
+    /* Aligns items vertically */
+}
+
+.inputbox {
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    resize: auto;
+    /* Allows user to resize */
+}
+
+.text-box-container {
+    overflow: hidden;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.text-box-header {
+    background: #f4f4f4;
+    padding: 8px 12px;
+    font-weight: bold;
+    border: 1px solid #ccc;
+    border-bottom: 1px solid #ddd;
+    border-radius: 4px 4px 0px 0px;
+    /* Top corners rounded */
+    text-align: left;
+    font-size: 14px;
+}
+
+.translation-textarea-container {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 0 0 4px 4px;
+    /* Only bottom-left and bottom-right rounded */
+}
+
+/* Highlight container when textarea is focused */
+.inputbox-translation:focus+.translation-textarea-container,
+.translation-textarea-container:has(.inputbox-translation:focus) {
+    border-color: #a7a72e;
+    /* Highlight color */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    /* Optional glow effect */
+}
+
+
+.translation-container {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    width: 100%;
+    margin: auto;
+}
+
+.inputbox-translation {
+    width: 100%;
+    height: 150px;
+    border: none;
+    resize: none;
+    padding: 8px;
+    font-size: 14px;
+    outline: none;
+    font-family: Arial, sans-serif;
+}
+
+#url-preview {
+    display: flex;
+}
+
+.flex-2-col {
+    display: inline-flex;
+    align-items: center;
+}
+
+.flex-2-col h3 {
+    display: inline-block;
+    margin: 0;
+    vertical-align: middle;
+}
+
+#changeKeyBtn {
+    display: inline-block;
+    margin-left: 10px;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+#changeKeyBtn i {
+    margin-right: 0;
+}
+
+/* Reusing keyPopup */
+.pop-up-overlay {
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 220px;
+    border-radius: 4px;
+}
+
+/* Ensure dropdown is positioned relative to logo */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Adjust the logo link to align the dropdown icon */
+.nav_logo_link {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Style the dropdown icon */
+.dropdown-icon {
+    font-size: 1.5rem;
+    color: var(--first-color-light);
+    transition: transform 0.3s;
+}
+
+/* Dropdown Menu Styling */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    /* Contrasting light background */
+    min-width: 220px;
+    border-radius: 0.25rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    border: 1px solid #ccc;
+    z-index: 1000;
+    padding: 0.5rem 0;
+}
+
+/* Dropdown items styling */
+.dropdown-menu a {
+    color: #333;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f5f5f5;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Rotate the dropdown icon when hovering */
+.dropdown:hover .dropdown-icon {
+    transform: rotate(180deg);
+}

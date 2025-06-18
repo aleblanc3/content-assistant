@@ -5,6 +5,9 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
 import { provideRouter, TitleStrategy } from '@angular/router';
 import { CustomTitleStrategy } from './common/custom-title-strategy';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { providePrimeNG } from 'primeng/config';
+import Aura from '@primeng/themes/aura';
 
 import { routes } from './app.routes';
 
@@ -23,6 +26,12 @@ export const appConfig: ApplicationConfig = {
         useFactory: httpLoaderFactory,
         deps: [HttpClient],
       },
-    })])
+    })]),
+    provideAnimationsAsync(),
+    providePrimeNG({
+      theme: {
+        preset: Aura
+      }
+    })
   ],
 };
