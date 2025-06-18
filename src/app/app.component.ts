@@ -7,7 +7,7 @@ import {HeaderComponent} from './template/header.component';
 import {SidebarComponent} from './template/sidebar.component';
 import {FooterComponent} from './template/footer.component';
 import {ApiKeyComponent} from './common/api-key.component';
-import {LocalStorageService} from './common/local-storage.service';
+import {LocalStorageService} from './services/local-storage.service';
 import {CustomTitleStrategy} from './common/custom-title-strategy';
 
 
