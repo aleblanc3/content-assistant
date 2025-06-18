@@ -5,5 +5,11 @@
 	"title.image": "Image assistant",
 	"title.translation": "Translation assistant",
 	"title.about": "About us",	
-	"about.content": "The DDPD GenAI Project is tracking progress towards various use cases to improve web optimization using generative artificial intelligence tools."
+	"about.content": "The DDPD GenAI Project is tracking progress towards various use cases to improve web optimization using generative artificial intelligence tools.",
+	"page.step2.urlForm.legend": "Enter the URL of the source Canada.ca or GitHub page and the prototype you want to compare",
+	"page.step2.urlForm.example": "For example:<br>Source:<br>https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses.html<br>Prototype:<br>https://cra-design.github.io/gst-hst-business/en/topics/gst-hst-businesses.html</p>",
+	"page.step2.error": "Must start with http:// or https://",
+	"submit": "Submit",
+	"continue": "Continue",
+	"404.message": "<h1 id=\"wb-cont\">404: Synergy Not Found</h1><p>This page failed to align with our Q3 objectives and has been offboarded.<br>We appreciate your commitment to innovation by discovering this undocumented feature.</p><h2 class=\"h4\">What now?</h2><ul><li><a href=\"\">Regroup on homepage</a></li><li>Escalate to someone else's to-do list</li><li>Or just stare into the void for a bit. We won't judge.</li></ul>"
 }
