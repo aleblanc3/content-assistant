@@ -39,6 +39,7 @@ testem.log
 
 # Test files
 /code-to-integrate
+/src/app/views/test
 
 # System files
 .DS_Store
