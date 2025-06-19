@@ -5,7 +5,7 @@ import { PageAssistantComponent } from './views/page-assistant/page-assistant.co
 import { ImageAssistantComponent } from './views/image-assistant/image-assistant.component';
 import { TranslationAssistantComponent } from './views/translation-assistant/translation-assistant.component';
 import { AboutComponent } from './views/static/about.component';
-import { TestCompareComponent } from '../../code-to-integrate/test-compare.component';
+import { TestComponent } from './views/test/test.component';
 
 export const routes: Routes = [    
     {
@@ -46,8 +46,8 @@ export const routes: Routes = [
     },
     {
         path: 'test',
-        component: TestCompareComponent,
-        title: 'title.compare',
+        component: TestComponent,
+        title: 'title.test',
         data: { lang: 'en' },
     },
     {
