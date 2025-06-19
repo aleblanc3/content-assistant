@@ -5,7 +5,7 @@ import { PageAssistantComponent } from './views/page-assistant/page-assistant.co
 import { ImageAssistantComponent } from './views/image-assistant/image-assistant.component';
 import { TranslationAssistantComponent } from './views/translation-assistant/translation-assistant.component';
 import { AboutComponent } from './views/static/about.component';
-import { TestComponent } from './views/test/test.component';
+import { TestComponent } from './views/my-test/test.component';
 
 export const routes: Routes = [    
     {
