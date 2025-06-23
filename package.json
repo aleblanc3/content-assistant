@@ -9,6 +9,7 @@
     "test": "ng test",
     "predeploy": "ng build --configuration production --base-href /content-assistant/",
     "deploy": "npx angular-cli-ghpages --dir=dist/content-assistant/browser --no-silent",
+    "deploydev": "npx angular-cli-ghpages --dir=dist/content-assistant/browser --branch=gh-pages-dev",
     "i18n:init": "ngx-translate-extract --input ./src --output ./public/i18n/template.json --key-as-default-value --replace --format json",
     "i18n:extract": "ngx-translate-extract --input ./src --output ./public/i18n/en.json ./public/i18n/fr.json --clean --format json"
   },
