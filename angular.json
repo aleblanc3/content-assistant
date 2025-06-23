@@ -47,6 +47,12 @@
           },
           "configurations": {
             "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/app/views/my-test/test.component.ts",
+                  "with": "src/app/views/example/test.component.ts"
+                }
+              ],
               "budgets": [
                 {
                   "type": "initial",
