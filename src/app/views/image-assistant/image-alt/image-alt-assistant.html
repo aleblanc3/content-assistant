@@ -1,0 +1,125 @@
+<!-- src/app/image-alt-assistant/image-alt-assistant.component.html -->
+
+<!-- API Key Entry -->
+<div id="api-key-entry" *ngIf="!(hasApiKey$ | async)">
+   <h2 class="card-title modal-icon-alignment mb-3">Enter the OpenRouter API key</h2>
+   <p class="mb-4">Before we start, add an openrouter API key to make your requests to OpenAI's GPT-4o-mini model.</p>
+   <fieldset style="margin-bottom:20px;">
+      <legend>OpenRouter API key</legend>
+      <div class="form-group mb-3">
+         <input id="api-key-display" type="text" [(ngModel)]="apiKeyInput" 
+                placeholder="Paste your OpenRouter key here..." 
+                class="form-control" 
+                style="max-width: 600px;">
+         <p id="api-key-entry-error" class="error-msg mt-2" [hidden]="!showApiKeyError" style="color: red;">
+            Please enter a value for the API key.
+         </p>
+      </div>
+      <button id="api-key-submit-btn" (click)="submitApiKey()" class="btn btn-primary">Submit</button>
+   </fieldset>
+   <p>If you don't have one yet, refer to the steps on the Page Assistant tool or visit <a href="https://www.openrouter.ai" target="_blank">openrouter.ai</a>.</p>
+</div>
+
+<!-- Main Tool Area (Hidden until key is submitted/found in URL) -->
+<div id="tool-area" *ngIf="hasApiKey$ | async">
+   <h2 class="mb-3">Image Alt Text Assistant</h2>
+   <p class="mb-4">Upload images (PNG, JPG) to create image alt text with French translations using OpenRouter's vision models.</p>
+
+   <div tabindex="0" class="card pt-2 mt-4">
+      <div class="card-body card-pad pt-2 h-100">
+         <div class="justify-content-between">
+                <div style="margin-bottom: 20px;">
+                    <label for="vision-model-select">Choose Vision Model:</label>
+                    <!-- Use [(ngModel)] to bind selected model to component property -->
+                    <select id="vision-model-select" class="form-control"
+                            [(ngModel)]="selectedVisionModel"
+                            (change)="onModelChange($event)"
+                            style="display: inline-block; width: auto; margin-left: 10px;">
+                       <option value="openai/gpt-4o-mini">openai/gpt-4o-mini</option>
+                       <option value="qwen/qwen2.5-vl-32b-instruct:free">qwen/qwen2.5-vl-32b-instruct:free</option>
+                    </select>
+                </div>
+
+                <fieldset>
+                    <legend>Choose image or PDF files</legend>
+                    <!-- Use (change) event to trigger file processing -->
+                    <input type="file" id="file-uploader" name="files" multiple accept=".png,.jpg,.jpeg,.pdf" (change)="onFileSelected($event)">
+                </fieldset>
+
+                <!-- Progress Area -->
+                <div id="progress-area" style="margin-top: 20px;" [hidden]="!showProgressArea">
+                    <div class="spinner"></div>
+                    <span id="progress-text">{{ progressText }}</span>
+                    <progress id="progress-bar" [value]="(processedCount / filesInProgress) * 100 || 0" max="100" style="width: 100%;"></progress>
+                </div>
+
+                <!-- Results Display Area -->
+                <div id="results-display" style="margin-top: 30px;">
+                    <!-- Iterate over processingResults object values -->
+                    <div *ngFor="let result of (processingResults | keyvalue); trackBy: resultTrackBy" class="result-container" [id]="'result-' + sanitizeId(result.key)">
+                        <h4>Results for: {{ result.value.fileName }}</h4>
+
+                        <p *ngIf="result.value.status === 'error' && result.value.data.error" class="error-message" style="color: red;">
+                            <strong>Error processing file:</strong> {{ safeHtml(result.value.data.error) }}
+                        </p>
+                        <p *ngIf="result.value.status === 'processing'" class="processing-message">
+                            <span class="spinner" style="width: 15px; height: 15px; border-width: 2px;"></span> Processing...
+                        </p>
+
+                        <div *ngIf="result.value.status !== 'processing' && result.value.status !== 'error'">
+                            <!-- Display image preview -->
+                            <img *ngIf="result.value.data.imageBase64" [src]="result.value.data.imageBase64"
+                                 alt="Preview for {{ result.value.fileName }}" class="result-image"
+                                 style="max-height: 200px; width: auto; border: 1px solid #eee; margin-bottom: 10px; display: block;">
+
+                            <div class="result-columns">
+                                <!-- English Alt Text/Description -->
+                                <div class="result-column">
+                                    <strong>English Alt Text:</strong>
+                                    <!-- Collapsible content for long text -->
+                                    <div class="collapsible-container">
+                                        <div [hidden]="result.value.showFullText">
+                                            {{ safeHtml(result.value.data.english || '').substring(0, 150) }}
+                                            <span *ngIf="(result.value.data.english || '').length > 150">...</span>
+                                        </div>
+                                        <div [hidden]="!result.value.showFullText" [innerHtml]="formatDescription(result.value.data.english)"></div>
+                                        <button *ngIf="(result.value.data.english || '').length > 150"
+                                                (click)="toggleFullText(result.value)" class="toggle-button">
+                                            {{ result.value.showFullText ? 'Show Less' : 'Show More' }}
+                                        </button>
+                                    </div>
+                                    <button *ngIf="result.value.data.english" (click)="copyText(result.value.data.english, $event)" class="copy-button">Copy Text</button>
+                                </div>
+
+                                <!-- French Alt Text/Description -->
+                                <div class="result-column">
+                                    <strong>Alt Text Français:</strong>
+                                    <!-- Collapsible content for long text -->
+                                    <div class="collapsible-container">
+                                        <div [hidden]="result.value.showFullText">
+                                            {{ safeHtml(result.value.data.french || '').substring(0, 150) }}
+                                            <span *ngIf="(result.value.data.french || '').length > 150">...</span>
+                                        </div>
+                                        <div [hidden]="!result.value.showFullText" [innerHtml]="formatDescription(result.value.data.french)"></div>
+                                        <button *ngIf="(result.value.data.french || '').length > 150"
+                                                (click)="toggleFullText(result.value)" class="toggle-button">
+                                            {{ result.value.showFullText ? 'Show Less' : 'Show More' }}
+                                        </button>
+                                    </div>
+                                    <button *ngIf="result.value.data.french" (click)="copyText(result.value.data.french, $event)" class="copy-button">Copy Text</button>
+                                </div>
+                            </div>
+                        </div>
+                        <hr style="border-top: 2px solid #ccc; margin-top: 20px;">
+                    </div>
+                </div>
+
+                <div id="csv-download-area" style="margin-top: 30px;">
+                    <!-- CSV Download link will appear here, populated by updateCsvLink() -->
+                </div>
+                <button (click)="clearApiKey()" class="btn btn-secondary mt-3">Clear API Key</button>
+            </div>
+         </div>
+      </div>
+   </div>
+

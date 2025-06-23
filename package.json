@@ -30,6 +30,7 @@
     "bootstrap": "^5.3.3",
     "diff": "^8.0.2",
     "diff2html": "^3.4.51",
+    "pdfjs-dist": "^5.3.31",
     "primeflex": "^4.0.0",
     "primeicons": "^7.0.0",
     "primeng": "^19.1.3",

@@ -1,0 +1,15 @@
+<div class="model-selector-container">
+  <label for="vision-model-select">{{ 'image.model.label' | translate }}</label>
+  <p-dropdown 
+    id="vision-model-select"
+    [options]="visionModels" 
+    [(ngModel)]="selectedModel"
+    optionLabel="name" 
+    optionValue="value"
+    (onChange)="onModelChange($event)"
+    [style]="{'margin-left': '10px'}">
+  </p-dropdown>
+  <p class="text-muted small mt-1">
+    <i class="pi pi-info-circle"></i> {{ 'image.model.pdfNote' | translate }}
+  </p>
+</div>

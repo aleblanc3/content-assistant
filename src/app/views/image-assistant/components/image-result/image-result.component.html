@@ -1,0 +1,91 @@
+<div class="result-container">
+  <p-card>
+    <ng-template pTemplate="header">
+      <h4>{{ 'image.result.title' | translate: { fileName: result.fileName } }}</h4>
+    </ng-template>
+    
+    <ng-template pTemplate="content">
+      <!-- Error state -->
+      <p-message 
+        *ngIf="result.status === 'error' && result.data.error" 
+        severity="error" 
+        [text]="('image.result.error' | translate) + ' ' + result.data.error">
+      </p-message>
+      
+      <!-- Processing state -->
+      <div *ngIf="result.status === 'processing'" class="processing-message">
+        <p-progressSpinner 
+          [style]="{width: '30px', height: '30px'}" 
+          strokeWidth="4">
+        </p-progressSpinner>
+        <span>{{ 'image.result.processing' | translate }}</span>
+      </div>
+      
+      <!-- Completed state -->
+      <div *ngIf="result.status === 'completed'">
+        <!-- Image preview -->
+        <img 
+          *ngIf="result.data.imageBase64" 
+          [src]="result.data.imageBase64"
+          [alt]="'Preview for ' + result.fileName" 
+          class="result-image">
+        
+        <div class="result-columns">
+          <!-- English Alt Text -->
+          <div class="result-column">
+            <strong>{{ 'image.result.english' | translate }}</strong>
+            <div class="collapsible-container">
+              <div *ngIf="!result.showFullText">
+                {{ getTruncatedText(result.data.english) }}
+                <span *ngIf="shouldShowToggle(result.data.english)">...</span>
+              </div>
+              <div *ngIf="result.showFullText" [innerHTML]="formatDescription(result.data.english)"></div>
+              
+              <p-button 
+                *ngIf="shouldShowToggle(result.data.english)"
+                [label]="(result.showFullText ? 'image.result.showLess' : 'image.result.showMore') | translate"
+                (click)="toggleFullText()"
+                styleClass="p-button-text p-button-sm">
+              </p-button>
+            </div>
+            
+            <p-button 
+              *ngIf="result.data.english"
+              [label]="'image.result.copy' | translate"
+              (click)="copyText(result.data.english, $event)"
+              icon="pi pi-copy"
+              styleClass="p-button-secondary p-button-sm copy-button">
+            </p-button>
+          </div>
+          
+          <!-- French Alt Text -->
+          <div class="result-column">
+            <strong>{{ 'image.result.french' | translate }}</strong>
+            <div class="collapsible-container">
+              <div *ngIf="!result.showFullText">
+                {{ getTruncatedText(result.data.french) }}
+                <span *ngIf="shouldShowToggle(result.data.french)">...</span>
+              </div>
+              <div *ngIf="result.showFullText" [innerHTML]="formatDescription(result.data.french)"></div>
+              
+              <p-button 
+                *ngIf="shouldShowToggle(result.data.french)"
+                [label]="(result.showFullText ? 'image.result.showLess' : 'image.result.showMore') | translate"
+                (click)="toggleFullText()"
+                styleClass="p-button-text p-button-sm">
+              </p-button>
+            </div>
+            
+            <p-button 
+              *ngIf="result.data.french"
+              [label]="'image.result.copy' | translate"
+              (click)="copyText(result.data.french, $event)"
+              icon="pi pi-copy"
+              styleClass="p-button-secondary p-button-sm copy-button">
+            </p-button>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </p-card>
+</div>
