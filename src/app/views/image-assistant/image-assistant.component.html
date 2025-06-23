@@ -1,2 +1,52 @@
-<h1 id="wb-cont">{{ 'title.image' | translate}}</h1>
-<p>{{'image.content' | translate }}</p> 
+<h1 id="wb-cont">{{ 'title.image' | translate }}</h1>
+<p>{{ 'image.description' | translate }}</p>
+
+<!-- API Key Status -->
+<section class="api-key-status mb-4">
+  <div>
+    <strong>{{ 'page.apiKey.status' | translate }}</strong>
+    <span *ngIf="apiKeyService.hasApiKey$ | async" class="text-success">
+      <i class="pi pi-check-circle"></i> {{ 'page.apiKey.active' | translate }}
+    </span>
+    <span *ngIf="!(apiKeyService.hasApiKey$ | async)" class="text-warning">
+      <i class="pi pi-exclamation-circle"></i> {{ 'page.apiKey.notSet' | translate }}
+    </span>
+  </div>
+</section>
+
+<!-- Main Tool Area -->
+<section>
+  <!-- Model Selector -->
+  <ca-model-selector
+    [selectedModel]="selectedVisionModel"
+    (modelChange)="onModelChange($event)">
+  </ca-model-selector>
+  
+  <!-- File Upload -->
+  <ca-file-upload
+    (filesSelected)="onFilesSelected($event)">
+  </ca-file-upload>
+  
+  <!-- Progress Indicator -->
+  <ng-container *ngIf="state$ | async as state">
+    <ca-progress-indicator
+      [progressText]="state.progressText"
+      [processedCount]="state.processedCount"
+      [totalFiles]="state.filesInProgress"
+      [showProgress]="state.showProgressArea">
+    </ca-progress-indicator>
+    
+    <!-- Results Display -->
+    <div class="results-section" *ngIf="getResultsArray(state.results).length > 0">
+      <ca-image-result 
+        *ngFor="let result of getResultsArray(state.results)"
+        [result]="result">
+      </ca-image-result>
+      
+      <!-- CSV Download -->
+      <ca-csv-download
+        [results]="state.results">
+      </ca-csv-download>
+    </div>
+  </ng-container>
+</section>

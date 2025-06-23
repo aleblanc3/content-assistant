@@ -1,0 +1,7 @@
+<div class="progress-container" *ngIf="showProgress">
+  <div class="progress-text">
+    <div class="spinner"></div>
+    <span>{{ progressText }}</span>
+  </div>
+  <p-progressBar [value]="progressValue" [showValue]="true"></p-progressBar>
+</div>
