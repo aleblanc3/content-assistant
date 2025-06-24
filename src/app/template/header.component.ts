@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from "@ngx-translate/core";
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'ca-header',
-  imports: [CommonModule, TranslateModule],
+  imports: [CommonModule, TranslateModule, ButtonModule],
   template: `
   <header id="header">
   <div class="row">
@@ -21,13 +22,12 @@ import { TranslateModule, TranslateService } from "@ngx-translate/core";
     <div class="col-lg-9 col-md-8 col-sm-6 col-6 text-end lang-toggle">
       <div class="language-picker-area">
         <div class="picker-label"></div>
-        <!--a
-          style="cursor: pointer"
-          class="langs"
-          tabindex="0"
-          (click)="this.langToggle.selectLanguage()"> 
-          {{ 'opp.lang' | translate }}
-        </a-->
+        <button
+          pButton
+          icon="pi pi-moon"
+          class="p-button-rounded p-button-secondary p-button-outlined p-button-sm mr-3"
+          (click)="toggleDarkMode()">
+        </button>
         <a
           style="cursor: pointer"
           class="langs"
@@ -83,6 +83,11 @@ export class HeaderComponent {
     else { oppLang = "en" }
     this.translate.use(oppLang);
     //console.log(`The opp lang is: ${oppLang}`);
+  }
+
+  toggleDarkMode() {
+    const element = document.querySelector('html');
+    if (element) { element.classList.toggle('dark-mode'); }
   }
 
 }
