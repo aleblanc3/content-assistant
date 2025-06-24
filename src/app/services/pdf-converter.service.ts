@@ -3,7 +3,7 @@ import * as pdfjsLib from 'pdfjs-dist';
 import { GlobalWorkerOptions } from 'pdfjs-dist';
 
 // Set worker path to local file
-GlobalWorkerOptions.workerSrc = '/pdfjs/pdf.worker.min.mjs';
+GlobalWorkerOptions.workerSrc = '/content-assistant/pdfjs/pdf.worker.min.mjs';
 
 @Injectable({
   providedIn: 'root'
