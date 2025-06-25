@@ -18,16 +18,17 @@
 }
 
 .fip-colour {
-    opacity: 70%
+    opacity: 70%;
 }
 
 body {
-    background-color: #f8f9f8;
-    color: #333;
+    background-color: var(--surface-ground);
+    color: var(--text-color);
     position: relative;
     margin: var(--header-height) 0 0 0;
     padding: 0 1rem;
     font-family: var(--body-font);
+    font-size: var(--font-size);
     transition: .5s;
 }
 
@@ -86,7 +87,7 @@ header#header {
     left: -30%;
     width: var(--nav-width);
     height: 100vh;
-    background-color: var(--first-color);
+    background-color: var(--p-gray-800);
     padding: .5rem 1rem 1rem;
     transition: .5s;
     z-index: var(--z-fixed)

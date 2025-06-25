@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet, RouterModule } from '@angular/router';
 import { Title } from '@angular/platform-browser';
@@ -18,7 +18,7 @@ import { PrimeNG } from 'primeng/config';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'GenAI Content Assistant';
   
   constructor(public CustomTitle: CustomTitleStrategy, public titleService: Title, public localStore: LocalStorageService, private primeng: PrimeNG) {}

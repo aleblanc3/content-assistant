@@ -10,7 +10,7 @@ import { ButtonModule } from 'primeng/button';
   <header id="header">
   <div class="row">
     <div class="col-lg-3 col-md-4 col-sm-6 col-6 text-start">
-      <img
+<img
         class="img-fluid fip-colour"
         src="cra-logo.png"
         width="471"
@@ -19,9 +19,7 @@ import { ButtonModule } from 'primeng/button';
         priority="true"
       />
     </div>
-    <div class="col-lg-9 col-md-8 col-sm-6 col-6 text-end lang-toggle">
-      <div class="language-picker-area">
-        <div class="picker-label"></div>
+    <div class="col-lg-9 col-md-8 col-sm-6 col-6 text-end">      
         <button
           pButton
           icon="pi pi-moon"
@@ -35,39 +33,11 @@ import { ButtonModule } from 'primeng/button';
           (click)="selectLanguage()"> 
           {{ 'opp.lang' | translate }}
         </a>
-      </div>
     </div>
   </div>
 </header>
   `,
-  styles: `
-    :host {
-      display: block;
-    }
-    .lang-toggle a:link {
-      text-color: black
-    }
-    .lang-toggle a:visited {
-      color: #000
-    }
-    .lang-toggle a:hover {
-      color: #00f
-    }
-    .language-picker-area {
-      display: flex;
-      justify-content: flex-end;
-    }
-    .picker-label {
-      margin-right: 20px;
-    }
-    .language-picker {
-      width: 100px;
-    }
-    .langs, .langs:hover, .langs:visited {
-      text-decoration: underline;
-      color: #2e5ea7;
-    }
-  `
+  styles: ``
 })
 export class HeaderComponent {
   // constructor(public langToggle: LangToggleService){} //putting the code below into a service works but we aren't calling it anywhere else
