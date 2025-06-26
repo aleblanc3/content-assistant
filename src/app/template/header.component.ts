@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from "@ngx-translate/core";
 import { ButtonModule } from 'primeng/button';
+import { ToggleButtonModule } from 'primeng/togglebutton';
 
 @Component({
   selector: 'ca-header',
-  imports: [CommonModule, TranslateModule, ButtonModule],
+  imports: [CommonModule, TranslateModule, ButtonModule, ToggleButtonModule],
   template: `
   <header id="header">
   <div class="row">
@@ -20,12 +21,14 @@ import { ButtonModule } from 'primeng/button';
       />
     </div>
     <div class="col-lg-9 col-md-8 col-sm-6 col-6 text-end">      
-        <button
-          pButton
-          icon="pi pi-moon"
-          class="p-button-rounded p-button-secondary p-button-outlined p-button-sm mr-3"
+        <p-togglebutton
+          offIcon="pi pi-moon"
+          offLabel=""
+          onIcon="pi pi-sun"
+          onLabel=""
+          class="p-button-rounded p-button-secondary p-button-outlined p-button-sm mr-3 pr-0"
           (click)="toggleDarkMode()">
-        </button>
+        </p-togglebutton>
         <a
           style="cursor: pointer"
           class="langs"
