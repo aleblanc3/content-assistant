@@ -1,0 +1,53 @@
+<!-- ***** Reset ***** -->
+<ng-container *ngIf="mySource != ''">    
+<p-card>
+         <h2 class="h4 text-secondary">URLs submitted</h2>        
+        <p class="text-secondary">Source: {{mySource}}</p>
+        <p class="text-secondary" *ngIf="taskType == 'task2Contents'">Prototype: {{myPrototype}}</p>
+        <p-button id="url-reset-btn" class="my-2" label="Reset" icon="pi pi-trash" (click)="resetInput()" severity="danger"></p-button>
+    </p-card>
+</ng-container>
+<!-- ***** User Input ***** -->
+<ng-container id="uploadForm" *ngIf="mySource == ''">
+    <!-- ***** Upload by URL ***** -->
+    <form #form="ngForm" (ngSubmit)="getHtmlContent()" novalidate *ngIf="uploadType == 'uploadURL'">
+        <fieldset>
+            <legend *ngIf="taskType !== 'task2Contents'" class="text-color">{{'page.step2.urlForm.legend' | translate }}</legend>
+            <legend *ngIf="taskType == 'task2Contents'" class="text-color">{{'page.step2.urlForm.legend2' | translate }}</legend>
+            <p class="small text-secondary" [innerHTML]="'page.step2.urlForm.example' | translate"></p>
+            <!-- Source URL -->
+            <div class="form-group mb-3">
+                <label for="source">{{'Source URL' | translate }}</label>
+                <input id="source" pInputText type="url" name="source" [(ngModel)]="source" required pattern="https?://.+"
+                    #sourceField="ngModel" class="form-control" placeholder="https://www.canada.ca/(your path)"
+                    autocomplete="url" />
+                <div *ngIf="sourceField.invalid && sourceField.touched" class="text-danger small">
+                    <div *ngIf="sourceField.errors?.['required']">{{'Source URL' | translate}} {{'is required' |
+                        translate
+                        }}.</div>
+                    <div *ngIf="sourceField.errors?.['pattern']">{{'page.step2.error' | translate }}</div>
+                </div>
+            </div>
+            <!-- Prototype URL -->
+            <div class="form-group mb-3" *ngIf="taskType == 'task2Contents'">
+                <label for="prototype">{{'Prototype URL' | translate }}</label>
+                <input id="prototype" pInputText type="url" name="prototype" [(ngModel)]="prototype" required pattern="https?://.+"
+                    #prototypeField="ngModel" class="form-control"
+                    placeholder="https://(allowed repo).github.io/(your path)" autocomplete="url" />
+                <div *ngIf="prototypeField.invalid && prototypeField.touched" class="text-danger small">
+                    <div *ngIf="prototypeField.errors?.['required']">{{'Prototype URL' | translate}} {{'is required' |
+                        translate}}.</div>
+                    <div *ngIf="prototypeField.errors?.['pattern']">{{'page.step2.error' | translate}}</div>
+                </div>
+            </div>
+            <!-- Error message -->
+            <div *ngIf="error" class="alert alert-danger" role="alert">{{ error }}</div>
+            <!-- Submit -->
+            <p-button type="submit" icon="pi pi-save" [label]="'continue' | translate" [loading]="loading" [disabled]="form.invalid" severity="info"></p-button>
+        </fieldset>
+    </form>
+    <!-- ***** Upload by Direct Input ***** -->
+    <p *ngIf="uploadType == 'uploadCP'">To-do: Add direct input box</p>
+    <!-- ***** Upload by Word Doc ***** -->
+    <p *ngIf="uploadType == 'uploadWD'">To-do: Add word doc upload</p>
+</ng-container>

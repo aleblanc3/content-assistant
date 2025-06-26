@@ -1,116 +1,96 @@
-import { Component, inject } from '@angular/core';
+import { Component} from '@angular/core';
+import { TranslateModule, TranslateService } from "@ngx-translate/core";
+import { LocalStorageService } from '../../services/local-storage.service'; //Delete if you aren't using anything from local storage
 import { CommonModule } from '@angular/common';
-import { TranslateModule } from "@ngx-translate/core";
-import { FormsModule, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { DomSanitizer, SafeResourceUrl, SafeHtml } from '@angular/platform-browser';
-import { HttpClient } from '@angular/common/http';
-import { InputTextModule } from 'primeng/inputtext';
+import { FormsModule } from '@angular/forms';
+
+//primeNG
+import { RadioButtonModule } from 'primeng/radiobutton';
+import { CheckboxModule } from 'primeng/checkbox';
 import { ButtonModule } from 'primeng/button';
-import { MessageModule } from 'primeng/message';
+import { StepperModule } from 'primeng/stepper';
+import { PanelModule } from 'primeng/panel';
+
+//Components
+import { UploadContentComponent } from './components/upload-content.component';
 
 @Component({
   selector: 'ca-page-assistant',
-  imports: [CommonModule, TranslateModule, FormsModule, ReactiveFormsModule, InputTextModule, ButtonModule, MessageModule],
+  imports: [TranslateModule, CommonModule, FormsModule, RadioButtonModule, CheckboxModule, ButtonModule, StepperModule, UploadContentComponent, PanelModule],
   templateUrl: './page-assistant.component.html',
   styles: ``
 })
 export class PageAssistantComponent {
 
-  //Initialize stuff
-  source: string = '';
-  prototype: string = '';
-  iframeContentA: SafeHtml | null = null;
-  iframeContentB: SafeHtml | null = null;
-  error: string = '';
+  sourceURL: any;
 
-  //This runs first, use it to inject services & other dependencies
-  constructor(private sanitizer: DomSanitizer, private http: HttpClient) {
+  constructor(public localStore: LocalStorageService, private translate: TranslateService) { } 
+  
+  //Step 1 radio buttons to select task
+  selectedTask: any = null;
+
+  tasks: any[] = [
+    { name: 'my content with an AI optimized version', key: 'taskContentAndAI', unavailable: 'false' },
+    { name: 'two webpages', key: 'task2Contents', unavailable: 'false' },
+    { name: 'two AI models', key: 'task2Models', unavailable: 'false' },
+    { name: 'two AI prompts', key: 'task2Prompts', unavailable: 'true' }
+  ];
+
+  //Step 2 radio buttons to select upload type
+  selectedUpload: any = null;
+
+  uploads: any[] = [
+    { name: 'URL', key: 'uploadURL', unavailable: 'false' },
+    { name: 'Copy & paste', key: 'uploadCP', unavailable: 'false' },
+    { name: 'Word doc (converts to HTML)', key: 'uploadWD', unavailable: 'true' }
+  ];
+  //Step 2 get upload data from child component
+  public receivedUploadData: {
+    sourceURL: string;
+    sourceHTML: string;
+    prototypeURL?: string;
+    prototypeHTML?: string;
+  } | null = null;
+
+  public handleUpload(uploadData: { sourceURL: string, sourceHTML: string, prototypeURL?: string, prototypeHTML?: string } | null = null) {
+    this.receivedUploadData = uploadData;
   }
 
-  //Loads content into iframe (used by updateIframeFromURL)
-  loadIntoIframe(frame: string, content: string): void {
-    const iframeContent = this.sanitizer.bypassSecurityTrustHtml(content);
-    if (frame === 'A') {
-      this.iframeContentA = iframeContent;
-    } else if (frame === 'B') {
-      this.iframeContentB = iframeContent;
-    } else {
-      console.warn('Unknown frame:', frame);
+  //Step 3 checkboxes for AI prompt
+  selectedPrompts: any[] = [];
+
+  prompts: any[] = [
+    { name: 'Suggest an SEOed title', key: 'promptSEOTitle', unavailable: 'false' },
+    { name: 'Suggest a metadata description', key: 'promptMetaDesc', unavailable: 'false' },
+    { name: '...', key: 'promptEtc', unavailable: 'true' },
+    { name: 'Propose a better heading structure', key: 'promptHeadingStructure', unavailable: 'false' }
+  ];
+
+  //Step 3 radio buttons or checkboxes for AI model
+  selectedAI: any = null;
+
+  selectedAIs: any[] = [];
+
+  ais: any[] = [
+    { name: 'Gemini 2.0 Flash', key: 'aiGenini', unavailable: 'false' },
+    { name: 'Llama 3.3 70B', key: 'aiLlama', unavailable: 'false' },
+    { name: 'Phi-3 Medium', key: 'aiPhi', unavailable: 'true' },
+    { name: 'Mistral Nemo', key: 'aiMistral', unavailable: 'false' },
+    { name: 'Dolphin3.0 R1', key: 'aiDolphin', unavailable: 'false' }
+  ];
+
+  isSelected(option: any): boolean {
+    return this.selectedAIs.includes(option);
+  }
+
+  toggleSelection(option: any): void {
+    const index = this.selectedAIs.indexOf(option);
+    if (index > -1) {
+      // Deselect
+      this.selectedAIs.splice(index, 1);
+    } else if (this.selectedAIs.length < 2) {
+      // Add only if under the limit
+      this.selectedAIs.push(option);
     }
   }
-
-  //Gets HTML content from URL (used by updateIframeFromURL)
-  async fetchHtml(url: string, label: string): Promise<string> {
-    const response = await fetch(url);
-    if (!response.ok) throw new Error(`${label} fetch failed: HTTP ${response.status}`);
-    console.warn(`Response code: ${response.status}`);
-    return response.text();
-  }
-
-  //Updates iframe using both fetchHtml() and loadIntoIframe()
-  async updateIframeFromURL() {
-    this.error = '';
-    this.iframeContentA = null;
-    this.iframeContentB = null;
-
-    try {
-      //Block unknown hosts
-      const allowedHosts = new Set([
-        "cra-design.github.io",
-        "cra-proto.github.io",
-        "gc-proto.github.io",
-        "test.canada.ca",
-        "www.canada.ca"
-      ]);
-      
-      const sourceInput = new URL(this.source);    
-      if (!allowedHosts.has(sourceInput.host)) {
-        throw new Error(`${sourceInput.host} is blocked`);
-      }
-      
-      const prototypeInput = new URL(this.prototype);
-      if (!allowedHosts.has(prototypeInput.host)) {
-        throw new Error(`${prototypeInput.host} is blocked`);
-      }
-
-      //Get HTML content
-      var htmlA = await this.fetchHtml(this.source, "Source");
-      var htmlB = await this.fetchHtml(this.prototype, "Prototype");
-
-      //Fix Canada.ca pages
-      if(sourceInput.host == "www.canada.ca"){
-        htmlA = htmlA.replace(/=("|')\//g,'="https://www.canada.ca/')
-      }
-      if(prototypeInput.host == "www.canada.ca"){
-        htmlB = htmlB.replace(/=("|')\//g,'="https://www.canada.ca/')
-      }
-      
-      //Load into iframe
-      this.loadIntoIframe("A", htmlA);
-      this.loadIntoIframe("B", htmlB);
-
-    }
-    catch (err: any) {
-      this.error = `Failed to fetch page: ${err.message}`;
-    }
-  }
-
-
-
-
-
-  //Switch to reactive forms if I need a more complex form (currently using template driven form)
- // urlForm = new FormGroup({
-//    source: new FormControl(''),
- //   prototype: new FormControl(''),
- // });
-//  submitURL() {
- //   this.pageAssistantService.submitURL(
- //     this.urlForm.value.source ?? '',
- //     this.urlForm.value.prototype ?? '',
- //   );
- // }
-  //End of reactive form code
-
-
 }
