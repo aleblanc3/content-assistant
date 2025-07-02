@@ -10,13 +10,15 @@ import { CheckboxModule } from 'primeng/checkbox';
 import { ButtonModule } from 'primeng/button';
 import { StepperModule } from 'primeng/stepper';
 import { PanelModule } from 'primeng/panel';
+import { MessageModule } from 'primeng/message';
 
 //Components
 import { UploadContentComponent } from './components/upload-content.component';
+import { PageCompareComponent } from './components/page-compare.component';
 
 @Component({
   selector: 'ca-page-assistant',
-  imports: [TranslateModule, CommonModule, FormsModule, RadioButtonModule, CheckboxModule, ButtonModule, StepperModule, UploadContentComponent, PanelModule],
+  imports: [TranslateModule, CommonModule, FormsModule, RadioButtonModule, CheckboxModule, ButtonModule, StepperModule, UploadContentComponent, PanelModule, MessageModule, PageCompareComponent],
   templateUrl: './page-assistant.component.html',
   styles: ``
 })
@@ -52,7 +54,7 @@ export class PageAssistantComponent {
     prototypeHTML?: string;
   } | null = null;
 
-  public handleUpload(uploadData: { sourceURL: string, sourceHTML: string, prototypeURL?: string, prototypeHTML?: string } | null = null) {
+  public handleUpload(uploadData: { sourceURL: string, sourceHTML: string, prototypeURL?: any, prototypeHTML?: any } | null = null) {
     this.receivedUploadData = uploadData;
   }
 

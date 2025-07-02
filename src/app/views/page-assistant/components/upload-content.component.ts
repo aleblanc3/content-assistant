@@ -10,6 +10,8 @@ import { CardModule } from 'primeng/card';
 import { DomSanitizer, SafeResourceUrl, SafeHtml } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
 
+import { sampleHtmlA, sampleHtmlB } from './sample-data';
+
 @Component({
   selector: 'ca-upload-content',
   imports: [CommonModule, TranslateModule, FormsModule, ButtonModule, InputTextModule, CardModule],
@@ -34,8 +36,6 @@ export class UploadContentComponent {
   prototype: string = '';
   mySource: string = '';
   myPrototype: string = '';
-  //iframeContentA: SafeHtml | null = null;
-  //iframeContentB: SafeHtml | null = null;
   error: string = '';
   loading = false;
 
@@ -49,18 +49,6 @@ export class UploadContentComponent {
     this.loading = false;
   }
 
-  //Loads content into iframe (used by getHtmlContent)
-  //loadIntoIframe(frame: string, content: string): void {
-  //  const iframeContent = this.sanitizer.bypassSecurityTrustHtml(content);
-  //  if (frame === 'A') {
-  //    this.iframeContentA = iframeContent;
-  //  } else if (frame === 'B') {
-  //    this.iframeContentB = iframeContent;
-  //  } else {
-  //    console.warn('Unknown frame:', frame);
-  //  }
-  //}
-
   //Gets HTML content from URL (used by getHtmlContent)
   async fetchHtml(url: string, label: string): Promise<string> {
     const response = await fetch(url);
@@ -73,8 +61,6 @@ export class UploadContentComponent {
   async getHtmlContent() {
     this.loading = true;
     this.error = '';
-    //this.iframeContentA = null;
-    //this.iframeContentB = null;
 
     try {
       //Block unknown hosts
@@ -109,10 +95,6 @@ export class UploadContentComponent {
       }
       else { htmlB = "Get AI content" }
 
-      //Load into iframe
-      //this.loadIntoIframe("A", htmlA);
-      //this.loadIntoIframe("B", htmlB);
-
       //Emit data
       this.uploadData.emit({
         sourceURL: this.source,
@@ -129,5 +111,17 @@ export class UploadContentComponent {
     catch (err: any) {
       this.error = `Failed to fetch page: ${err.message}`;
     }
+  }
+    //Emit sample data
+    loadSampleData() {
+      this.uploadData.emit({
+        sourceURL: "Sample data A",
+        sourceHTML: sampleHtmlA,
+        prototypeURL: "Sample data B",
+        prototypeHTML: sampleHtmlB
+      });
+      //Set variables to display
+      this.mySource = "Sample data A";
+      this.myPrototype = "Sample data B";
   }
 }

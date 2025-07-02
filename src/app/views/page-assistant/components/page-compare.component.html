@@ -1,0 +1,26 @@
+<div class="pb-2">
+    <!-- Control Buttons -->
+    <p-button label="Compare HTML" icon="pi pi-search" (onClick)="compareHtml()" class="mr-2"
+        [disabled]="!originalHtml || !modifiedHtml"></p-button>
+    <p-button label="Clear All" icon="pi pi-trash" (onClick)="clearAll()" severity="danger"></p-button>
+
+    <!-- Results Section -->
+    <div *ngIf="showResults" class="mt-4">
+        <p-tabView>
+            <!-- Rendered page -->
+            <p-tabPanel header="Web page" leftIcon="pi pi-eye">
+                <p-card>
+                    <div #shadowDiffContainer class="shadow-diff-container border-1 surface-border border-round p-3">
+                    </div>
+                </p-card>
+            </p-tabPanel>
+
+            <!-- Source code -->
+            <p-tabPanel header="Page source" leftIcon="pi pi-code">
+                <p-card>
+                    <div #diff2htmlContainer class="diff2html-container"></div>
+                </p-card>
+            </p-tabPanel>
+        </p-tabView>
+    </div>
+</div>

@@ -122,7 +122,9 @@
                 </div>
                 <div class="flex py-3 gap-2">
                     <p-button label="Back" severity="secondary" (onClick)="activateCallback(2)" />
-                    <p-button label="Next" [disabled]="(selectedTask.key === 'task2Models' && selectedAIs.length <= 1) || (selectedTask.key !== 'task2Contents' && (!selectedAI || selectedPrompts.length < 1))" (onClick)="activateCallback(4)" />
+                    <p-button label="Next"
+                        [disabled]="(selectedTask.key === 'task2Models' && selectedAIs.length <= 1) || (selectedTask.key !== 'task2Contents' && (!selectedAI || selectedPrompts.length < 1))"
+                        (onClick)="activateCallback(4)" />
                 </div>
             </ng-template>
         </p-step-panel>
@@ -132,26 +134,41 @@
         <p-step>View results</p-step>
         <p-step-panel>
             <ng-template #content let-activateCallback="activateCallback">
-                <div class="flex flex-col h-48">
-                    <div
-                        class="bg-surface-50 dark:bg-surface-950 flex-auto flex justify-center items-center font-medium">
-                        <!--Summary of collected data-->
+                <div class="flex flex-column h-48">
+                    <div class="bg-surface-50 dark:bg-surface-950 flex-auto">
+        <!--Summary of collected data-->
+                        <div class="p-3" *ngIf="selectedTask.name">
                         <p-panel header="User Input Summary" [toggleable]="true" [collapsed]="true">
                             <p>Task: {{selectedTask.name}}</p>
-                            
+
                             <p>Upload type: {{selectedUpload.name}}</p>
-                            
+
                             <ng-container *ngIf="receivedUploadData">
                                 <p>Source URL: {{this.receivedUploadData.sourceURL}}</p>
-                                <p *ngIf="receivedUploadData.prototypeURL">Prototype URL: {{this.receivedUploadData.prototypeURL}}</p>
+                                <p *ngIf="receivedUploadData.prototypeURL">Prototype URL:
+                                    {{this.receivedUploadData.prototypeURL}}</p>
                             </ng-container>
 
-                            <p *ngIf="selectedTask.key !== 'task2Contents' && selectedTask.key !== 'task2Models'">AI model: {{selectedAI.name}}</p>
-                            
-                            <p *ngIf="selectedAIs.length > 0">AI models: <span *ngFor="let ai of selectedAIs; let i = index">{{ ai.name }}<span *ngIf="i < selectedAIs.length - 1"> and </span></span></p>
-                            
-                            <p *ngIf="selectedPrompts.length > 0">Complete prompt: <span *ngFor="let prompt of selectedPrompts; let i = index">{{ prompt.name }}<span *ngIf="i < selectedPrompts.length - 1">, </span></span></p>
+                            <p *ngIf="selectedTask.key !== 'task2Contents' && selectedTask.key !== 'task2Models'">AI
+                                model: {{selectedAI.name}}</p>
+
+                            <p *ngIf="selectedAIs.length > 0">AI models: <span
+                                    *ngFor="let ai of selectedAIs; let i = index">{{ ai.name }}<span
+                                        *ngIf="i < selectedAIs.length - 1"> and </span></span></p>
+
+                            <p *ngIf="selectedPrompts.length > 0">Complete prompt: <span
+                                    *ngFor="let prompt of selectedPrompts; let i = index">{{ prompt.name }}<span
+                                        *ngIf="i < selectedPrompts.length - 1">, </span></span></p>
                         </p-panel>
+                        </div>
+                        <!-- ***** Upload options ***** -->
+                        <div class="p-3" *ngIf="receivedUploadData; else noData">
+                            <ca-page-compare [originalHtml]="this.receivedUploadData.sourceHTML"
+                                [modifiedHtml]="this.receivedUploadData.prototypeHTML ?? ''"></ca-page-compare>
+                        </div>
+                        <ng-template #noData>
+                            <p-message severity="danger" text="Did not receive upload data"/>
+                        </ng-template>
                     </div>
                 </div>
                 <div class="py-3">

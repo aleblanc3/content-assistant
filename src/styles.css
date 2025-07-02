@@ -1,6 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 @charset "UTF-8";
 
+@import 'primeicons/primeicons.css';
+@import 'diff2html/bundles/css/diff2html.min.css';
+
+.diff2html-wrapper {
+  font-size: 0.875rem;
+}
+
 :root {
     --header-height: 3rem;
     --nav-width: 80px;
