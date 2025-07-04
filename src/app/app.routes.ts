@@ -4,10 +4,11 @@ import { NotFoundComponent } from './views/static/not-found.component';
 import { PageAssistantComponent } from './views/page-assistant/page-assistant.component';
 import { ImageAssistantComponent } from './views/image-assistant/image-assistant.component';
 import { TranslationAssistantComponent } from './views/translation-assistant/translation-assistant.component';
+import { ProjectAssistantComponent } from './views/project-assistant/project-assistant.component';
 import { AboutComponent } from './views/static/about.component';
 import { TestComponent } from './views/my-test/test.component';
 
-export const routes: Routes = [    
+export const routes: Routes = [
     {
         path: '',
         component: LandingComponent,
@@ -36,6 +37,12 @@ export const routes: Routes = [
         path: 'translation-assistant',
         component: TranslationAssistantComponent,
         title: 'title.translation',
+        data: { lang: 'en' },
+    },
+    {
+        path: 'project-assistant',
+        component: ProjectAssistantComponent,
+        title: 'title.project',
         data: { lang: 'en' },
     },
     {

@@ -1,10 +1,10 @@
 <div class="l-navbar show-n" id="nav-bar">
   <nav class="nav">
-    
+
     <div>
       <a class="nav_logo" [routerLink]="['/']">
         <img [src]="'app.logo' | translate" [alt]="'app.title' | translate" />
-      </a>      
+      </a>
       <div class="nav_list mt-5">
         <a [routerLink]="['/page-assistant']" [routerLinkActive]="['active']" class="nav_link" aria-current="page"
           id="active">
@@ -21,9 +21,14 @@
           <span class="material-icons nav_icon" aria-hidden="true">language</span>
           <span class="nav_name">{{ 'menu.translation' | translate }}</span>
         </a>
+        <a [routerLink]="['/project-assistant']" [routerLinkActive]="['active']" class="nav_link"
+          aria-current="page" id="active">
+          <span class="material-icons nav_icon" aria-hidden="true">folder</span>
+          <span class="nav_name">{{ 'menu.project' | translate }}</span>
+        </a>
       </div>
     </div>
-    
+
     <div class="nav_list mb-4">
       <a [routerLink]="['/about-us']" [routerLinkActive]="['active']" class="nav_link">
         <span class="material-icons nav_icon" aria-hidden="true">web_asset</span>
