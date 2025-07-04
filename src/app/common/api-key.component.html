@@ -1,38 +1,21 @@
-<p-button icon="pi pi-key" label="Change API key" [rounded]="true" [raised]="true" severity="secondary"
-    id="api-key-reset-btn" class="my-2" *ngIf="this.localStore.getData('apiKey') != null" (click)="removeAPI()" />
+<p-card [header]="'title.apiKey' | translate">
+  <div class="flex flex-column gap-3">
 
-<div id="api-key-entry" *ngIf="this.localStore.getData('apiKey') == null">
-    <h3 class="card-title h5 modal-icon-alignment pb-2 ng-star-inserted">Enter the GenAI API key</h3>
-    <p>Before we start, add an openrouter API key to make your requests.</p>
+    <p class="m-0">
+      {{'apiKey.intro' | translate}}
+    </p>
 
-    <p-inputgroup>
-        <input pInputText placeholder="API key value" [(ngModel)]="api" #apiField="ngModel" #apiKey required />
-        <p-button icon="pi pi-key" label="Save API key" [raised]="true" severity="success" (click)="saveAPI(apiKey.value)" />
-    </p-inputgroup>
+    <p-inputGroup>
+      <input pInputText [placeholder]="'apiKey.placeholder' | translate" [(ngModel)]="api" #apiField="ngModel" #apiKey required />
+      <button pButton icon="pi pi-key" [label]="'apiKey.save' | translate" [raised]="true" severity="success"
+              (click)="this.localStore.saveData('apiKey', api)"></button>
+    </p-inputGroup>
+
     <div *ngIf="apiField.invalid && apiField.touched" class="text-danger small">
-        <ng-container *ngIf="apiField.errors?.['required']">
-            <p>Please enter a value for the API key. It can be a
-                placeholder, but if so GenAI reports will not function.</p>
-        </ng-container>
+      <ng-container *ngIf="apiField.errors?.['required']">
+        <p class="m-0">{{'apiKey.error' | translate}}</p>
+      </ng-container>
     </div>
-
-    <p class="pt-3">If you don't have one yet, here are some steps to create one:</p>
-    <ol>
-        <li>Create an account at <a href="https://www.openrouter.ai">openrouter.ai</a></li>
-        <li>Under the top right hamburger menu icon, select "Keys"</li>
-        <li>Create key (and save it somewhere!)
-            <ul>
-                <li>the point of this is to prevent abuse if you bought credits on your account if third parties find
-                    your key</li>
-                <li>you don't need to buy credits for free models used in this demo</li>
-                <li>you will be shown your key right after creating it: copy and save it somewhere, as you can't access
-                    it again through openrouter</li>
-                <li>if you want to try another model, or have credits on your account and want a paid model, let Miguel
-                    know so we can update the selections</li>
-            </ul>
-        </li>
-        <li>Now that you have a key, paste it in the input box above, which will use it for this session (the key is not
-            sent back to us, so we won't see it!)</li>
-    </ol>
-
+<div [innerHTML]="'apiKey.instructions' | translate"></div>
 </div>
+</p-card>

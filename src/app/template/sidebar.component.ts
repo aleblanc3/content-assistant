@@ -10,5 +10,4 @@ import { TranslateModule } from "@ngx-translate/core";
   styles: ``
 })
 export class SidebarComponent {
-
 }

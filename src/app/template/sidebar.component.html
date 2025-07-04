@@ -1,39 +1,39 @@
 <div class="l-navbar show-n" id="nav-bar">
   <nav class="nav">
+    
     <div>
       <a class="nav_logo" [routerLink]="['/']">
-        <img src="ca-logo.png" alt="{{ 'app.title' }}" />
-      </a>
-
+        <img [src]="'app.logo' | translate" [alt]="'app.title' | translate" />
+      </a>      
       <div class="nav_list mt-5">
         <a [routerLink]="['/page-assistant']" [routerLinkActive]="['active']" class="nav_link" aria-current="page"
           id="active">
           <span class="material-icons nav_icon" aria-hidden="true">article</span>
-          <span class="nav_name">Pages</span>
+          <span class="nav_name">{{ 'menu.page' | translate }}</span>
         </a>
         <a [routerLink]="['/image-assistant']" [routerLinkActive]="['active']" class="nav_link" aria-current="page"
           id="active">
           <span class="material-icons nav_icon" aria-hidden="true">photo</span>
-          <span class="nav_name">Images</span>
+          <span class="nav_name">{{ 'menu.image' | translate }}</span>
         </a>
         <a [routerLink]="['/translation-assistant']" [routerLinkActive]="['active']" class="nav_link"
           aria-current="page" id="active">
           <span class="material-icons nav_icon" aria-hidden="true">language</span>
-          <span class="nav_name">Translations</span>
+          <span class="nav_name">{{ 'menu.translation' | translate }}</span>
         </a>
       </div>
     </div>
+    
     <div class="nav_list mb-4">
       <a [routerLink]="['/about-us']" [routerLinkActive]="['active']" class="nav_link">
         <span class="material-icons nav_icon" aria-hidden="true">web_asset</span>
-        <span class="nav_name" data-i18n="about-us">About us</span>
+        <span class="nav_name">{{ 'menu.about' | translate }}</span>
       </a>
-      <a href="mailto:AIPIA-PIAAI@cra-arc.gc.ca?subject=Feedback%20for%20Content%20Assistant&body=" class="nav_link">
+      <a [href]="'feedback.email' | translate" class="nav_link">
         <span class="material-icons nav_icon" aria-hidden="true">feedback</span>
-        <span class="nav_name" data-i18n="menu-feedback">Feedback</span>
+        <span class="nav_name">{{ 'menu.feedback' | translate }}</span>
       </a>
     </div>
-
 
   </nav>
 </div>
