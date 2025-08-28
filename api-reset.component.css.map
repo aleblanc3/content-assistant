@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["angular:styles/component:css;bba23d67f0c44f7da3fe1807e61603e3ec278e3a7974ab93a3b3cfcf38d3671d;C:/AmberDev/content-assistant/src/app/template/api-reset.component.ts"],
-  "sourcesContent": ["\n  @media (max-width: 768px) {\n  ::ng-deep .api-button .p-button-label {\n    display: none;\n  }\n}\n ::ng-deep .api-button:hover .p-button-icon {\n    color: var(--p-primary-400) !important;\n  }\n\n  ::ng-deep html.dark-mode .api-button:hover .p-button-icon {\n    color: var(--p-primary-200) !important;\n  }"],
-  "mappings": ";AACE,OAAO,CAAC,SAAS,EAAE;AACnB,YAAU,CAAC,WAAW,CAAC;AACrB,aAAS;AACX;AACF;AACC,UAAU,CAJE,UAIS,OAAO,CAAC;AAC1B,SAAO,IAAI;AACb;AAEA,UAAU,IAAI,CAAC,UAAU,CARd,UAQyB,OAAO,CAJf;AAK1B,SAAO,IAAI;AACb;",
-  "names": []
-}

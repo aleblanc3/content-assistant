@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["src/app/views/inventory-assistant/inventory-assistant.component.css"],
-  "sourcesContent": ["table {\r\n  width: 100%;\r\n  border-collapse: collapse;\r\n}\r\n\r\ntd,\r\nth {\r\n  padding: 8px;\r\n  text-align: left;\r\n}\r\n\r\ntbody tr {\r\n  border-bottom: 1px solid #ccc;\r\n}\r\n\r\nthead tr {\r\n  border-bottom: 2px solid #444;\r\n}\r\n\r\n.p-field-radiobutton label {\r\n  margin-left: 0.75rem;\r\n}\r\n\r\n.p-field-radiobutton {\r\n  margin-bottom: 1rem;\r\n}\r\n\r\n.p-field-last-radiobutton label {\r\n  margin-left: 0.75rem;\r\n}\r\n\r\n.p-last-field-radiobutton {\r\n  margin-bottom: 1rem;\r\n}"],
-  "mappings": ";AAAA;AACE,SAAO;AACP,mBAAiB;AACnB;AAEA;AACA;AACE,WAAS;AACT,cAAY;AACd;AAEA,MAAM;AACJ,iBAAe,IAAI,MAAM;AAC3B;AAEA,MAAM;AACJ,iBAAe,IAAI,MAAM;AAC3B;AAEA,CAAC,oBAAoB;AACnB,eAAa;AACf;AAEA,CAJC;AAKC,iBAAe;AACjB;AAEA,CAAC,yBAAyB;AACxB,eAAa;AACf;AAEA,CAAC;AACC,iBAAe;AACjB;",
-  "names": []
-}

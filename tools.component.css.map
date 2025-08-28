@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["angular:styles/component:css;9e7cc5950e5373289b39e42a6f357dbd841e9544565ec76a3393527901935000;C:/AmberDev/content-assistant/src/app/views/page-assistant/components/tools.component.ts"],
-  "sourcesContent": ["\n    :host {\n      display: block;\n    }\n    .ia-label {\n      white-space: pre-line; \n      display: inline-block; \n    }\n  "],
-  "mappings": ";AACI;AACE,WAAS;AACX;AACA,CAAC;AACC,eAAa;AACb,WAAS;AACX;",
-  "names": []
-}
