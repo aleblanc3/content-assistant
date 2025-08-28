@@ -117,7 +117,7 @@ import {
   scrollInView,
   unblockBodyScroll,
   uuid
-} from "./chunk-ZTZYHSRI.js";
+} from "./chunk-GEBSPHRO.js";
 import {
   ANIMATION_MODULE_TYPE,
   BehaviorSubject,
@@ -22597,7 +22597,7 @@ var routes = [
       }
       return true;
     }],
-    loadComponent: () => import("./chunk-Y5VRDV26.js").then((m) => m.PageAssistantCompareComponent)
+    loadComponent: () => import("./chunk-SDGD2KW2.js").then((m) => m.PageAssistantCompareComponent)
   },
   {
     path: "page-assistant/share",

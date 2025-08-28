@@ -45186,7 +45186,7 @@ var UploadUrlComponent = class _UploadUrlComponent {
       \u0275\u0275advance(2);
       \u0275\u0275property("label", \u0275\u0275pipeBind1(23, 22, "page.upload.continue"))("loading", ctx.loading)("disabled", form_r5.invalid);
       \u0275\u0275advance(2);
-      \u0275\u0275property("ngIf", ctx.showSampleDataButton && ctx.production);
+      \u0275\u0275property("ngIf", ctx.showSampleDataButton && !ctx.production);
     }
   }, dependencies: [CommonModule, NgIf, TranslateModule, TranslatePipe, FormsModule, \u0275NgNoValidate, DefaultValueAccessor, NgControlStatus, NgControlStatusGroup, RequiredValidator, PatternValidator, NgModel, NgForm, ButtonModule, Button, InputTextModule, InputText, InputGroupModule, InputGroup, InputGroupAddonModule, InputGroupAddon, MessageModule, Message], styles: ["\n\n[_nghost-%COMP%] {\n  display: block;\n}\n  button.p-button.nohover:hover {\n  background-color: transparent !important;\n}\n  button.p-button.nohover {\n  border: none !important;\n}\n/*# sourceMappingURL=upload-url.component.css.map */"], data: { animation: [
     trigger("slideDown", [
@@ -45259,7 +45259,7 @@ var UploadUrlComponent = class _UploadUrlComponent {
                 [disabled]="form.invalid" severity="primary">\r
       </p-button>\r
       <p-button [label]="'page.upload.sample' | translate" icon="pi pi-file" (onClick)="loadSampleData()" severity="secondary"\r
-                *ngIf="showSampleDataButton && production">\r
+                *ngIf="showSampleDataButton && !production">\r
       </p-button>\r
     </div>\r
 \r
@@ -48613,7 +48613,7 @@ function UploadWordComponent_ng_template_12_Template(rf, ctx) {
     \u0275\u0275advance(2);
     \u0275\u0275property("label", \u0275\u0275pipeBind1(8, 8, "page.upload.continue"))("loading", ctx_r2.loading)("disabled", !ctx_r2.uploadedFileName);
     \u0275\u0275advance(2);
-    \u0275\u0275property("ngIf", ctx_r2.showSampleDataButton);
+    \u0275\u0275property("ngIf", ctx_r2.showSampleDataButton && !ctx_r2.production);
   }
 }
 var UploadWordComponent = class _UploadWordComponent {
@@ -48623,6 +48623,7 @@ var UploadWordComponent = class _UploadWordComponent {
   //Import data from parent component
   mode = "original";
   showSampleDataButton = true;
+  production = environment.production;
   //Export upload complete
   uploadComplete = new EventEmitter();
   constructor(urlDataService, uploadState, translate) {
@@ -48768,7 +48769,7 @@ var UploadWordComponent = class _UploadWordComponent {
 \r
     <!-- File input -->\r
     <p-fileupload #fileUploadRef name="word[]" accept=".docx" auto="true" maxFileSize="1000000" [customUpload]="true"\r
-        (uploadHandler)="getWordContent($event)" mode="advanced" styleClass="border-none">\r
+                  (uploadHandler)="getWordContent($event)" mode="advanced" styleClass="border-none">\r
         <ng-template #header></ng-template>\r
         <ng-template #content></ng-template>\r
 \r
@@ -48784,10 +48785,10 @@ var UploadWordComponent = class _UploadWordComponent {
             <!-- Buttons -->\r
             <div class="flex gap-2 flex-wrap mt-3">\r
                 <p-button type="submit" icon="pi pi-save" [label]="'page.upload.continue' | translate"\r
-                    [loading]="loading" [disabled]="!uploadedFileName" (onClick)="emitData()" severity="primary">\r
+                          [loading]="loading" [disabled]="!uploadedFileName" (onClick)="emitData()" severity="primary">\r
                 </p-button>\r
                 <p-button [label]="'page.upload.sample' | translate" icon="pi pi-file" (onClick)="loadSampleData()"\r
-                    severity="secondary">\r
+                          severity="secondary">\r
                 </p-button>\r
             </div>\r
         </ng-template>\r
@@ -48797,7 +48798,7 @@ var UploadWordComponent = class _UploadWordComponent {
             <div class="flex flex-column align-items-center justify-content-center p-3\r
                     border-dashed border-round border-200 surface-100\r
                     hover:surface-200 hover:border-primary-400 transition-colors transition-duration-500 cursor-pointer"\r
-                (click)="fileUploadRef.choose()">\r
+                 (click)="fileUploadRef.choose()">\r
                 <i class="pi pi-upload border-2 border-circle border-300 p-4 text-5xl text-color-secondary"></i>\r
                 <p class="m-0 mt-3">{{ 'page.upload.word.instruction' | translate }}</p>\r
             </div>\r
@@ -48805,10 +48806,10 @@ var UploadWordComponent = class _UploadWordComponent {
             <!-- Buttons -->\r
             <div class="flex gap-2 flex-wrap mt-3">\r
                 <p-button type="submit" icon="pi pi-save" [label]="'page.upload.continue' | translate"\r
-                    [loading]="loading" [disabled]="!uploadedFileName" (onClick)="emitData()" severity="primary">\r
+                          [loading]="loading" [disabled]="!uploadedFileName" (onClick)="emitData()" severity="primary">\r
                 </p-button>\r
                 <p-button [label]="'page.upload.sample' | translate" icon="pi pi-file" (onClick)="loadSampleData()"\r
-                    severity="secondary" *ngIf="showSampleDataButton">\r
+                          severity="secondary" *ngIf="showSampleDataButton && !production">\r
                 </p-button>\r
             </div>\r
         </ng-template>\r
@@ -48825,7 +48826,7 @@ var UploadWordComponent = class _UploadWordComponent {
   }] });
 })();
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(UploadWordComponent, { className: "UploadWordComponent", filePath: "src/app/views/page-assistant/components/upload/upload-word.component.ts", lineNumber: 50 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(UploadWordComponent, { className: "UploadWordComponent", filePath: "src/app/views/page-assistant/components/upload/upload-word.component.ts", lineNumber: 51 });
 })();
 
 // node_modules/primeng/fesm2022/primeng-iftalabel.mjs
@@ -79616,4 +79617,4 @@ export {
    * License: MIT
    *)
 */
-//# sourceMappingURL=chunk-ZTZYHSRI.js.map
+//# sourceMappingURL=chunk-GEBSPHRO.js.map
