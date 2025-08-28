@@ -32702,6 +32702,11 @@ var RadioButtonModule = class _RadioButtonModule {
   }], null, null);
 })();
 
+// src/environments/environment.ts
+var environment = {
+  production: false
+};
+
 // node_modules/primeng/fesm2022/primeng-badge.mjs
 var theme3 = ({
   dt: dt2
@@ -44356,11 +44361,6 @@ var ToolbarModule = class _ToolbarModule {
     }]
   }], null, null);
 })();
-
-// src/environments/environment.ts
-var environment = {
-  production: false
-};
 
 // node_modules/primeng/fesm2022/primeng-inputtext.mjs
 var theme12 = ({
@@ -79512,6 +79512,7 @@ export {
   AutoFocusModule,
   RadioButton,
   RadioButtonModule,
+  environment,
   BaseIcon,
   AngleRightIcon,
   ArrowDownIcon,
@@ -79617,4 +79618,4 @@ export {
    * License: MIT
    *)
 */
-//# sourceMappingURL=chunk-GEBSPHRO.js.map
+//# sourceMappingURL=chunk-4XKWHO4L.js.map

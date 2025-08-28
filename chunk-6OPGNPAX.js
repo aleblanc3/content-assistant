@@ -113,6 +113,7 @@ import {
   calculateScrollbarWidth,
   clearSelection,
   createElement,
+  environment,
   equals,
   find,
   findLastIndex,
@@ -149,7 +150,7 @@ import {
   unblockBodyScroll,
   uuid,
   zindexutils
-} from "./chunk-GEBSPHRO.js";
+} from "./chunk-4XKWHO4L.js";
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
@@ -41820,6 +41821,7 @@ var PageAssistantCompareComponent = class _PageAssistantCompareComponent {
   }
   ngOnInit() {
     this.observeDarkMode();
+    console.log("Environment: ", environment.production);
     const undoText = this.translate.instant("page.compare.button.undo");
     this.acceptItems = [
       {
@@ -42611,9 +42613,9 @@ ${base}`;
   }] });
 })();
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(PageAssistantCompareComponent, { className: "PageAssistantCompareComponent", filePath: "src/app/views/page-assistant/page-assistant.component.ts", lineNumber: 51 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(PageAssistantCompareComponent, { className: "PageAssistantCompareComponent", filePath: "src/app/views/page-assistant/page-assistant.component.ts", lineNumber: 52 });
 })();
 export {
   PageAssistantCompareComponent
 };
-//# sourceMappingURL=chunk-SDGD2KW2.js.map
+//# sourceMappingURL=chunk-6OPGNPAX.js.map
