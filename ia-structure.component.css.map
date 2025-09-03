@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["angular:styles/component:css;5815616505d5a37a219d1d084e9495fccb413dff4fd8f6021046737a2d4487ec;C:/AmberDev/content-assistant/src/app/views/page-assistant/components/tools/ia-structure.component.ts"],
+  "sourcesContent": ["\n    .ia-label {\n      white-space: pre-line;\n      display: inline-block;\n      color: var(--text-color) !important; /* force app default text color */\n      text-decoration: none !important;    /* remove underline */\n    }\n\n    .ia-label:hover,\n    .ia-label:focus,\n    .ia-label:visited {\n      color: var(--text-color) !important;\n      text-decoration: none !important;\n    }\n\n    ::ng-deep .p-tree-node-label > span {\n      display: flex !important;       /* or block */\n      width: 100% !important;         /* now it can actually expand */\n      align-items: center; /* vertically center icons and input */\n      gap: 0.5rem;         /* spacing between icon and input */\n    }\n    \n   ::ng-deep .p-tree .p-tree-node-content:hover {\n  background-color: unset !important; \n}"],
+  "mappings": ";AACI,CAAC;AACC,eAAa;AACb,WAAS;AACT,SAAO,IAAI;AACX,mBAAiB;AACnB;AAEA,CAPC,QAOQ;AACT,CARC,QAQQ;AACT,CATC,QASQ;AACP,SAAO,IAAI;AACX,mBAAiB;AACnB;AAEA,UAAU,CAAC,kBAAkB,EAAE;AAC7B,WAAS;AACT,SAAO;AACP,eAAa;AACb,OAAK;AACP;AAED,UAAU,CAAC,OAAO,CAAC,mBAAmB;AACvC,oBAAkB;AACpB;",
+  "names": []
+}
