@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["src/app/views/metadata-assistant/components/url-input/url-input.component.css"],
-  "sourcesContent": [".url-input-container {\r\n  width: 100%;\r\n}\r\n\r\n.url-input-content {\r\n  padding: 0;\r\n}\r\n\r\n.field label {\r\n  font-weight: 600;\r\n  color: var(--text-color);\r\n}\r\n\r\ntextarea {\r\n  font-family: monospace;\r\n  font-size: 0.9rem;\r\n  line-height: 1.5;\r\n}\r\n\r\n.url-validation {\r\n  padding: 1rem;\r\n  background-color: var(--surface-50);\r\n  border-radius: var(--border-radius);\r\n}\r\n\r\n:host ::ng-deep .p-chip {\r\n  font-size: 0.85rem;\r\n  padding: 0.25rem 0.5rem;\r\n}\r\n\r\n:host ::ng-deep .p-message {\r\n  margin: 0;\r\n}\r\n\r\n.text-400 {\r\n  color: #9ca3af;\r\n  font-size: 0.875rem;\r\n}\r\n\r\n.text-gray-500 {\r\n  color: #6b7280;\r\n}\r\n\r\n.text-orange-600 {\r\n  color: #ea580c;\r\n}"],
-  "mappings": ";AAAA,CAAC;AACC,SAAO;AACT;AAEA,CAAC;AACC,WAAS;AACX;AAEA,CAAC,MAAM;AACL,eAAa;AACb,SAAO,IAAI;AACb;AAEA;AACE,eAAa;AACb,aAAW;AACX,eAAa;AACf;AAEA,CAAC;AACC,WAAS;AACT,oBAAkB,IAAI;AACtB,iBAAe,IAAI;AACrB;AAEA,MAAM,UAAU,CAAC;AACf,aAAW;AACX,WAAS,QAAQ;AACnB;AAEA,MAAM,UAAU,CAAC;AACf,UAAQ;AACV;AAEA,CAAC;AACC,SAAO;AACP,aAAW;AACb;AAEA,CAAC;AACC,SAAO;AACT;AAEA,CAAC;AACC,SAAO;AACT;",
-  "names": []
-}
