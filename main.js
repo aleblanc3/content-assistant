@@ -23699,28 +23699,35 @@ function IaAssistantComponent_ng_container_14_ng_container_4_Template(rf, ctx) {
   if (rf & 1) {
     const _r5 = \u0275\u0275getCurrentView();
     \u0275\u0275elementContainerStart(0);
-    \u0275\u0275elementStart(1, "span");
-    \u0275\u0275text(2);
+    \u0275\u0275elementStart(1, "p-iftalabel")(2, "input", 16);
+    \u0275\u0275twoWayListener("ngModelChange", function IaAssistantComponent_ng_container_14_ng_container_4_Template_input_ngModelChange_2_listener($event) {
+      const url_r6 = \u0275\u0275restoreView(_r5).$implicit;
+      \u0275\u0275twoWayBindingSet(url_r6.originalHref, $event) || (url_r6.originalHref = $event);
+      return \u0275\u0275resetView($event);
+    });
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "p-inputgroup")(4, "p-iftalabel")(5, "input", 15);
-    \u0275\u0275twoWayListener("ngModelChange", function IaAssistantComponent_ng_container_14_ng_container_4_Template_input_ngModelChange_5_listener($event) {
+    \u0275\u0275elementStart(3, "label", 17);
+    \u0275\u0275text(4, "Original URL");
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(5, "p-inputgroup")(6, "p-iftalabel")(7, "input", 18);
+    \u0275\u0275twoWayListener("ngModelChange", function IaAssistantComponent_ng_container_14_ng_container_4_Template_input_ngModelChange_7_listener($event) {
       const url_r6 = \u0275\u0275restoreView(_r5).$implicit;
       \u0275\u0275twoWayBindingSet(url_r6.href, $event) || (url_r6.href = $event);
       return \u0275\u0275resetView($event);
     });
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "label", 16);
-    \u0275\u0275text(7, "Redirected URL");
+    \u0275\u0275elementStart(8, "label", 19);
+    \u0275\u0275text(9, "Redirected URL");
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(8, "p-inputgroup-addon")(9, "p-button", 13);
-    \u0275\u0275listener("click", function IaAssistantComponent_ng_container_14_ng_container_4_Template_p_button_click_9_listener() {
+    \u0275\u0275elementStart(10, "p-inputgroup-addon")(11, "p-button", 20);
+    \u0275\u0275listener("click", function IaAssistantComponent_ng_container_14_ng_container_4_Template_p_button_click_11_listener() {
       const url_r6 = \u0275\u0275restoreView(_r5).$implicit;
       const ctx_r0 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r0.approve(url_r6));
     });
     \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(10, "p-inputgroup-addon")(11, "p-button", 14);
-    \u0275\u0275listener("click", function IaAssistantComponent_ng_container_14_ng_container_4_Template_p_button_click_11_listener() {
+    \u0275\u0275elementStart(12, "p-inputgroup-addon")(13, "p-button", 21);
+    \u0275\u0275listener("click", function IaAssistantComponent_ng_container_14_ng_container_4_Template_p_button_click_13_listener() {
       const url_r6 = \u0275\u0275restoreView(_r5).$implicit;
       const ctx_r0 = \u0275\u0275nextContext(2);
       return \u0275\u0275resetView(ctx_r0.remove(url_r6));
@@ -23731,8 +23738,8 @@ function IaAssistantComponent_ng_container_14_ng_container_4_Template(rf, ctx) {
   if (rf & 2) {
     const url_r6 = ctx.$implicit;
     \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate1("Old URL:", url_r6.originalHref, "");
-    \u0275\u0275advance(3);
+    \u0275\u0275twoWayProperty("ngModel", url_r6.originalHref);
+    \u0275\u0275advance(5);
     \u0275\u0275twoWayProperty("ngModel", url_r6.href);
   }
 }
@@ -23742,8 +23749,8 @@ function IaAssistantComponent_ng_container_14_Template(rf, ctx) {
     \u0275\u0275elementStart(1, "h2", 10);
     \u0275\u0275text(2, "Redirected links");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "div", 6);
-    \u0275\u0275template(4, IaAssistantComponent_ng_container_14_ng_container_4_Template, 12, 2, "ng-container", 7);
+    \u0275\u0275elementStart(3, "div", 15);
+    \u0275\u0275template(4, IaAssistantComponent_ng_container_14_ng_container_4_Template, 14, 2, "ng-container", 7);
     \u0275\u0275elementEnd();
     \u0275\u0275elementContainerEnd();
   }
@@ -23757,14 +23764,14 @@ function IaAssistantComponent_ng_container_15_ng_container_4_Template(rf, ctx) {
   if (rf & 1) {
     const _r7 = \u0275\u0275getCurrentView();
     \u0275\u0275elementContainerStart(0);
-    \u0275\u0275elementStart(1, "p-inputgroup")(2, "p-iftalabel")(3, "input", 18);
+    \u0275\u0275elementStart(1, "p-inputgroup")(2, "p-iftalabel")(3, "input", 23);
     \u0275\u0275twoWayListener("ngModelChange", function IaAssistantComponent_ng_container_15_ng_container_4_Template_input_ngModelChange_3_listener($event) {
       const url_r8 = \u0275\u0275restoreView(_r7).$implicit;
       \u0275\u0275twoWayBindingSet(url_r8.href, $event) || (url_r8.href = $event);
       return \u0275\u0275resetView($event);
     });
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(4, "label", 19);
+    \u0275\u0275elementStart(4, "label", 24);
     \u0275\u0275text(5, "Blocked URL");
     \u0275\u0275elementEnd()();
     \u0275\u0275elementStart(6, "p-inputgroup-addon")(7, "p-button", 13);
@@ -23801,7 +23808,7 @@ function IaAssistantComponent_ng_container_15_Template(rf, ctx) {
     \u0275\u0275elementStart(5, "p", 10);
     \u0275\u0275text(6, "Only links from the following domains are allowed:");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(7, "ul", 17)(8, "li");
+    \u0275\u0275elementStart(7, "ul", 22)(8, "li");
     \u0275\u0275text(9, "www.canada.ca");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(10, "li");
@@ -23842,7 +23849,7 @@ function IaAssistantComponent_ng_container_16_Template(rf, ctx) {
     \u0275\u0275elementStart(1, "h2", 10);
     \u0275\u0275text(2, "Valid links");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "ul", 17);
+    \u0275\u0275elementStart(3, "ul", 22);
     \u0275\u0275template(4, IaAssistantComponent_ng_container_16_li_4_Template, 2, 1, "li", 7);
     \u0275\u0275elementEnd();
     \u0275\u0275elementContainerEnd();
@@ -23967,7 +23974,7 @@ var IaAssistantComponent = class _IaAssistantComponent {
   static \u0275fac = function IaAssistantComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _IaAssistantComponent)();
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _IaAssistantComponent, selectors: [["ca-ia-assistant"]], decls: 17, vars: 12, consts: [["content", ""], ["id", "wb-cont"], ["id", "urls", "autoResize", "true", "rows", "5", "pTextarea", "", "fluid", "", 3, "ngModelChange", "input", "ngModel"], ["for", "urls"], [4, "ngIf"], [3, "value"], [1, "flex", "flex-column", "gap-2"], [4, "ngFor", "ngForOf"], ["styleClass", "bg-yellow-100", 1, "max-w-max"], [1, "pi", "pi-spin", "pi-spinner"], [1, "mb-0"], ["type", "text", "id", "broken", "pInputText", "", "variant", "outlined", 3, "ngModelChange", "ngModel"], ["for", "broken"], ["icon", "pi pi-check-circle", "severity", "success", "variant", "text", 3, "click"], ["icon", "pi pi-times-circle", "severity", "danger", "variant", "text", 3, "click"], ["type", "text", "id", "redirect", "pInputText", "", "variant", "outlined", 3, "ngModelChange", "ngModel"], ["for", "redirect"], [1, "my-0"], ["type", "text", "id", "blocked", "pInputText", "", "variant", "outlined", 3, "ngModelChange", "ngModel"], ["for", "blocked"]], template: function IaAssistantComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _IaAssistantComponent, selectors: [["ca-ia-assistant"]], decls: 17, vars: 12, consts: [["content", ""], ["id", "wb-cont"], ["id", "urls", "autoResize", "true", "rows", "5", "pTextarea", "", "fluid", "", 3, "ngModelChange", "input", "ngModel"], ["for", "urls"], [4, "ngIf"], [3, "value"], [1, "flex", "flex-column", "gap-2"], [4, "ngFor", "ngForOf"], ["styleClass", "bg-yellow-100", 1, "max-w-max"], [1, "pi", "pi-spin", "pi-spinner"], [1, "mb-0"], ["type", "text", "id", "broken", "pInputText", "", "variant", "outlined", 3, "ngModelChange", "ngModel"], ["for", "broken"], ["icon", "pi pi-check-circle", "severity", "success", "variant", "text", 3, "click"], ["icon", "pi pi-times-circle", "severity", "danger", "variant", "text", 3, "click"], [1, "flex", "flex-column"], ["type", "text", "id", "original", "pInputText", "", "variant", "outlined", "pSize", "small", "disabled", "true", "fluid", "", 1, "ng-invalid", "ng-dirty", "bg-white", 3, "ngModelChange", "ngModel"], ["for", "original"], ["type", "text", "id", "redirect", "pInputText", "", "variant", "outlined", 3, "ngModelChange", "ngModel"], ["for", "redirect"], ["icon", "pi pi-check-circle", "pTooltip", "Revalidate", "tooltipPosition", "top", "severity", "success", "variant", "text", 3, "click"], ["icon", "pi pi-times-circle", "pTooltip", "Remove link", "tooltipPosition", "top", "severity", "danger", "variant", "text", 3, "click"], [1, "my-0"], ["type", "text", "id", "blocked", "pInputText", "", "variant", "outlined", 3, "ngModelChange", "ngModel"], ["for", "blocked"]], template: function IaAssistantComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275elementStart(0, "h1", 1);
       \u0275\u0275text(1);
@@ -24012,7 +24019,7 @@ var IaAssistantComponent = class _IaAssistantComponent {
       \u0275\u0275advance();
       \u0275\u0275property("ngIf", ctx.okUrls.length);
     }
-  }, dependencies: [CommonModule, NgForOf, NgIf, FormsModule, DefaultValueAccessor, NgControlStatus, NgModel, TranslateModule, TranslatePipe, TextareaModule, Textarea, InputTextModule, InputText, IftaLabelModule, IftaLabel, ProgressBarModule, ProgressBar, ButtonModule, Button, ButtonGroupModule, InputGroupModule, InputGroup, InputGroupAddonModule, InputGroupAddon, ChipModule, Chip], encapsulation: 2 });
+  }, dependencies: [CommonModule, NgForOf, NgIf, FormsModule, DefaultValueAccessor, NgControlStatus, NgModel, TranslateModule, TranslatePipe, TextareaModule, Textarea, InputTextModule, InputText, IftaLabelModule, IftaLabel, ProgressBarModule, ProgressBar, ButtonModule, Button, ButtonGroupModule, InputGroupModule, InputGroup, InputGroupAddonModule, InputGroupAddon, ChipModule, Chip, Tooltip], encapsulation: 2 });
 };
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(IaAssistantComponent, [{
@@ -24029,7 +24036,8 @@ var IaAssistantComponent = class _IaAssistantComponent {
       ButtonGroupModule,
       InputGroupModule,
       InputGroupAddonModule,
-      ChipModule
+      ChipModule,
+      Tooltip
     ], template: `<h1 id="wb-cont">{{ 'title.ia' | translate}}</h1>\r
 <p>{{'ia.description' | translate }}</p>\r
 <p>Paste some relevant URLs to get started.</p>\r
@@ -24091,19 +24099,22 @@ var IaAssistantComponent = class _IaAssistantComponent {
 </ng-container>\r
 <ng-container *ngIf="redirectedUrls.length">\r
     <h2 class="mb-0">Redirected links</h2>\r
-    <div class="flex flex-column gap-2">\r
+    <div class="flex flex-column">\r
         <ng-container *ngFor="let url of redirectedUrls">\r
-            <span>Old URL:{{url.originalHref}}</span>\r
+            <p-iftalabel>\r
+                <input type="text" id="original" pInputText variant="outlined" [(ngModel)]="url.originalHref" pSize="small" class="ng-invalid ng-dirty bg-white" disabled="true" fluid />\r
+                <label for="original">Original URL</label>\r
+            </p-iftalabel>\r
             <p-inputgroup>\r
                 <p-iftalabel>\r
                     <input type="text" id="redirect" pInputText variant="outlined" [(ngModel)]="url.href" />\r
                     <label for="redirect">Redirected URL</label>\r
                 </p-iftalabel>\r
                 <p-inputgroup-addon>\r
-                    <p-button icon="pi pi-check-circle" severity="success" variant="text" (click)="approve(url)" />\r
+                    <p-button icon="pi pi-check-circle" pTooltip="Revalidate" tooltipPosition="top" severity="success" variant="text" (click)="approve(url)" />\r
                 </p-inputgroup-addon>\r
                 <p-inputgroup-addon>\r
-                    <p-button icon="pi pi-times-circle" severity="danger" variant="text" (click)="remove(url)" />\r
+                    <p-button icon="pi pi-times-circle" pTooltip="Remove link" tooltipPosition="top" severity="danger" variant="text" (click)="remove(url)" />\r
                 </p-inputgroup-addon>\r
             </p-inputgroup>\r
         </ng-container>\r
