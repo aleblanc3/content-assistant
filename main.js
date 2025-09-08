@@ -24517,271 +24517,242 @@ var ConfirmPopupModule = class _ConfirmPopupModule {
   }], null, null);
 })();
 
+// src/app/views/ia-assistant/components/link-list.component.ts
+function LinkListComponent_ng_container_0_div_4_p_iftalabel_1_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r2 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "p-iftalabel")(1, "input", 8);
+    \u0275\u0275twoWayListener("ngModelChange", function LinkListComponent_ng_container_0_div_4_p_iftalabel_1_Template_input_ngModelChange_1_listener($event) {
+      \u0275\u0275restoreView(_r2);
+      const url_r3 = \u0275\u0275nextContext().$implicit;
+      \u0275\u0275twoWayBindingSet(url_r3.originalHref, $event) || (url_r3.originalHref = $event);
+      return \u0275\u0275resetView($event);
+    });
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(2, "label", 9);
+    \u0275\u0275text(3, "Original URL");
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    const url_r3 = \u0275\u0275nextContext().$implicit;
+    \u0275\u0275advance();
+    \u0275\u0275twoWayProperty("ngModel", url_r3.originalHref);
+  }
+}
+function LinkListComponent_ng_container_0_div_4_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r1 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div");
+    \u0275\u0275template(1, LinkListComponent_ng_container_0_div_4_p_iftalabel_1_Template, 4, 1, "p-iftalabel", 0);
+    \u0275\u0275elementStart(2, "p-inputgroup")(3, "p-iftalabel")(4, "input", 4);
+    \u0275\u0275twoWayListener("ngModelChange", function LinkListComponent_ng_container_0_div_4_Template_input_ngModelChange_4_listener($event) {
+      const url_r3 = \u0275\u0275restoreView(_r1).$implicit;
+      \u0275\u0275twoWayBindingSet(url_r3.href, $event) || (url_r3.href = $event);
+      return \u0275\u0275resetView($event);
+    });
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(5, "label", 5);
+    \u0275\u0275text(6);
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(7, "p-inputgroup-addon")(8, "p-button", 6);
+    \u0275\u0275listener("click", function LinkListComponent_ng_container_0_div_4_Template_p_button_click_8_listener($event) {
+      const url_r3 = \u0275\u0275restoreView(_r1).$implicit;
+      const ctx_r3 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r3.approve.emit({ url: url_r3, event: $event }));
+    });
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(9, "p-inputgroup-addon")(10, "p-button", 7);
+    \u0275\u0275listener("click", function LinkListComponent_ng_container_0_div_4_Template_p_button_click_10_listener() {
+      const url_r3 = \u0275\u0275restoreView(_r1).$implicit;
+      const ctx_r3 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r3.remove.emit(url_r3));
+    });
+    \u0275\u0275elementEnd()()()();
+  }
+  if (rf & 2) {
+    const url_r3 = ctx.$implicit;
+    const ctx_r3 = \u0275\u0275nextContext(2);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", url_r3.originalHref);
+    \u0275\u0275advance(3);
+    \u0275\u0275property("id", ctx_r3.labelKey);
+    \u0275\u0275twoWayProperty("ngModel", url_r3.href);
+    \u0275\u0275advance();
+    \u0275\u0275property("for", ctx_r3.labelKey);
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate1("", ctx_r3.labelKey, " URL");
+  }
+}
+function LinkListComponent_ng_container_0_ng_container_5_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementContainerStart(0);
+    \u0275\u0275elementStart(1, "p", 1);
+    \u0275\u0275text(2, "Only links from the following domains are allowed:");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(3, "ul", 10)(4, "li");
+    \u0275\u0275text(5, "www.canada.ca");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(6, "li");
+    \u0275\u0275text(7, "test.canada.ca");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(8, "li");
+    \u0275\u0275text(9, "gc-proto.github.io");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(10, "li");
+    \u0275\u0275text(11, "cra-proto.github.io");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(12, "li");
+    \u0275\u0275text(13, "cra-design.github.io");
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementContainerEnd();
+  }
+}
+function LinkListComponent_ng_container_0_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementContainerStart(0);
+    \u0275\u0275elementStart(1, "h2", 1);
+    \u0275\u0275text(2);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(3, "div", 2);
+    \u0275\u0275template(4, LinkListComponent_ng_container_0_div_4_Template, 11, 5, "div", 3)(5, LinkListComponent_ng_container_0_ng_container_5_Template, 14, 0, "ng-container", 0);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementContainerEnd();
+  }
+  if (rf & 2) {
+    const ctx_r3 = \u0275\u0275nextContext();
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate1("", ctx_r3.labelKey, " links");
+    \u0275\u0275advance(2);
+    \u0275\u0275property("ngForOf", ctx_r3.links);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r3.labelKey === "Blocked");
+  }
+}
+var LinkListComponent = class _LinkListComponent {
+  labelKey;
+  links;
+  approve = new EventEmitter();
+  remove = new EventEmitter();
+  static \u0275fac = function LinkListComponent_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _LinkListComponent)();
+  };
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _LinkListComponent, selectors: [["ca-link-list"]], inputs: { labelKey: "labelKey", links: "links" }, outputs: { approve: "approve", remove: "remove" }, decls: 1, vars: 1, consts: [[4, "ngIf"], [1, "mb-0"], [1, "flex", "flex-column", "gap-2"], [4, "ngFor", "ngForOf"], ["type", "text", "pInputText", "", "variant", "outlined", "pSize", "small", "fluid", "", 3, "ngModelChange", "id", "ngModel"], [3, "for"], ["icon", "pi pi-check-circle", "pTooltip", "Revalidate", "tooltipPosition", "top", "severity", "success", "variant", "text", 3, "click"], ["icon", "pi pi-times-circle", "pTooltip", "Remove link", "tooltipPosition", "top", "severity", "danger", "variant", "text", 3, "click"], ["type", "text", "id", "original", "pInputText", "", "disabled", "", "pSize", "small", "fluid", "", 1, "ng-invalid", "ng-dirty", "bg-white", 3, "ngModelChange", "ngModel"], ["for", "original"], [1, "my-0"]], template: function LinkListComponent_Template(rf, ctx) {
+    if (rf & 1) {
+      \u0275\u0275template(0, LinkListComponent_ng_container_0_Template, 6, 3, "ng-container", 0);
+    }
+    if (rf & 2) {
+      \u0275\u0275property("ngIf", ctx.links == null ? null : ctx.links.length);
+    }
+  }, dependencies: [CommonModule, NgForOf, NgIf, FormsModule, DefaultValueAccessor, NgControlStatus, NgModel, IftaLabelModule, IftaLabel, InputTextModule, InputText, InputGroupModule, InputGroup, InputGroupAddonModule, InputGroupAddon, ButtonModule, Button, Tooltip], styles: ["\n\n[_nghost-%COMP%] {\n  display: block;\n}\n/*# sourceMappingURL=link-list.component.css.map */"] });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(LinkListComponent, [{
+    type: Component,
+    args: [{ selector: "ca-link-list", imports: [CommonModule, FormsModule, IftaLabelModule, InputTextModule, InputGroupModule, InputGroupAddonModule, ButtonModule, Tooltip], template: `
+<ng-container *ngIf="links?.length">
+  <h2 class="mb-0">{{ labelKey }} links</h2>
+  <div class="flex flex-column gap-2">
+    <div *ngFor="let url of links">
+      <p-iftalabel *ngIf="url.originalHref">
+        <input type="text" id="original" pInputText [(ngModel)]="url.originalHref" disabled pSize="small" class="ng-invalid ng-dirty bg-white" fluid/>
+        <label for="original">Original URL</label>
+      </p-iftalabel>
+      <p-inputgroup>
+        <p-iftalabel>
+          <input type="text" [id]="labelKey" pInputText variant="outlined" [(ngModel)]="url.href" pSize="small" fluid/>
+          <label [for]="labelKey">{{ labelKey }} URL</label>
+        </p-iftalabel>
+        <p-inputgroup-addon>
+          <p-button icon="pi pi-check-circle" pTooltip="Revalidate" tooltipPosition="top" severity="success" variant="text" (click)="approve.emit({ url, event: $event })" />
+        </p-inputgroup-addon>
+        <p-inputgroup-addon>
+          <p-button icon="pi pi-times-circle" pTooltip="Remove link" tooltipPosition="top" severity="danger" variant="text" (click)="remove.emit(url)" />
+        </p-inputgroup-addon>
+      </p-inputgroup>
+    </div>
+    <ng-container *ngIf="labelKey === 'Blocked'">
+      <p class="mb-0">Only links from the following domains are allowed:</p>
+      <ul class="my-0">
+          <li>www.canada.ca</li>
+          <li>test.canada.ca</li>
+          <li>gc-proto.github.io</li>
+          <li>cra-proto.github.io</li>
+          <li>cra-design.github.io</li>
+      </ul>
+    </ng-container>
+  </div>
+</ng-container>
+  `, styles: ["/* angular:styles/component:css;219558ef63f119a92210704329b58a3cdceaa4fb296db559e672f74512827dc7;C:/AmberDev/content-assistant/src/app/views/ia-assistant/components/link-list.component.ts */\n:host {\n  display: block;\n}\n/*# sourceMappingURL=link-list.component.css.map */\n"] }]
+  }], null, { labelKey: [{
+    type: Input
+  }], links: [{
+    type: Input
+  }], approve: [{
+    type: Output
+  }], remove: [{
+    type: Output
+  }] });
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(LinkListComponent, { className: "LinkListComponent", filePath: "src/app/views/ia-assistant/components/link-list.component.ts", lineNumber: 57 });
+})();
+
 // src/app/views/ia-assistant/ia-assistant.component.ts
-function IaAssistantComponent_ng_container_13_ng_template_2_Template(rf, ctx) {
+function IaAssistantComponent_ng_template_15_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "span");
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const ctx_r0 = \u0275\u0275nextContext(2);
+    const ctx_r1 = \u0275\u0275nextContext();
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate2("", ctx_r0.urlChecked, "/", ctx_r0.urlTotal, "");
+    \u0275\u0275textInterpolate2("", ctx_r1.urlChecked, "/", ctx_r1.urlTotal, "");
   }
 }
-function IaAssistantComponent_ng_container_13_ng_container_7_Template(rf, ctx) {
+function IaAssistantComponent_ng_container_20_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementContainerStart(0);
-    \u0275\u0275elementStart(1, "p-chip", 8);
-    \u0275\u0275element(2, "i", 9);
+    \u0275\u0275elementStart(1, "p-chip", 11);
+    \u0275\u0275element(2, "i", 12);
     \u0275\u0275elementStart(3, "span");
     \u0275\u0275text(4);
     \u0275\u0275elementEnd()();
     \u0275\u0275elementContainerEnd();
   }
   if (rf & 2) {
-    const url_r2 = ctx.$implicit;
+    const url_r3 = ctx.$implicit;
     \u0275\u0275advance(4);
-    \u0275\u0275textInterpolate(url_r2.href);
+    \u0275\u0275textInterpolate(url_r3.href);
   }
 }
-function IaAssistantComponent_ng_container_13_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275elementContainerStart(0);
-    \u0275\u0275elementStart(1, "p-progressbar", 5);
-    \u0275\u0275template(2, IaAssistantComponent_ng_container_13_ng_template_2_Template, 2, 2, "ng-template", null, 0, \u0275\u0275templateRefExtractor);
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(4, "h2");
-    \u0275\u0275text(5, "Validating links");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(6, "div", 6);
-    \u0275\u0275template(7, IaAssistantComponent_ng_container_13_ng_container_7_Template, 5, 1, "ng-container", 7);
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementContainerEnd();
-  }
-  if (rf & 2) {
-    const ctx_r0 = \u0275\u0275nextContext();
-    \u0275\u0275advance();
-    \u0275\u0275property("value", ctx_r0.urlPercent);
-    \u0275\u0275advance(6);
-    \u0275\u0275property("ngForOf", ctx_r0.checkingUrls);
-  }
-}
-function IaAssistantComponent_ng_container_14_ng_container_4_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r3 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementContainerStart(0);
-    \u0275\u0275elementStart(1, "p-inputgroup")(2, "p-iftalabel")(3, "input", 11);
-    \u0275\u0275twoWayListener("ngModelChange", function IaAssistantComponent_ng_container_14_ng_container_4_Template_input_ngModelChange_3_listener($event) {
-      const url_r4 = \u0275\u0275restoreView(_r3).$implicit;
-      \u0275\u0275twoWayBindingSet(url_r4.href, $event) || (url_r4.href = $event);
-      return \u0275\u0275resetView($event);
-    });
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(4, "label", 12);
-    \u0275\u0275text(5, "Broken URL");
-    \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(6, "p-inputgroup-addon")(7, "p-button", 13);
-    \u0275\u0275listener("click", function IaAssistantComponent_ng_container_14_ng_container_4_Template_p_button_click_7_listener($event) {
-      const url_r4 = \u0275\u0275restoreView(_r3).$implicit;
-      const ctx_r0 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r0.approve(url_r4, $event));
-    });
-    \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(8, "p-inputgroup-addon")(9, "p-button", 14);
-    \u0275\u0275listener("click", function IaAssistantComponent_ng_container_14_ng_container_4_Template_p_button_click_9_listener() {
-      const url_r4 = \u0275\u0275restoreView(_r3).$implicit;
-      const ctx_r0 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r0.remove(url_r4));
-    });
-    \u0275\u0275elementEnd()()();
-    \u0275\u0275elementContainerEnd();
-  }
-  if (rf & 2) {
-    const url_r4 = ctx.$implicit;
-    \u0275\u0275advance(3);
-    \u0275\u0275twoWayProperty("ngModel", url_r4.href);
-  }
-}
-function IaAssistantComponent_ng_container_14_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275elementContainerStart(0);
-    \u0275\u0275elementStart(1, "h2", 10);
-    \u0275\u0275text(2, "Broken links");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "div", 6);
-    \u0275\u0275template(4, IaAssistantComponent_ng_container_14_ng_container_4_Template, 10, 1, "ng-container", 7);
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementContainerEnd();
-  }
-  if (rf & 2) {
-    const ctx_r0 = \u0275\u0275nextContext();
-    \u0275\u0275advance(4);
-    \u0275\u0275property("ngForOf", ctx_r0.badUrls);
-  }
-}
-function IaAssistantComponent_ng_container_15_div_4_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r5 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div")(1, "p-iftalabel")(2, "input", 15);
-    \u0275\u0275twoWayListener("ngModelChange", function IaAssistantComponent_ng_container_15_div_4_Template_input_ngModelChange_2_listener($event) {
-      const url_r6 = \u0275\u0275restoreView(_r5).$implicit;
-      \u0275\u0275twoWayBindingSet(url_r6.originalHref, $event) || (url_r6.originalHref = $event);
-      return \u0275\u0275resetView($event);
-    });
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "label", 16);
-    \u0275\u0275text(4, "Original URL");
-    \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(5, "p-inputgroup")(6, "p-iftalabel")(7, "input", 17);
-    \u0275\u0275twoWayListener("ngModelChange", function IaAssistantComponent_ng_container_15_div_4_Template_input_ngModelChange_7_listener($event) {
-      const url_r6 = \u0275\u0275restoreView(_r5).$implicit;
-      \u0275\u0275twoWayBindingSet(url_r6.href, $event) || (url_r6.href = $event);
-      return \u0275\u0275resetView($event);
-    });
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(8, "label", 18);
-    \u0275\u0275text(9, "Redirected URL");
-    \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(10, "p-inputgroup-addon")(11, "p-button", 19);
-    \u0275\u0275listener("click", function IaAssistantComponent_ng_container_15_div_4_Template_p_button_click_11_listener($event) {
-      const url_r6 = \u0275\u0275restoreView(_r5).$implicit;
-      const ctx_r0 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r0.approve(url_r6, $event));
-    });
-    \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(12, "p-inputgroup-addon")(13, "p-button", 20);
-    \u0275\u0275listener("click", function IaAssistantComponent_ng_container_15_div_4_Template_p_button_click_13_listener() {
-      const url_r6 = \u0275\u0275restoreView(_r5).$implicit;
-      const ctx_r0 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r0.remove(url_r6));
-    });
-    \u0275\u0275elementEnd()()()();
-  }
-  if (rf & 2) {
-    const url_r6 = ctx.$implicit;
-    \u0275\u0275advance(2);
-    \u0275\u0275twoWayProperty("ngModel", url_r6.originalHref);
-    \u0275\u0275advance(5);
-    \u0275\u0275twoWayProperty("ngModel", url_r6.href);
-  }
-}
-function IaAssistantComponent_ng_container_15_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275elementContainerStart(0);
-    \u0275\u0275elementStart(1, "h2", 10);
-    \u0275\u0275text(2, "Redirected links");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "div", 6);
-    \u0275\u0275template(4, IaAssistantComponent_ng_container_15_div_4_Template, 14, 2, "div", 7);
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementContainerEnd();
-  }
-  if (rf & 2) {
-    const ctx_r0 = \u0275\u0275nextContext();
-    \u0275\u0275advance(4);
-    \u0275\u0275property("ngForOf", ctx_r0.redirectedUrls);
-  }
-}
-function IaAssistantComponent_ng_container_16_ng_container_4_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r7 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementContainerStart(0);
-    \u0275\u0275elementStart(1, "p-inputgroup")(2, "p-iftalabel")(3, "input", 22);
-    \u0275\u0275twoWayListener("ngModelChange", function IaAssistantComponent_ng_container_16_ng_container_4_Template_input_ngModelChange_3_listener($event) {
-      const url_r8 = \u0275\u0275restoreView(_r7).$implicit;
-      \u0275\u0275twoWayBindingSet(url_r8.href, $event) || (url_r8.href = $event);
-      return \u0275\u0275resetView($event);
-    });
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(4, "label", 23);
-    \u0275\u0275text(5, "Blocked URL");
-    \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(6, "p-inputgroup-addon")(7, "p-button", 13);
-    \u0275\u0275listener("click", function IaAssistantComponent_ng_container_16_ng_container_4_Template_p_button_click_7_listener($event) {
-      const url_r8 = \u0275\u0275restoreView(_r7).$implicit;
-      const ctx_r0 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r0.approve(url_r8, $event));
-    });
-    \u0275\u0275elementEnd()();
-    \u0275\u0275elementStart(8, "p-inputgroup-addon")(9, "p-button", 14);
-    \u0275\u0275listener("click", function IaAssistantComponent_ng_container_16_ng_container_4_Template_p_button_click_9_listener() {
-      const url_r8 = \u0275\u0275restoreView(_r7).$implicit;
-      const ctx_r0 = \u0275\u0275nextContext(2);
-      return \u0275\u0275resetView(ctx_r0.remove(url_r8));
-    });
-    \u0275\u0275elementEnd()()();
-    \u0275\u0275elementContainerEnd();
-  }
-  if (rf & 2) {
-    const url_r8 = ctx.$implicit;
-    \u0275\u0275advance(3);
-    \u0275\u0275twoWayProperty("ngModel", url_r8.href);
-  }
-}
-function IaAssistantComponent_ng_container_16_Template(rf, ctx) {
-  if (rf & 1) {
-    \u0275\u0275elementContainerStart(0);
-    \u0275\u0275elementStart(1, "h2", 10);
-    \u0275\u0275text(2, "Blocked links");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "div", 6);
-    \u0275\u0275template(4, IaAssistantComponent_ng_container_16_ng_container_4_Template, 10, 1, "ng-container", 7);
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(5, "p", 10);
-    \u0275\u0275text(6, "Only links from the following domains are allowed:");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(7, "ul", 21)(8, "li");
-    \u0275\u0275text(9, "www.canada.ca");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(10, "li");
-    \u0275\u0275text(11, "test.canada.ca");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(12, "li");
-    \u0275\u0275text(13, "gc-proto.github.io");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(14, "li");
-    \u0275\u0275text(15, "cra-proto.github.io");
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(16, "li");
-    \u0275\u0275text(17, "cra-design.github.io");
-    \u0275\u0275elementEnd()();
-    \u0275\u0275elementContainerEnd();
-  }
-  if (rf & 2) {
-    const ctx_r0 = \u0275\u0275nextContext();
-    \u0275\u0275advance(4);
-    \u0275\u0275property("ngForOf", ctx_r0.blockedUrls);
-  }
-}
-function IaAssistantComponent_ng_container_17_li_4_Template(rf, ctx) {
+function IaAssistantComponent_ng_container_24_li_4_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "li");
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const url_r9 = ctx.$implicit;
+    const url_r4 = ctx.$implicit;
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate(url_r9.href);
+    \u0275\u0275textInterpolate(url_r4.href);
   }
 }
-function IaAssistantComponent_ng_container_17_Template(rf, ctx) {
+function IaAssistantComponent_ng_container_24_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementContainerStart(0);
-    \u0275\u0275elementStart(1, "h2", 10);
+    \u0275\u0275elementStart(1, "h2", 13);
     \u0275\u0275text(2, "Valid links");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "ul", 21);
-    \u0275\u0275template(4, IaAssistantComponent_ng_container_17_li_4_Template, 2, 1, "li", 7);
+    \u0275\u0275elementStart(3, "ul", 14);
+    \u0275\u0275template(4, IaAssistantComponent_ng_container_24_li_4_Template, 2, 1, "li", 6);
     \u0275\u0275elementEnd();
     \u0275\u0275elementContainerEnd();
   }
   if (rf & 2) {
-    const ctx_r0 = \u0275\u0275nextContext();
+    const ctx_r1 = \u0275\u0275nextContext();
     \u0275\u0275advance(4);
-    \u0275\u0275property("ngForOf", ctx_r0.okUrls);
+    \u0275\u0275property("ngForOf", ctx_r1.okUrls);
   }
 }
 var IaAssistantComponent = class _IaAssistantComponent {
@@ -24816,15 +24787,21 @@ var IaAssistantComponent = class _IaAssistantComponent {
         this.urlPercent = this.urlChecked / this.urlTotal * 100;
       }));
       yield Promise.all(urlsToCheck);
-      yield new Promise((resolve) => setTimeout(resolve, 2e3));
+      yield new Promise((resolve) => setTimeout(resolve, 1e3));
+      this.urlChecked -= this.badUrls.length;
       for (const badUrl of this.badUrls) {
-        this.checkStatus(badUrl);
+        badUrl.status = "checking";
+        this.checkStatus(badUrl).finally(() => {
+          this.urlChecked++;
+          this.urlPercent = this.urlChecked / this.urlTotal * 100;
+        });
       }
     });
   }
   checkStatus(link) {
     return __async(this, null, function* () {
       try {
+        yield new Promise((resolve) => setTimeout(resolve, 500 + Math.random() * 1e3));
         const url = new URL(link.href);
         if (!this.allowedHosts.has(url.host)) {
           link.status = "blocked";
@@ -24861,53 +24838,31 @@ var IaAssistantComponent = class _IaAssistantComponent {
   get okUrls() {
     return this.urls.filter((u) => u.status === "ok");
   }
-  getChipClass(status) {
-    switch (status) {
-      case "ok":
-        return "bg-green-100";
-      case "bad":
-        return "bg-red-100";
-      case "redirect":
-        return "bg-blue-100";
-      case "blocked":
-        return "bg-orange-100";
-      default:
-        return "bg-yellow-100";
-    }
-  }
-  getChipIcon(status) {
-    switch (status) {
-      case "ok":
-        return "pi pi-check";
-      case "checking":
-        return "pi pi-spin pi-spinner";
-      default:
-        return "pi pi-times";
-    }
-  }
-  isEditable(status) {
-    return status === "bad" || status === "blocked";
-  }
-  isRedirect(status) {
-    return status === "redirect";
-  }
   remove(link) {
     this.urls = this.urls.filter((url) => url !== link);
+    this.urlChecked -= 1;
+    this.urlTotal -= 1;
+    this.urlPercent = this.urlChecked / this.urlTotal * 100;
   }
   approve(link, $event) {
     link.href = link.href.trim().toLowerCase();
     const duplicate = this.urls.some((url) => url !== link && url.href === link.href);
     if (duplicate) {
-      this.confirm($event, link);
+      this.confirmDuplicate($event, link);
       return;
     }
     link.status = "checking";
-    this.checkStatus(link);
+    this.urlChecked -= 1;
+    this.urlPercent = this.urlChecked / this.urlTotal * 100;
+    this.checkStatus(link).finally(() => {
+      this.urlChecked++;
+      this.urlPercent = this.urlChecked / this.urlTotal * 100;
+    });
   }
-  confirm(event, link) {
+  confirmDuplicate(event, link) {
     this.confirmationService.confirm({
       target: event.currentTarget,
-      message: "This URL was already included. Are you sure you want to proceed?",
+      message: "This URL is already included. Do you want to remove the duplicate link?",
       icon: "pi pi-exclamation-triangle",
       rejectButtonProps: {
         label: "Cancel",
@@ -24928,8 +24883,9 @@ var IaAssistantComponent = class _IaAssistantComponent {
   static \u0275fac = function IaAssistantComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _IaAssistantComponent)(\u0275\u0275directiveInject(ConfirmationService));
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _IaAssistantComponent, selectors: [["ca-ia-assistant"]], decls: 18, vars: 12, consts: [["content", ""], ["id", "wb-cont"], ["id", "urls", "autoResize", "true", "rows", "5", "pTextarea", "", "fluid", "", 3, "ngModelChange", "input", "ngModel"], ["for", "urls"], [4, "ngIf"], [3, "value"], [1, "flex", "flex-column", "gap-2"], [4, "ngFor", "ngForOf"], ["styleClass", "bg-yellow-100", 1, "max-w-max"], [1, "pi", "pi-spin", "pi-spinner"], [1, "mb-0"], ["type", "text", "id", "broken", "pInputText", "", "variant", "outlined", 3, "ngModelChange", "ngModel"], ["for", "broken"], ["icon", "pi pi-check-circle", "severity", "success", "variant", "text", 3, "click"], ["icon", "pi pi-times-circle", "severity", "danger", "variant", "text", 3, "click"], ["type", "text", "id", "original", "pInputText", "", "variant", "outlined", "pSize", "small", "disabled", "true", "fluid", "", 1, "ng-invalid", "ng-dirty", "bg-white", 3, "ngModelChange", "ngModel"], ["for", "original"], ["type", "text", "id", "redirect", "pInputText", "", "variant", "outlined", 3, "ngModelChange", "ngModel"], ["for", "redirect"], ["icon", "pi pi-check-circle", "pTooltip", "Revalidate", "tooltipPosition", "top", "severity", "success", "variant", "text", 3, "click"], ["icon", "pi pi-times-circle", "pTooltip", "Remove link", "tooltipPosition", "top", "severity", "danger", "variant", "text", 3, "click"], [1, "my-0"], ["type", "text", "id", "blocked", "pInputText", "", "variant", "outlined", 3, "ngModelChange", "ngModel"], ["for", "blocked"]], template: function IaAssistantComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _IaAssistantComponent, selectors: [["ca-ia-assistant"]], decls: 25, vars: 13, consts: [["content", ""], ["id", "wb-cont"], ["id", "urls", "autoResize", "true", "rows", "5", "pTextarea", "", "fluid", "", 3, "ngModelChange", "input", "ngModel"], ["for", "urls"], [3, "value"], [1, "flex", "flex-column", "gap-2"], [4, "ngFor", "ngForOf"], ["labelKey", "Broken", 3, "approve", "remove", "links"], ["labelKey", "Redirected", 3, "approve", "remove", "links"], ["labelKey", "Blocked", 3, "approve", "remove", "links"], [4, "ngIf"], ["styleClass", "bg-yellow-100", 1, "max-w-max"], [1, "pi", "pi-spin", "pi-spinner"], [1, "mb-0"], [1, "my-0"]], template: function IaAssistantComponent_Template(rf, ctx) {
     if (rf & 1) {
+      const _r1 = \u0275\u0275getCurrentView();
       \u0275\u0275elementStart(0, "h1", 1);
       \u0275\u0275text(1);
       \u0275\u0275pipe(2, "translate");
@@ -24944,37 +24900,79 @@ var IaAssistantComponent = class _IaAssistantComponent {
       \u0275\u0275element(8, "p-confirmpopup");
       \u0275\u0275elementStart(9, "p-iftalabel")(10, "textarea", 2);
       \u0275\u0275twoWayListener("ngModelChange", function IaAssistantComponent_Template_textarea_ngModelChange_10_listener($event) {
+        \u0275\u0275restoreView(_r1);
         \u0275\u0275twoWayBindingSet(ctx.rawUrls, $event) || (ctx.rawUrls = $event);
-        return $event;
+        return \u0275\u0275resetView($event);
       });
       \u0275\u0275listener("input", function IaAssistantComponent_Template_textarea_input_10_listener() {
-        return ctx.validateUrls();
+        \u0275\u0275restoreView(_r1);
+        return \u0275\u0275resetView(ctx.validateUrls());
       });
       \u0275\u0275elementEnd();
       \u0275\u0275elementStart(11, "label", 3);
       \u0275\u0275text(12, "URLs");
       \u0275\u0275elementEnd()();
-      \u0275\u0275template(13, IaAssistantComponent_ng_container_13_Template, 8, 2, "ng-container", 4)(14, IaAssistantComponent_ng_container_14_Template, 5, 1, "ng-container", 4)(15, IaAssistantComponent_ng_container_15_Template, 5, 1, "ng-container", 4)(16, IaAssistantComponent_ng_container_16_Template, 18, 1, "ng-container", 4)(17, IaAssistantComponent_ng_container_17_Template, 5, 1, "ng-container", 4);
+      \u0275\u0275elementContainerStart(13);
+      \u0275\u0275elementStart(14, "p-progressbar", 4);
+      \u0275\u0275template(15, IaAssistantComponent_ng_template_15_Template, 2, 2, "ng-template", null, 0, \u0275\u0275templateRefExtractor);
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(17, "h2");
+      \u0275\u0275text(18, "Validating links");
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(19, "div", 5);
+      \u0275\u0275template(20, IaAssistantComponent_ng_container_20_Template, 5, 1, "ng-container", 6);
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementContainerEnd();
+      \u0275\u0275elementStart(21, "ca-link-list", 7);
+      \u0275\u0275listener("approve", function IaAssistantComponent_Template_ca_link_list_approve_21_listener($event) {
+        \u0275\u0275restoreView(_r1);
+        return \u0275\u0275resetView(ctx.approve($event.url, $event.event));
+      })("remove", function IaAssistantComponent_Template_ca_link_list_remove_21_listener($event) {
+        \u0275\u0275restoreView(_r1);
+        return \u0275\u0275resetView(ctx.remove($event));
+      });
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(22, "ca-link-list", 8);
+      \u0275\u0275listener("approve", function IaAssistantComponent_Template_ca_link_list_approve_22_listener($event) {
+        \u0275\u0275restoreView(_r1);
+        return \u0275\u0275resetView(ctx.approve($event.url, $event.event));
+      })("remove", function IaAssistantComponent_Template_ca_link_list_remove_22_listener($event) {
+        \u0275\u0275restoreView(_r1);
+        return \u0275\u0275resetView(ctx.remove($event));
+      });
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(23, "ca-link-list", 9);
+      \u0275\u0275listener("approve", function IaAssistantComponent_Template_ca_link_list_approve_23_listener($event) {
+        \u0275\u0275restoreView(_r1);
+        return \u0275\u0275resetView(ctx.approve($event.url, $event.event));
+      })("remove", function IaAssistantComponent_Template_ca_link_list_remove_23_listener($event) {
+        \u0275\u0275restoreView(_r1);
+        return \u0275\u0275resetView(ctx.remove($event));
+      });
+      \u0275\u0275elementEnd();
+      \u0275\u0275template(24, IaAssistantComponent_ng_container_24_Template, 5, 1, "ng-container", 10);
     }
     if (rf & 2) {
       \u0275\u0275advance();
-      \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(2, 8, "title.ia"));
+      \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(2, 9, "title.ia"));
       \u0275\u0275advance(3);
-      \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(5, 10, "ia.description"));
+      \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(5, 11, "ia.description"));
       \u0275\u0275advance(6);
       \u0275\u0275twoWayProperty("ngModel", ctx.rawUrls);
-      \u0275\u0275advance(3);
-      \u0275\u0275property("ngIf", ctx.checkingUrls.length);
+      \u0275\u0275advance(4);
+      \u0275\u0275property("value", ctx.urlPercent);
+      \u0275\u0275advance(6);
+      \u0275\u0275property("ngForOf", ctx.checkingUrls);
       \u0275\u0275advance();
-      \u0275\u0275property("ngIf", ctx.badUrls.length);
+      \u0275\u0275property("links", ctx.badUrls);
       \u0275\u0275advance();
-      \u0275\u0275property("ngIf", ctx.redirectedUrls.length);
+      \u0275\u0275property("links", ctx.redirectedUrls);
       \u0275\u0275advance();
-      \u0275\u0275property("ngIf", ctx.blockedUrls.length);
+      \u0275\u0275property("links", ctx.blockedUrls);
       \u0275\u0275advance();
       \u0275\u0275property("ngIf", ctx.okUrls.length);
     }
-  }, dependencies: [CommonModule, NgForOf, NgIf, FormsModule, DefaultValueAccessor, NgControlStatus, NgModel, TranslateModule, TranslatePipe, TextareaModule, Textarea, InputTextModule, InputText, IftaLabelModule, IftaLabel, ProgressBarModule, ProgressBar, ButtonModule, Button, ButtonGroupModule, InputGroupModule, InputGroup, InputGroupAddonModule, InputGroupAddon, ChipModule, Chip, Tooltip, ConfirmPopupModule, ConfirmPopup], encapsulation: 2 });
+  }, dependencies: [CommonModule, NgForOf, NgIf, FormsModule, DefaultValueAccessor, NgControlStatus, NgModel, TranslateModule, TranslatePipe, TextareaModule, Textarea, InputTextModule, IftaLabelModule, IftaLabel, ProgressBarModule, ProgressBar, ButtonModule, ButtonGroupModule, InputGroupModule, InputGroupAddonModule, ChipModule, Chip, ConfirmPopupModule, ConfirmPopup, LinkListComponent], encapsulation: 2 });
 };
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(IaAssistantComponent, [{
@@ -24993,7 +24991,8 @@ var IaAssistantComponent = class _IaAssistantComponent {
       InputGroupAddonModule,
       ChipModule,
       Tooltip,
-      ConfirmPopupModule
+      ConfirmPopupModule,
+      LinkListComponent
     ], template: `<h1 id="wb-cont">{{ 'title.ia' | translate}}</h1>\r
 <p>{{'ia.description' | translate }}</p>\r
 <p>Paste some relevant URLs to get started.</p>\r
@@ -25018,7 +25017,7 @@ var IaAssistantComponent = class _IaAssistantComponent {
     </ng-container>\r
 </div-->\r
 \r
-<ng-container *ngIf="checkingUrls.length">\r
+<ng-container>\r
     <p-progressbar [value]="urlPercent">\r
         <ng-template #content let-value>\r
             <span>{{urlChecked}}/{{urlTotal}}</span>\r
@@ -25034,7 +25033,25 @@ var IaAssistantComponent = class _IaAssistantComponent {
         </ng-container>\r
     </div>\r
 </ng-container>\r
-<ng-container *ngIf="badUrls.length">\r
+\r
+\r
+<ca-link-list labelKey="Broken"\r
+              [links]="badUrls"\r
+              (approve)="approve($event.url, $event.event)"\r
+              (remove)="remove($event)">\r
+</ca-link-list>\r
+<ca-link-list labelKey="Redirected"\r
+              [links]="redirectedUrls"\r
+              (approve)="approve($event.url, $event.event)"\r
+              (remove)="remove($event)">\r
+</ca-link-list>\r
+<ca-link-list labelKey="Blocked"\r
+              [links]="blockedUrls"\r
+              (approve)="approve($event.url, $event.event)"\r
+              (remove)="remove($event)">\r
+</ca-link-list>\r
+\r
+<!--ng-container *ngIf="badUrls.length">\r
     <h2 class="mb-0">Broken links</h2>\r
     <div class="flex flex-column gap-2">\r
         <ng-container *ngFor="let url of badUrls">\r
@@ -25103,7 +25120,7 @@ var IaAssistantComponent = class _IaAssistantComponent {
         <li>cra-proto.github.io</li>\r
         <li>cra-design.github.io</li>\r
     </ul>\r
-</ng-container>\r
+</ng-container-->\r
 <ng-container *ngIf="okUrls.length">\r
     <h2 class="mb-0">Valid links</h2>\r
     <!--div class="flex flex-column gap-2">\r
@@ -25130,7 +25147,7 @@ var IaAssistantComponent = class _IaAssistantComponent {
   }], () => [{ type: ConfirmationService }], null);
 })();
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(IaAssistantComponent, { className: "IaAssistantComponent", filePath: "src/app/views/ia-assistant/ia-assistant.component.ts", lineNumber: 27 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(IaAssistantComponent, { className: "IaAssistantComponent", filePath: "src/app/views/ia-assistant/ia-assistant.component.ts", lineNumber: 30 });
 })();
 
 // src/app/app.routes.ts
