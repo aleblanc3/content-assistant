@@ -24714,6 +24714,7 @@ export {
   ɵɵsanitizeUrl,
   ɵɵsanitizeUrlOrResourceUrl,
   ɵɵresolveWindow,
+  ɵɵresolveDocument,
   ɵɵadvance,
   RendererStyleFlags2,
   TemplateRef,
@@ -24879,4 +24880,4 @@ export {
    * found in the LICENSE file at https://angular.dev/license
    *)
 */
-//# sourceMappingURL=chunk-6G6LGOOB.js.map
+//# sourceMappingURL=chunk-I5ZTZF5P.js.map
