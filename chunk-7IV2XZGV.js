@@ -24725,6 +24725,7 @@ export {
   ɵɵinvalidFactory,
   ViewContainerRef,
   contentChild,
+  contentChildren,
   model,
   ContentChildren,
   ContentChild,
@@ -24880,4 +24881,4 @@ export {
    * found in the LICENSE file at https://angular.dev/license
    *)
 */
-//# sourceMappingURL=chunk-I5ZTZF5P.js.map
+//# sourceMappingURL=chunk-7IV2XZGV.js.map

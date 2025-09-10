@@ -231,7 +231,7 @@ import {
   ɵɵtwoWayListener,
   ɵɵtwoWayProperty,
   ɵɵviewQuery
-} from "./chunk-I5ZTZF5P.js";
+} from "./chunk-7IV2XZGV.js";
 import {
   __async,
   __commonJS,
@@ -22392,6 +22392,18 @@ function contains(value, list) {
     }
   }
   return false;
+}
+function findIndexInList(value, list) {
+  let index = -1;
+  if (list) {
+    for (let i = 0; i < list.length; i++) {
+      if (list[i] === value) {
+        index = i;
+        break;
+      }
+    }
+  }
+  return index;
 }
 function findLastIndex(arr, callback) {
   let index = -1;
@@ -78612,6 +78624,7 @@ export {
   isNotEmpty,
   resolveFieldData,
   equals2 as equals,
+  findIndexInList,
   findLastIndex,
   resolve,
   isPrintableCharacter,
@@ -78646,6 +78659,7 @@ export {
   AutoFocusModule,
   RadioButton,
   RadioButtonModule,
+  environment,
   Badge,
   BadgeModule,
   BaseIcon,
@@ -78693,6 +78707,7 @@ export {
   IftaLabel,
   IftaLabelModule,
   zindexutils,
+  transformToBoolean,
   Tooltip,
   TooltipModule,
   Toast,
@@ -78755,4 +78770,4 @@ export {
    * License: MIT
    *)
 */
-//# sourceMappingURL=chunk-NIO4BQ6N.js.map
+//# sourceMappingURL=chunk-66CUUU6Y.js.map

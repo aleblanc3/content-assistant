@@ -110,7 +110,10 @@ import {
   bootstrapApplication,
   deepEquals,
   definePreset,
+  environment,
   equals,
+  find,
+  findIndexInList,
   findLastIndex,
   findSingle,
   focus,
@@ -128,10 +131,11 @@ import {
   provideRouter,
   resolveFieldData,
   scrollInView,
+  transformToBoolean,
   unblockBodyScroll,
   uuid,
   zindexutils
-} from "./chunk-NIO4BQ6N.js";
+} from "./chunk-66CUUU6Y.js";
 import {
   ANIMATION_MODULE_TYPE,
   BehaviorSubject,
@@ -166,13 +170,17 @@ import {
   booleanAttribute,
   catchError,
   computed,
+  contentChild,
+  contentChildren,
   effect,
   forwardRef,
   from,
   importProvidersFrom,
   inject,
+  input,
   makeEnvironmentProviders,
   map,
+  model,
   numberAttribute,
   of,
   performanceMarkFeature,
@@ -198,6 +206,7 @@ import {
   ɵɵclassProp,
   ɵɵconditional,
   ɵɵcontentQuery,
+  ɵɵcontentQuerySignal,
   ɵɵdefineComponent,
   ɵɵdefineDirective,
   ɵɵdefineInjectable,
@@ -230,6 +239,7 @@ import {
   ɵɵpureFunction1,
   ɵɵpureFunction2,
   ɵɵpureFunction3,
+  ɵɵqueryAdvance,
   ɵɵqueryRefresh,
   ɵɵreference,
   ɵɵresetView,
@@ -249,7 +259,7 @@ import {
   ɵɵtwoWayListener,
   ɵɵtwoWayProperty,
   ɵɵviewQuery
-} from "./chunk-I5ZTZF5P.js";
+} from "./chunk-7IV2XZGV.js";
 import {
   __async,
   __spreadProps,
@@ -363,7 +373,7 @@ var AsyncAnimationRendererFactory = class _AsyncAnimationRendererFactory {
    * @internal
    */
   loadImpl() {
-    const loadFn = () => this.moduleImpl ?? import("./chunk-YEAQNZYA.js").then((m) => m);
+    const loadFn = () => this.moduleImpl ?? import("./chunk-YQNFOA3U.js").then((m) => m);
     let moduleImplPromise;
     if (this.loadingSchedulerFn) {
       moduleImplPromise = this.loadingSchedulerFn(loadFn);
@@ -7827,9 +7837,9 @@ var FileUploadComponent = class _FileUploadComponent {
   filesSelected = new EventEmitter();
   isDragOver = false;
   onFileSelected(event) {
-    const input = event.target;
-    if (input.files && input.files.length > 0) {
-      this.filesSelected.emit(input.files);
+    const input2 = event.target;
+    if (input2.files && input2.files.length > 0) {
+      this.filesSelected.emit(input2.files);
     }
   }
   onDragOver(event) {
@@ -9635,7 +9645,7 @@ var Dropdown = class _Dropdown extends BaseComponent {
   lastHiddenFocusableElementOnOverlay;
   // @todo to be refactored
   get hostClass() {
-    const classes10 = this._componentStyle.classes.root({
+    const classes12 = this._componentStyle.classes.root({
       instance: this
     }).map((cls) => {
       if (typeof cls === "string") {
@@ -9644,7 +9654,7 @@ var Dropdown = class _Dropdown extends BaseComponent {
         return Object.keys(cls).filter((key) => cls[key]).join(" ");
       }
     }).join(" ");
-    return classes10 + " " + this.styleClass;
+    return classes12 + " " + this.styleClass;
   }
   get hostStyle() {
     return this.style;
@@ -11432,8 +11442,8 @@ var SharedModelSelectorComponent = class _SharedModelSelectorComponent {
   }
   initializeModels() {
     if (this.models && this.models.length > 0) {
-      this.localModels = this.models.map((model) => __spreadProps(__spreadValues({}, model), {
-        name: this.translate.instant(model.name)
+      this.localModels = this.models.map((model2) => __spreadProps(__spreadValues({}, model2), {
+        name: this.translate.instant(model2.name)
       }));
     }
   }
@@ -13115,8 +13125,8 @@ var ImageAssistantComponent = class _ImageAssistantComponent {
     });
     this.processNextFile();
   }
-  onModelChange(model) {
-    this.selectedVisionModel = model;
+  onModelChange(model2) {
+    this.selectedVisionModel = model2;
     alert(this.translate.instant("image.model.changeAlert"));
     this.stateService.resetState();
   }
@@ -16343,7 +16353,7 @@ var render = function(iconDefinition) {
     maskId = null,
     title = null,
     titleId = null,
-    classes: classes10 = [],
+    classes: classes12 = [],
     attributes = {},
     styles: styles2 = {}
   } = params;
@@ -16388,7 +16398,7 @@ var render = function(iconDefinition) {
       extra: {
         attributes,
         styles: styles2,
-        classes: classes10
+        classes: classes12
       }
     });
   });
@@ -16490,7 +16500,7 @@ var Layers = {
       layer(assembler) {
         let params = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
         const {
-          classes: classes10 = []
+          classes: classes12 = []
         } = params;
         return domVariants({
           type: "layer"
@@ -16508,7 +16518,7 @@ var Layers = {
           return [{
             tag: "span",
             attributes: {
-              class: ["".concat(config.cssPrefix, "-layers"), ...classes10].join(" ")
+              class: ["".concat(config.cssPrefix, "-layers"), ...classes12].join(" ")
             },
             children
           }];
@@ -16524,7 +16534,7 @@ var LayersCounter = {
         let params = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
         const {
           title = null,
-          classes: classes10 = [],
+          classes: classes12 = [],
           attributes = {},
           styles: styles2 = {}
         } = params;
@@ -16542,7 +16552,7 @@ var LayersCounter = {
             extra: {
               attributes,
               styles: styles2,
-              classes: ["".concat(config.cssPrefix, "-layers-counter"), ...classes10]
+              classes: ["".concat(config.cssPrefix, "-layers-counter"), ...classes12]
             }
           });
         });
@@ -16558,7 +16568,7 @@ var LayersText = {
         const {
           transform = meaninglessTransform,
           title = null,
-          classes: classes10 = [],
+          classes: classes12 = [],
           attributes = {},
           styles: styles2 = {}
         } = params;
@@ -16577,7 +16587,7 @@ var LayersText = {
             extra: {
               attributes,
               styles: styles2,
-              classes: ["".concat(config.cssPrefix, "-layers-text"), ...classes10]
+              classes: ["".concat(config.cssPrefix, "-layers-text"), ...classes12]
             }
           });
         });
@@ -17152,7 +17162,7 @@ var faWarnIfIconSpecMissing = () => {
 var isKnownRotateValue = (rotate) => rotate != null && (rotate === 90 || rotate === 180 || rotate === 270 || rotate === "90" || rotate === "180" || rotate === "270");
 var faClassList = (props) => {
   const knownRotateValue = isKnownRotateValue(props.rotate);
-  const classes10 = {
+  const classes12 = {
     [`fa-${props.animation}`]: props.animation != null && !props.animation.startsWith("spin"),
     "fa-spin": props.animation === "spin" || props.animation === "spin-reverse",
     "fa-spin-pulse": props.animation === "spin-pulse" || props.animation === "spin-pulse-reverse",
@@ -17173,7 +17183,7 @@ var faClassList = (props) => {
     [`fa-pull-${props.pull}`]: props.pull !== null,
     [`fa-stack-${props.stackItemSize}`]: props.stackItemSize != null
   };
-  return Object.keys(classes10).map((key) => classes10[key] ? key : null).filter((key) => key);
+  return Object.keys(classes12).map((key) => classes12[key] ? key : null).filter((key) => key);
 };
 var cssInserted = /* @__PURE__ */ new WeakSet();
 var autoCssId = "fa-auto-css";
@@ -18103,8 +18113,8 @@ Return the French document in HTML format that exactly follows the structure of 
         "deepseek/deepseek-r1:free"
       ];
       let finalResponse = null;
-      for (const model of models) {
-        const aiResponse = yield this.getORData(model, requestJson, 0);
+      for (const model2 of models) {
+        const aiResponse = yield this.getORData(model2, requestJson, 0);
         if (aiResponse?.choices?.[0]?.message?.content) {
           finalResponse = this.removeCodeFences(aiResponse.choices[0].message.content);
           console.log("AI response received.");
@@ -18117,7 +18127,7 @@ Return the French document in HTML format that exactly follows the structure of 
   /**
    * Fetches data from OpenRouter API
    */
-  getORData(model, requestJson, temperature = 0) {
+  getORData(model2, requestJson, temperature = 0) {
     return __async(this, null, function* () {
       const apiKey = this.apiKeyService.getCurrentKey();
       if (!apiKey)
@@ -18129,7 +18139,7 @@ Return the French document in HTML format that exactly follows the structure of 
         "X-Title": "Content Assistant"
         // optional but nice
       });
-      const payload = { model, messages: requestJson, temperature };
+      const payload = { model: model2, messages: requestJson, temperature };
       try {
         const resp = yield this.http.post(this.openRouterApiUrl, payload, {
           headers,
@@ -18148,7 +18158,7 @@ Return the French document in HTML format that exactly follows the structure of 
       } catch (err) {
         const status = err?.status;
         const bodySnippet = typeof err?.error === "string" ? err.error.slice(0, 500) : JSON.stringify(err?.error);
-        console.error(`OpenRouter HTTP error (model: ${model}) status=${status}: ${bodySnippet}`);
+        console.error(`OpenRouter HTTP error (model: ${model2}) status=${status}: ${bodySnippet}`);
         return void 0;
       }
     });
@@ -18492,8 +18502,8 @@ var TranslationAssistantComponent = class _TranslationAssistantComponent {
     this.previewText = "";
     this.showSecondUpload = false;
     this.sourceError = "";
-    const input = event.target;
-    this.selectedFile = input.files?.[0] ?? null;
+    const input2 = event.target;
+    this.selectedFile = input2.files?.[0] ?? null;
     if (this.selectedFile) {
       this.buildEnglishHtmlStored(this.selectedFile).catch(console.error);
     }
@@ -19377,8 +19387,8 @@ var InventoryAssistantComponent = class _InventoryAssistantComponent {
   /**
    * Splits a multi-line string into a clean array of trimmed, non-empty URLs.
    */
-  getCleanUrls(input) {
-    return input.split("\n").map((url) => url.trim()).filter((url) => url.length > 0);
+  getCleanUrls(input2) {
+    return input2.split("\n").map((url) => url.trim()).filter((url) => url.length > 0);
   }
   /**
    * Processes a single URL, extracting metadata and updating the results buffer.
@@ -19468,9 +19478,9 @@ var InventoryAssistantComponent = class _InventoryAssistantComponent {
   /**
    * Extract metadata for preview URLs using local CSV data.
    */
-  fetchPreviewMetadata(input) {
+  fetchPreviewMetadata(input2) {
     return __async(this, null, function* () {
-      const urls = this.getCleanUrls(input);
+      const urls = this.getCleanUrls(input2);
       if (!urls.length)
         return;
       this.loading = true;
@@ -20409,11 +20419,11 @@ var Chip = class _Chip extends BaseComponent {
     }
   }
   containerClass() {
-    let classes10 = "p-chip p-component";
+    let classes12 = "p-chip p-component";
     if (this.styleClass) {
-      classes10 += ` ${this.styleClass}`;
+      classes12 += ` ${this.styleClass}`;
     }
-    return classes10;
+    return classes12;
   }
   close(event) {
     this.visible = false;
@@ -21154,17 +21164,17 @@ var Tag = class _Tag extends BaseComponent {
     });
   }
   containerClass() {
-    let classes10 = "p-tag p-component";
+    let classes12 = "p-tag p-component";
     if (this.severity) {
-      classes10 += ` p-tag-${this.severity}`;
+      classes12 += ` p-tag-${this.severity}`;
     }
     if (this.rounded) {
-      classes10 += " p-tag-rounded";
+      classes12 += " p-tag-rounded";
     }
     if (this.styleClass) {
-      classes10 += ` ${this.styleClass}`;
+      classes12 += ` ${this.styleClass}`;
     }
-    return classes10;
+    return classes12;
   }
   static \u0275fac = /* @__PURE__ */ (() => {
     let \u0275Tag_BaseFactory;
@@ -22181,13 +22191,13 @@ var MetadataAssistantService = class _MetadataAssistantService {
       return throwError(() => error);
     }));
   }
-  processUrl(url, model, translateToFrench) {
+  processUrl(url, model2, translateToFrench) {
     return this.scrapeUrl(url).pipe(switchMap((scrapedContent) => {
       if (!scrapedContent || scrapedContent.length < 50) {
         return throwError(() => new Error("Content too short or invalid for processing"));
       }
       const language = this.detectLanguage(scrapedContent);
-      return this.generateMetadata(scrapedContent, model, language).pipe(switchMap((metadata) => {
+      return this.generateMetadata(scrapedContent, model2, language).pipe(switchMap((metadata) => {
         const result = {
           url,
           scrapedContent,
@@ -22393,7 +22403,7 @@ var MetadataAssistantService = class _MetadataAssistantService {
     const frenchRatio = frenchWordCount / Math.max(words.length, 1);
     return frenchRatio > 0.05 ? "fr" : "en";
   }
-  generateMetadata(content, model, language) {
+  generateMetadata(content, model2, language) {
     const apiKey = this.apiKeyService.getCurrentKey();
     if (!apiKey) {
       return throwError(() => new Error("API key not configured"));
@@ -22416,8 +22426,8 @@ Keywords:` : `En tant qu'expert en optimisation pour les moteurs de recherche, a
 ${content}
 
 Mots-cl\xE9s:`;
-    return this.callOpenRouter(descriptionPrompt, model, 200).pipe(switchMap((description) => {
-      return this.callOpenRouter(keywordsPrompt, model, 100).pipe(map((keywords) => ({
+    return this.callOpenRouter(descriptionPrompt, model2, 200).pipe(switchMap((description) => {
+      return this.callOpenRouter(keywordsPrompt, model2, 100).pipe(map((keywords) => ({
         description: this.cleanMetadataResponse(description),
         keywords: this.cleanKeywordsResponse(keywords)
       })));
@@ -22464,7 +22474,7 @@ French keywords (comma-separated):`;
       })
     );
   }
-  callOpenRouter(prompt, model, maxTokens, timeoutMs = this.API_TIMEOUT) {
+  callOpenRouter(prompt, model2, maxTokens, timeoutMs = this.API_TIMEOUT) {
     const apiKey = this.apiKeyService.getCurrentKey();
     if (!apiKey) {
       return throwError(() => new Error("API key not configured"));
@@ -22476,7 +22486,7 @@ French keywords (comma-separated):`;
       "X-Title": "Content Assistant"
     });
     const payload = {
-      model,
+      model: model2,
       messages: [{ role: "user", content: prompt }],
       max_tokens: maxTokens,
       temperature: 0.3
@@ -22581,7 +22591,7 @@ var MetadataAssistantStateService = class _MetadataAssistantStateService {
     const currentState = this.getState();
     this.stateSubject.next(__spreadValues(__spreadValues({}, currentState), updates));
   }
-  startProcessing(urls, model, translateToFrench) {
+  startProcessing(urls, model2, translateToFrench) {
     this.updateState({
       isProcessing: true,
       currentStep: "scraping",
@@ -22590,7 +22600,7 @@ var MetadataAssistantStateService = class _MetadataAssistantStateService {
       processedUrls: 0,
       results: [],
       error: null,
-      selectedModel: model,
+      selectedModel: model2,
       translateToFrench
     });
   }
@@ -22631,8 +22641,8 @@ var MetadataAssistantStateService = class _MetadataAssistantStateService {
   reset() {
     this.stateSubject.next(this.initialState);
   }
-  setSelectedModel(model) {
-    this.updateState({ selectedModel: model });
+  setSelectedModel(model2) {
+    this.updateState({ selectedModel: model2 });
   }
   setTranslateToFrench(translate) {
     this.updateState({ translateToFrench: translate });
@@ -22870,8 +22880,8 @@ var MetadataAssistantComponent = class _MetadataAssistantComponent {
   onUrlsChange(urls) {
     this.urls = urls;
   }
-  onUrlInputChange(input) {
-    this.urlInput = input;
+  onUrlInputChange(input2) {
+    this.urlInput = input2;
   }
   isValidUrl(url) {
     try {
@@ -22881,8 +22891,8 @@ var MetadataAssistantComponent = class _MetadataAssistantComponent {
       return false;
     }
   }
-  onModelChange(model) {
-    this.stateService.setSelectedModel(model);
+  onModelChange(model2) {
+    this.stateService.setSelectedModel(model2);
   }
   onTranslateToggle(translate) {
     this.stateService.setTranslateToFrench(translate);
@@ -24517,6 +24527,1538 @@ var ConfirmPopupModule = class _ConfirmPopupModule {
   }], null, null);
 })();
 
+// node_modules/primeng/fesm2022/primeng-stepper.mjs
+var _c014 = ["*"];
+var _c113 = ["content"];
+var _c24 = (a0, a1, a2) => ({
+  activateCallback: a0,
+  value: a1,
+  active: a2
+});
+function Step_Conditional_0_Conditional_5_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275element(0, "p-stepper-separator");
+  }
+}
+function Step_Conditional_0_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r1 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "button", 0);
+    \u0275\u0275listener("click", function Step_Conditional_0_Template_button_click_0_listener() {
+      \u0275\u0275restoreView(_r1);
+      const ctx_r1 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r1.onStepClick());
+    });
+    \u0275\u0275elementStart(1, "span", 1);
+    \u0275\u0275text(2);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(3, "span", 2);
+    \u0275\u0275projection(4);
+    \u0275\u0275elementEnd()();
+    \u0275\u0275template(5, Step_Conditional_0_Conditional_5_Template, 1, 0, "p-stepper-separator");
+  }
+  if (rf & 2) {
+    const ctx_r1 = \u0275\u0275nextContext();
+    \u0275\u0275property("tabindex", ctx_r1.isStepDisabled() ? -1 : void 0)("disabled", ctx_r1.isStepDisabled());
+    \u0275\u0275attribute("id", ctx_r1.id())("role", "tab")("aria-controls", ctx_r1.ariaControls());
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(ctx_r1.value());
+    \u0275\u0275advance(3);
+    \u0275\u0275conditional(ctx_r1.isSeparatorVisible() ? 5 : -1);
+  }
+}
+function Step_Conditional_1_ng_container_0_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementContainer(0);
+  }
+}
+function Step_Conditional_1_Conditional_1_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275element(0, "p-stepper-separator");
+  }
+}
+function Step_Conditional_1_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275template(0, Step_Conditional_1_ng_container_0_Template, 1, 0, "ng-container", 3)(1, Step_Conditional_1_Conditional_1_Template, 1, 0, "p-stepper-separator");
+  }
+  if (rf & 2) {
+    const ctx_r1 = \u0275\u0275nextContext();
+    \u0275\u0275property("ngTemplateOutlet", ctx_r1.content || ctx_r1._contentTemplate)("ngTemplateOutletContext", \u0275\u0275pureFunction3(3, _c24, ctx_r1.onStepClick.bind(ctx_r1), ctx_r1.value(), ctx_r1.active()));
+    \u0275\u0275advance();
+    \u0275\u0275conditional(ctx_r1.isSeparatorVisible() ? 1 : -1);
+  }
+}
+var _c34 = (a0) => ({
+  transitionParams: a0
+});
+var _c44 = (a0) => ({
+  value: "visible",
+  params: a0
+});
+var _c54 = (a0) => ({
+  value: "hidden",
+  params: a0
+});
+function StepPanel_Conditional_0_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275element(0, "p-stepper-separator");
+  }
+}
+function StepPanel_Conditional_2_ng_container_0_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementContainer(0);
+  }
+}
+function StepPanel_Conditional_2_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275template(0, StepPanel_Conditional_2_ng_container_0_Template, 1, 0, "ng-container", 1);
+  }
+  if (rf & 2) {
+    const ctx_r0 = \u0275\u0275nextContext();
+    \u0275\u0275property("ngTemplateOutlet", ctx_r0.contentTemplate || ctx_r0._contentTemplate)("ngTemplateOutletContext", \u0275\u0275pureFunction3(2, _c24, ctx_r0.updateValue.bind(ctx_r0), ctx_r0.value(), ctx_r0.active()));
+  }
+}
+var theme10 = ({
+  dt
+}) => `
+.p-steplist {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    overflow-x: auto;
+}
+
+.p-step {
+    position: relative;
+    display: flex;
+    flex: 1 1 auto;
+    align-items: center;
+    gap: ${dt("stepper.step.gap")};
+    padding: ${dt("stepper.step.padding")};
+}
+
+.p-step:last-of-type {
+    flex: initial;
+}
+
+.p-step-header {
+    border: 0 none;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background ${dt("stepper.transition.duration")}, color ${dt("stepper.transition.duration")}, border-color ${dt("stepper.transition.duration")}, outline-color ${dt("stepper.transition.duration")}, box-shadow ${dt("stepper.transition.duration")};
+    border-radius: ${dt("stepper.step.header.border.radius")};
+    outline-color: transparent;
+    background: transparent;
+    padding: ${dt("stepper.step.header.padding")};
+    gap: ${dt("stepper.step.header.gap")};
+}
+
+.p-step-header:focus-visible {
+    box-shadow: ${dt("stepper.step.header.focus.ring.shadow")};
+    outline: ${dt("stepper.step.header.focus.ring.width")} ${dt("stepper.step.header.focus.ring.style")} ${dt("stepper.step.header.focus.ring.color")};
+    outline-offset: ${dt("stepper.step.header.focus.ring.offset")};
+}
+
+.p-stepper.p-stepper-readonly .p-step {
+    cursor: auto;
+}
+
+.p-step-title {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    color: ${dt("stepper.step.title.color")};
+    font-weight: ${dt("stepper.step.title.font.weight")};
+    transition: background ${dt("stepper.transition.duration")}, color ${dt("stepper.transition.duration")}, border-color ${dt("stepper.transition.duration")}, box-shadow ${dt("stepper.transition.duration")}, outline-color ${dt("stepper.transition.duration")};
+}
+
+.p-step-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: ${dt("stepper.step.number.color")};
+    border: 2px solid ${dt("stepper.step.number.border.color")};
+    background: ${dt("stepper.step.number.background")};
+    min-width: ${dt("stepper.step.number.size")};
+    height: ${dt("stepper.step.number.size")};
+    line-height: ${dt("stepper.step.number.size")};
+    font-size: ${dt("stepper.step.number.font.size")};
+    z-index: 1;
+    border-radius: ${dt("stepper.step.number.border.radius")};
+    position: relative;
+    font-weight: ${dt("stepper.step.number.font.weight")};
+}
+
+.p-step-number::after {
+    content: " ";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: ${dt("stepper.step.number.border.radius")};
+    box-shadow: ${dt("stepper.step.number.shadow")};
+}
+
+.p-step-active .p-step-header {
+    cursor: default;
+}
+
+.p-step-active .p-step-number {
+    background: ${dt("stepper.step.number.active.background")};
+    border-color: ${dt("stepper.step.number.active.border.color")};
+    color: ${dt("stepper.step.number.active.color")};
+}
+
+.p-step-active .p-step-title {
+    color: ${dt("stepper.step.title.active.color")};
+}
+
+.p-step:not(.p-disabled):focus-visible {
+    outline: ${dt("focus.ring.width")} ${dt("focus.ring.style")} ${dt("focus.ring.color")};
+    outline-offset: ${dt("focus.ring.offset")};
+}
+
+.p-step:has(~ .p-step-active) .p-stepper-separator {
+    background: ${dt("stepper.separator.active.background")};
+}
+
+.p-stepper-separator {
+    flex: 1 1 0;
+    background: ${dt("stepper.separator.background")};
+    width: 100%;
+    height: ${dt("stepper.separator.size")};
+    transition: background ${dt("stepper.transition.duration")}, color ${dt("stepper.transition.duration")}, border-color ${dt("stepper.transition.duration")}, box-shadow ${dt("stepper.transition.duration")}, outline-color ${dt("stepper.transition.duration")};
+}
+
+.p-steppanels {
+    padding: ${dt("stepper.steppanels.padding")};
+}
+
+.p-steppanel {
+    background: ${dt("stepper.steppanel.background")};
+    color: ${dt("stepper.steppanel.color")};
+}
+
+.p-stepper:has(.p-stepitem) {
+    display: flex;
+    flex-direction: column;
+}
+
+.p-stepitem {
+    display: flex;
+    flex-direction: column;
+    flex: initial;
+}
+
+.p-stepitem.p-stepitem-active {
+    flex: 1 1 auto;
+}
+
+.p-stepitem .p-step {
+    flex: initial;
+}
+
+.p-stepitem .p-steppanel-content {
+    width: 100%;
+    padding: ${dt("stepper.steppanel.padding")};
+    margin-inline-start: 1rem;
+}
+
+.p-stepitem .p-steppanel {
+    display: flex;
+    flex: 1 1 auto;
+}
+
+.p-stepitem .p-stepper-separator {
+    flex: 0 0 auto;
+    width: ${dt("stepper.separator.size")};
+    height: auto;
+    margin: ${dt("stepper.separator.margin")};
+    position: relative;
+    left: calc(-1 * ${dt("stepper.separator.size")});
+}
+
+.p-stepitem .p-stepper-separator:dir(rtl) {
+    left: calc(-9 * ${dt("stepper.separator.size")});
+}
+
+.p-stepitem:has(~ .p-stepitem-active) .p-stepper-separator {
+    background: ${dt("stepper.separator.active.background")};
+}
+
+.p-stepitem:last-of-type .p-steppanel {
+    padding-inline-start: ${dt("stepper.step.number.size")};
+}
+/* For PrimeNG */
+.p-steppanel {
+    overflow: hidden;
+}
+
+.p-stepppanel:not(.ng-animating) {
+    overflow: inherit;
+}
+`;
+var classes10 = {
+  root: ({
+    props
+  }) => ["p-stepper p-component", {
+    "p-readonly": props.linear
+  }],
+  separator: "p-stepper-separator"
+};
+var StepperStyle = class _StepperStyle extends BaseStyle {
+  name = "stepper";
+  theme = theme10;
+  classes = classes10;
+  static \u0275fac = /* @__PURE__ */ (() => {
+    let \u0275StepperStyle_BaseFactory;
+    return function StepperStyle_Factory(__ngFactoryType__) {
+      return (\u0275StepperStyle_BaseFactory || (\u0275StepperStyle_BaseFactory = \u0275\u0275getInheritedFactory(_StepperStyle)))(__ngFactoryType__ || _StepperStyle);
+    };
+  })();
+  static \u0275prov = /* @__PURE__ */ \u0275\u0275defineInjectable({
+    token: _StepperStyle,
+    factory: _StepperStyle.\u0275fac
+  });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(StepperStyle, [{
+    type: Injectable
+  }], null, null);
+})();
+var StepperClasses;
+(function(StepperClasses2) {
+  StepperClasses2["root"] = "p-stepper";
+  StepperClasses2["separator"] = "p-stepper-separator";
+})(StepperClasses || (StepperClasses = {}));
+var StepList = class _StepList extends BaseComponent {
+  steps = contentChildren(forwardRef(() => Step));
+  static \u0275fac = /* @__PURE__ */ (() => {
+    let \u0275StepList_BaseFactory;
+    return function StepList_Factory(__ngFactoryType__) {
+      return (\u0275StepList_BaseFactory || (\u0275StepList_BaseFactory = \u0275\u0275getInheritedFactory(_StepList)))(__ngFactoryType__ || _StepList);
+    };
+  })();
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({
+    type: _StepList,
+    selectors: [["p-step-list"]],
+    contentQueries: function StepList_ContentQueries(rf, ctx, dirIndex) {
+      if (rf & 1) {
+        \u0275\u0275contentQuerySignal(dirIndex, ctx.steps, Step, 4);
+      }
+      if (rf & 2) {
+        \u0275\u0275queryAdvance();
+      }
+    },
+    hostVars: 4,
+    hostBindings: function StepList_HostBindings(rf, ctx) {
+      if (rf & 2) {
+        \u0275\u0275classProp("p-steplist", true)("p-component", true);
+      }
+    },
+    features: [\u0275\u0275InheritDefinitionFeature],
+    ngContentSelectors: _c014,
+    decls: 1,
+    vars: 0,
+    template: function StepList_Template(rf, ctx) {
+      if (rf & 1) {
+        \u0275\u0275projectionDef();
+        \u0275\u0275projection(0);
+      }
+    },
+    dependencies: [CommonModule],
+    encapsulation: 2,
+    changeDetection: 0
+  });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(StepList, [{
+    type: Component,
+    args: [{
+      selector: "p-step-list",
+      standalone: true,
+      imports: [CommonModule],
+      template: ` <ng-content></ng-content>`,
+      changeDetection: ChangeDetectionStrategy.OnPush,
+      encapsulation: ViewEncapsulation.None,
+      host: {
+        "[class.p-steplist]": "true",
+        "[class.p-component]": "true"
+      }
+    }]
+  }], null, null);
+})();
+var StepperSeparator = class _StepperSeparator extends BaseComponent {
+  static \u0275fac = /* @__PURE__ */ (() => {
+    let \u0275StepperSeparator_BaseFactory;
+    return function StepperSeparator_Factory(__ngFactoryType__) {
+      return (\u0275StepperSeparator_BaseFactory || (\u0275StepperSeparator_BaseFactory = \u0275\u0275getInheritedFactory(_StepperSeparator)))(__ngFactoryType__ || _StepperSeparator);
+    };
+  })();
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({
+    type: _StepperSeparator,
+    selectors: [["p-stepper-separator"]],
+    hostVars: 4,
+    hostBindings: function StepperSeparator_HostBindings(rf, ctx) {
+      if (rf & 2) {
+        \u0275\u0275classProp("p-stepper-separator", true)("p-component", true);
+      }
+    },
+    features: [\u0275\u0275InheritDefinitionFeature],
+    ngContentSelectors: _c014,
+    decls: 1,
+    vars: 0,
+    template: function StepperSeparator_Template(rf, ctx) {
+      if (rf & 1) {
+        \u0275\u0275projectionDef();
+        \u0275\u0275projection(0);
+      }
+    },
+    dependencies: [CommonModule],
+    encapsulation: 2,
+    changeDetection: 0
+  });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(StepperSeparator, [{
+    type: Component,
+    args: [{
+      selector: "p-stepper-separator",
+      standalone: true,
+      imports: [CommonModule],
+      template: ` <ng-content></ng-content>`,
+      changeDetection: ChangeDetectionStrategy.OnPush,
+      encapsulation: ViewEncapsulation.None,
+      host: {
+        "[class.p-stepper-separator]": "true",
+        "[class.p-component]": "true"
+      }
+    }]
+  }], null, null);
+})();
+var StepItem = class _StepItem extends BaseComponent {
+  pcStepper = inject(forwardRef(() => Stepper));
+  /**
+   * Value of step.
+   * @type {<number | undefined>}
+   * @defaultValue undefined
+   * @group Props
+   */
+  value = model();
+  isActive = computed(() => this.pcStepper.value() === this.value());
+  step = contentChild(forwardRef(() => Step));
+  stepPanel = contentChild(forwardRef(() => StepPanel));
+  constructor() {
+    super();
+    effect(() => {
+      this.step().value.set(this.value());
+    });
+    effect(() => {
+      this.stepPanel().value.set(this.value());
+    });
+  }
+  static \u0275fac = function StepItem_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _StepItem)();
+  };
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({
+    type: _StepItem,
+    selectors: [["p-step-item"]],
+    contentQueries: function StepItem_ContentQueries(rf, ctx, dirIndex) {
+      if (rf & 1) {
+        \u0275\u0275contentQuerySignal(dirIndex, ctx.step, Step, 5);
+        \u0275\u0275contentQuerySignal(dirIndex, ctx.stepPanel, StepPanel, 5);
+      }
+      if (rf & 2) {
+        \u0275\u0275queryAdvance(2);
+      }
+    },
+    hostVars: 5,
+    hostBindings: function StepItem_HostBindings(rf, ctx) {
+      if (rf & 2) {
+        \u0275\u0275attribute("data-p-active", ctx.isActive());
+        \u0275\u0275classProp("p-stepitem", true)("p-component", true);
+      }
+    },
+    inputs: {
+      value: [1, "value"]
+    },
+    outputs: {
+      value: "valueChange"
+    },
+    features: [\u0275\u0275InheritDefinitionFeature],
+    ngContentSelectors: _c014,
+    decls: 1,
+    vars: 0,
+    template: function StepItem_Template(rf, ctx) {
+      if (rf & 1) {
+        \u0275\u0275projectionDef();
+        \u0275\u0275projection(0);
+      }
+    },
+    dependencies: [CommonModule],
+    encapsulation: 2,
+    changeDetection: 0
+  });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(StepItem, [{
+    type: Component,
+    args: [{
+      selector: "p-step-item",
+      standalone: true,
+      imports: [CommonModule],
+      template: ` <ng-content></ng-content>`,
+      changeDetection: ChangeDetectionStrategy.OnPush,
+      encapsulation: ViewEncapsulation.None,
+      host: {
+        "[class.p-stepitem]": "true",
+        "[class.p-component]": "true",
+        "[attr.data-p-active]": "isActive()"
+      }
+    }]
+  }], () => [], null);
+})();
+var Step = class _Step extends BaseComponent {
+  pcStepper = inject(forwardRef(() => Stepper));
+  /**
+   * Active value of stepper.
+   * @type {number}
+   * @defaultValue undefined
+   * @group Props
+   */
+  value = model();
+  /**
+   * Whether the step is disabled.
+   * @type {boolean}
+   * @defaultValue false
+   * @group Props
+   */
+  disabled = input(false, {
+    transform: (v) => transformToBoolean(v)
+  });
+  active = computed(() => this.pcStepper.isStepActive(this.value()));
+  isStepDisabled = computed(() => !this.active() && (this.pcStepper.linear() || this.disabled()));
+  id = computed(() => `${this.pcStepper.id()}_step_${this.value()}`);
+  ariaControls = computed(() => `${this.pcStepper.id()}_steppanel_${this.value()}`);
+  isSeparatorVisible = computed(() => {
+    if (this.pcStepper.stepList()) {
+      const steps = this.pcStepper.stepList().steps();
+      const index = steps.indexOf(this);
+      const stepLen = steps.length;
+      return index !== stepLen - 1;
+    } else {
+      return false;
+    }
+  });
+  /**
+   * Content template.
+   * @type {TemplateRef<StepContentTemplateContext>}
+   * @group Templates
+   */
+  content;
+  templates;
+  _contentTemplate;
+  ngAfterContentInit() {
+    this.templates?.forEach((item) => {
+      switch (item.getType()) {
+        case "content":
+          this._contentTemplate = item.template;
+          break;
+      }
+    });
+  }
+  onStepClick() {
+    this.pcStepper.updateValue(this.value());
+  }
+  static \u0275fac = /* @__PURE__ */ (() => {
+    let \u0275Step_BaseFactory;
+    return function Step_Factory(__ngFactoryType__) {
+      return (\u0275Step_BaseFactory || (\u0275Step_BaseFactory = \u0275\u0275getInheritedFactory(_Step)))(__ngFactoryType__ || _Step);
+    };
+  })();
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({
+    type: _Step,
+    selectors: [["p-step"]],
+    contentQueries: function Step_ContentQueries(rf, ctx, dirIndex) {
+      if (rf & 1) {
+        \u0275\u0275contentQuery(dirIndex, _c113, 4);
+        \u0275\u0275contentQuery(dirIndex, PrimeTemplate, 4);
+      }
+      if (rf & 2) {
+        let _t;
+        \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx.content = _t.first);
+        \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx.templates = _t);
+      }
+    },
+    hostVars: 13,
+    hostBindings: function Step_HostBindings(rf, ctx) {
+      if (rf & 2) {
+        \u0275\u0275attribute("aria-current", ctx.active() ? "step" : void 0)("role", "presentation")("data-p-active", ctx.active())("data-p-disabled", ctx.isStepDisabled())("data-pc-name", "step");
+        \u0275\u0275classProp("p-step", true)("p-step-active", ctx.active())("p-disabled", ctx.isStepDisabled())("p-component", true);
+      }
+    },
+    inputs: {
+      value: [1, "value"],
+      disabled: [1, "disabled"]
+    },
+    outputs: {
+      value: "valueChange"
+    },
+    features: [\u0275\u0275InheritDefinitionFeature],
+    ngContentSelectors: _c014,
+    decls: 2,
+    vars: 1,
+    consts: [["type", "button", 1, "p-step-header", 3, "click", "tabindex", "disabled"], [1, "p-step-number"], [1, "p-step-title"], [4, "ngTemplateOutlet", "ngTemplateOutletContext"]],
+    template: function Step_Template(rf, ctx) {
+      if (rf & 1) {
+        \u0275\u0275projectionDef();
+        \u0275\u0275template(0, Step_Conditional_0_Template, 6, 7)(1, Step_Conditional_1_Template, 2, 7);
+      }
+      if (rf & 2) {
+        \u0275\u0275conditional(!ctx.content && !ctx._contentTemplate ? 0 : 1);
+      }
+    },
+    dependencies: [CommonModule, NgTemplateOutlet, StepperSeparator, SharedModule],
+    encapsulation: 2,
+    changeDetection: 0
+  });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(Step, [{
+    type: Component,
+    args: [{
+      selector: "p-step",
+      standalone: true,
+      imports: [CommonModule, StepperSeparator, SharedModule],
+      template: `
+        @if (!content && !_contentTemplate) {
+            <button [attr.id]="id()" class="p-step-header" [attr.role]="'tab'" [tabindex]="isStepDisabled() ? -1 : undefined" [attr.aria-controls]="ariaControls()" [disabled]="isStepDisabled()" (click)="onStepClick()" type="button">
+                <span class="p-step-number">{{ value() }}</span>
+                <span class="p-step-title">
+                    <ng-content></ng-content>
+                </span>
+            </button>
+            @if (isSeparatorVisible()) {
+                <p-stepper-separator />
+            }
+        } @else {
+            <ng-container *ngTemplateOutlet="content || _contentTemplate; context: { activateCallback: onStepClick.bind(this), value: value(), active: active() }"></ng-container>
+            @if (isSeparatorVisible()) {
+                <p-stepper-separator />
+            }
+        }
+    `,
+      changeDetection: ChangeDetectionStrategy.OnPush,
+      encapsulation: ViewEncapsulation.None,
+      host: {
+        "[class.p-step]": "true",
+        "[class.p-step-active]": "active()",
+        "[class.p-disabled]": "isStepDisabled()",
+        "[class.p-component]": "true",
+        "[attr.aria-current]": 'active() ? "step" : undefined',
+        "[attr.role]": '"presentation"',
+        "[attr.data-p-active]": "active()",
+        "[attr.data-p-disabled]": "isStepDisabled()",
+        "[attr.data-pc-name]": '"step"'
+      }
+    }]
+  }], null, {
+    content: [{
+      type: ContentChild,
+      args: ["content", {
+        descendants: false
+      }]
+    }],
+    templates: [{
+      type: ContentChildren,
+      args: [PrimeTemplate]
+    }]
+  });
+})();
+var StepPanel = class _StepPanel extends BaseComponent {
+  pcStepper = inject(forwardRef(() => Stepper));
+  transitionOptions = computed(() => this.pcStepper.transitionOptions());
+  /**
+   * Active value of stepper.
+   * @type {number}
+   * @defaultValue undefined
+   * @group Props
+   */
+  value = model(void 0);
+  active = computed(() => this.pcStepper.value() === this.value());
+  ariaControls = computed(() => `${this.pcStepper.id()}_step_${this.value()}`);
+  id = computed(() => `${this.pcStepper.id()}_steppanel_${this.value()}`);
+  isVertical = computed(() => this.pcStepper.stepItems().length > 0);
+  isSeparatorVisible = computed(() => {
+    if (this.pcStepper.stepItems()) {
+      const stepLen = this.pcStepper.stepItems().length;
+      const stepPanelElements = find(this.pcStepper.el.nativeElement, '[data-pc-name="steppanel"]');
+      const index = findIndexInList(this.el.nativeElement, stepPanelElements);
+      return index !== stepLen - 1;
+    }
+  });
+  /**
+   * Content template.
+   * @param {StepPanelContentTemplateContext} context - Context of the template
+   * @see {@link StepPanelContentTemplateContext}
+   * @group Templates
+   */
+  contentTemplate;
+  templates;
+  _contentTemplate;
+  ngAfterContentInit() {
+    this.templates?.forEach((item) => {
+      switch (item.getType()) {
+        case "content":
+          this._contentTemplate = item.template;
+          break;
+      }
+    });
+  }
+  updateValue(value) {
+    this.pcStepper.updateValue(value);
+  }
+  static \u0275fac = /* @__PURE__ */ (() => {
+    let \u0275StepPanel_BaseFactory;
+    return function StepPanel_Factory(__ngFactoryType__) {
+      return (\u0275StepPanel_BaseFactory || (\u0275StepPanel_BaseFactory = \u0275\u0275getInheritedFactory(_StepPanel)))(__ngFactoryType__ || _StepPanel);
+    };
+  })();
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({
+    type: _StepPanel,
+    selectors: [["p-step-panel"]],
+    contentQueries: function StepPanel_ContentQueries(rf, ctx, dirIndex) {
+      if (rf & 1) {
+        \u0275\u0275contentQuery(dirIndex, _c113, 5);
+        \u0275\u0275contentQuery(dirIndex, PrimeTemplate, 4);
+      }
+      if (rf & 2) {
+        let _t;
+        \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx.contentTemplate = _t.first);
+        \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx.templates = _t);
+      }
+    },
+    hostVars: 11,
+    hostBindings: function StepPanel_HostBindings(rf, ctx) {
+      if (rf & 2) {
+        \u0275\u0275attribute("role", "tabpanel")("aria-controls", ctx.ariaControls())("id", ctx.id())("data-p-active", ctx.active())("data-pc-name", "steppanel");
+        \u0275\u0275classProp("p-steppanel", true)("p-component", true)("p-steppanel-active", ctx.active());
+      }
+    },
+    inputs: {
+      value: [1, "value"]
+    },
+    outputs: {
+      value: "valueChange"
+    },
+    features: [\u0275\u0275InheritDefinitionFeature],
+    decls: 3,
+    vars: 11,
+    consts: [[1, "p-steppanel-content"], [4, "ngTemplateOutlet", "ngTemplateOutletContext"]],
+    template: function StepPanel_Template(rf, ctx) {
+      if (rf & 1) {
+        \u0275\u0275template(0, StepPanel_Conditional_0_Template, 1, 0, "p-stepper-separator");
+        \u0275\u0275elementStart(1, "div", 0);
+        \u0275\u0275template(2, StepPanel_Conditional_2_Template, 1, 6, "ng-container");
+        \u0275\u0275elementEnd();
+      }
+      if (rf & 2) {
+        \u0275\u0275conditional(ctx.isSeparatorVisible() ? 0 : -1);
+        \u0275\u0275advance();
+        \u0275\u0275property("@content", ctx.isVertical() ? ctx.active() ? \u0275\u0275pureFunction1(5, _c44, \u0275\u0275pureFunction1(3, _c34, ctx.transitionOptions())) : \u0275\u0275pureFunction1(9, _c54, \u0275\u0275pureFunction1(7, _c34, ctx.transitionOptions())) : void 0);
+        \u0275\u0275advance();
+        \u0275\u0275conditional(ctx.active() ? 2 : -1);
+      }
+    },
+    dependencies: [CommonModule, NgTemplateOutlet, StepperSeparator, SharedModule],
+    encapsulation: 2,
+    data: {
+      animation: [trigger("content", [state("hidden", style({
+        height: "0",
+        visibility: "hidden"
+      })), state("visible", style({
+        height: "*",
+        visibility: "visible"
+      })), transition("visible <=> hidden", [animate("250ms cubic-bezier(0.86, 0, 0.07, 1)")]), transition("void => *", animate(0))])]
+    },
+    changeDetection: 0
+  });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(StepPanel, [{
+    type: Component,
+    args: [{
+      selector: "p-step-panel",
+      standalone: true,
+      imports: [CommonModule, StepperSeparator, SharedModule],
+      template: `
+        @if (isSeparatorVisible()) {
+            <p-stepper-separator />
+        }
+        <div class="p-steppanel-content" [@content]="isVertical() ? (active() ? { value: 'visible', params: { transitionParams: transitionOptions() } } : { value: 'hidden', params: { transitionParams: transitionOptions() } }) : undefined">
+            @if (active()) {
+                <ng-container *ngTemplateOutlet="contentTemplate || _contentTemplate; context: { activateCallback: updateValue.bind(this), value: value(), active: active() }"></ng-container>
+            }
+        </div>
+    `,
+      changeDetection: ChangeDetectionStrategy.OnPush,
+      encapsulation: ViewEncapsulation.None,
+      host: {
+        "[class.p-steppanel]": "true",
+        "[class.p-component]": "true",
+        "[class.p-steppanel-active]": "active()",
+        "[attr.role]": '"tabpanel"',
+        "[attr.aria-controls]": "ariaControls()",
+        "[attr.id]": "id()",
+        "[attr.data-p-active]": "active()",
+        "[attr.data-pc-name]": '"steppanel"'
+      },
+      animations: [trigger("content", [state("hidden", style({
+        height: "0",
+        visibility: "hidden"
+      })), state("visible", style({
+        height: "*",
+        visibility: "visible"
+      })), transition("visible <=> hidden", [animate("250ms cubic-bezier(0.86, 0, 0.07, 1)")]), transition("void => *", animate(0))])]
+    }]
+  }], null, {
+    contentTemplate: [{
+      type: ContentChild,
+      args: ["content"]
+    }],
+    templates: [{
+      type: ContentChildren,
+      args: [PrimeTemplate]
+    }]
+  });
+})();
+var StepPanels = class _StepPanels extends BaseComponent {
+  static \u0275fac = /* @__PURE__ */ (() => {
+    let \u0275StepPanels_BaseFactory;
+    return function StepPanels_Factory(__ngFactoryType__) {
+      return (\u0275StepPanels_BaseFactory || (\u0275StepPanels_BaseFactory = \u0275\u0275getInheritedFactory(_StepPanels)))(__ngFactoryType__ || _StepPanels);
+    };
+  })();
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({
+    type: _StepPanels,
+    selectors: [["p-step-panels"]],
+    hostVars: 4,
+    hostBindings: function StepPanels_HostBindings(rf, ctx) {
+      if (rf & 2) {
+        \u0275\u0275classProp("p-steppanels", true)("p-component", true);
+      }
+    },
+    features: [\u0275\u0275InheritDefinitionFeature],
+    ngContentSelectors: _c014,
+    decls: 1,
+    vars: 0,
+    template: function StepPanels_Template(rf, ctx) {
+      if (rf & 1) {
+        \u0275\u0275projectionDef();
+        \u0275\u0275projection(0);
+      }
+    },
+    dependencies: [CommonModule, SharedModule],
+    encapsulation: 2,
+    changeDetection: 0
+  });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(StepPanels, [{
+    type: Component,
+    args: [{
+      selector: "p-step-panels",
+      standalone: true,
+      imports: [CommonModule, SharedModule],
+      template: ` <ng-content></ng-content>`,
+      changeDetection: ChangeDetectionStrategy.OnPush,
+      encapsulation: ViewEncapsulation.None,
+      host: {
+        "[class.p-steppanels]": "true",
+        "[class.p-component]": "true"
+      }
+    }]
+  }], null, null);
+})();
+var Stepper = class _Stepper extends BaseComponent {
+  /**
+   * A model that can hold a numeric value or be undefined.
+   * @defaultValue undefined
+   * @type {ModelSignal<number | undefined>}
+   * @group Props
+   */
+  value = model(void 0);
+  /**
+   * A boolean variable that captures user input.
+   * @defaultValue false
+   * @type {InputSignalWithTransform<any, boolean >}
+   * @group Props
+   */
+  linear = input(false, {
+    transform: (v) => transformToBoolean(v)
+  });
+  /**
+   * Transition options of the animation.
+   * @defaultValue 400ms cubic-bezier(0.86, 0, 0.07, 1)
+   * @type {InputSignal<string >}
+   * @group Props
+   */
+  transitionOptions = input("400ms cubic-bezier(0.86, 0, 0.07, 1)");
+  _componentStyle = inject(StepperStyle);
+  id = signal(uuid("pn_id_"));
+  stepItems = contentChildren(StepItem);
+  steps = contentChildren(Step);
+  stepList = contentChild(StepList);
+  updateValue(value) {
+    this.value.set(value);
+  }
+  isStepActive(value) {
+    return this.value() === value;
+  }
+  static \u0275fac = /* @__PURE__ */ (() => {
+    let \u0275Stepper_BaseFactory;
+    return function Stepper_Factory(__ngFactoryType__) {
+      return (\u0275Stepper_BaseFactory || (\u0275Stepper_BaseFactory = \u0275\u0275getInheritedFactory(_Stepper)))(__ngFactoryType__ || _Stepper);
+    };
+  })();
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({
+    type: _Stepper,
+    selectors: [["p-stepper"]],
+    contentQueries: function Stepper_ContentQueries(rf, ctx, dirIndex) {
+      if (rf & 1) {
+        \u0275\u0275contentQuerySignal(dirIndex, ctx.stepItems, StepItem, 4);
+        \u0275\u0275contentQuerySignal(dirIndex, ctx.steps, Step, 4);
+        \u0275\u0275contentQuerySignal(dirIndex, ctx.stepList, StepList, 5);
+      }
+      if (rf & 2) {
+        \u0275\u0275queryAdvance(3);
+      }
+    },
+    hostVars: 6,
+    hostBindings: function Stepper_HostBindings(rf, ctx) {
+      if (rf & 2) {
+        \u0275\u0275attribute("role", "tablist")("id", ctx.id());
+        \u0275\u0275classProp("p-stepper", true)("p-component", true);
+      }
+    },
+    inputs: {
+      value: [1, "value"],
+      linear: [1, "linear"],
+      transitionOptions: [1, "transitionOptions"]
+    },
+    outputs: {
+      value: "valueChange"
+    },
+    features: [\u0275\u0275ProvidersFeature([StepperStyle]), \u0275\u0275InheritDefinitionFeature],
+    ngContentSelectors: _c014,
+    decls: 1,
+    vars: 0,
+    template: function Stepper_Template(rf, ctx) {
+      if (rf & 1) {
+        \u0275\u0275projectionDef();
+        \u0275\u0275projection(0);
+      }
+    },
+    dependencies: [CommonModule, SharedModule],
+    encapsulation: 2,
+    changeDetection: 0
+  });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(Stepper, [{
+    type: Component,
+    args: [{
+      selector: "p-stepper",
+      standalone: true,
+      imports: [CommonModule, SharedModule],
+      template: ` <ng-content></ng-content>`,
+      changeDetection: ChangeDetectionStrategy.OnPush,
+      encapsulation: ViewEncapsulation.None,
+      providers: [StepperStyle],
+      host: {
+        "[class.p-stepper]": "true",
+        "[class.p-component]": "true",
+        "[attr.role]": '"tablist"',
+        "[attr.id]": "id()"
+      }
+    }]
+  }], null, null);
+})();
+var StepperModule = class _StepperModule {
+  static \u0275fac = function StepperModule_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _StepperModule)();
+  };
+  static \u0275mod = /* @__PURE__ */ \u0275\u0275defineNgModule({
+    type: _StepperModule,
+    imports: [Stepper, StepList, StepPanels, StepPanel, StepItem, Step, StepperSeparator, SharedModule],
+    exports: [Stepper, StepList, StepPanels, StepPanel, StepItem, Step, StepperSeparator, SharedModule]
+  });
+  static \u0275inj = /* @__PURE__ */ \u0275\u0275defineInjector({
+    imports: [Stepper, StepList, StepPanels, StepPanel, StepItem, Step, StepperSeparator, SharedModule, SharedModule]
+  });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(StepperModule, [{
+    type: NgModule,
+    args: [{
+      imports: [Stepper, StepList, StepPanels, StepPanel, StepItem, Step, StepperSeparator, SharedModule],
+      exports: [Stepper, StepList, StepPanels, StepPanel, StepItem, Step, StepperSeparator, SharedModule]
+    }]
+  }], null, null);
+})();
+
+// node_modules/primeng/fesm2022/primeng-toggleswitch.mjs
+var _c015 = ["handle"];
+var _c114 = ["input"];
+var _c25 = (a0) => ({
+  checked: a0
+});
+function ToggleSwitch_Conditional_5_ng_container_0_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementContainer(0);
+  }
+}
+function ToggleSwitch_Conditional_5_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275template(0, ToggleSwitch_Conditional_5_ng_container_0_Template, 1, 0, "ng-container", 4);
+  }
+  if (rf & 2) {
+    const ctx_r1 = \u0275\u0275nextContext();
+    \u0275\u0275property("ngTemplateOutlet", ctx_r1.handleTemplate || ctx_r1._handleTemplate)("ngTemplateOutletContext", \u0275\u0275pureFunction1(2, _c25, ctx_r1.checked()));
+  }
+}
+var theme11 = ({
+  dt
+}) => `
+.p-toggleswitch {
+    display: inline-block;
+    width: ${dt("toggleswitch.width")};
+    height: ${dt("toggleswitch.height")};
+}
+
+.p-toggleswitch-input {
+    cursor: pointer;
+    appearance: none;
+    position: absolute;
+    top: 0;
+    inset-inline-start: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    z-index: 1;
+    outline: 0 none;
+    border-radius: ${dt("toggleswitch.border.radius")};
+}
+
+.p-toggleswitch-slider {
+    display: inline-block;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    border-width: ${dt("toggleswitch.border.width")};
+    border-style: solid;
+    border-color: ${dt("toggleswitch.border.color")};
+    background: ${dt("toggleswitch.background")};
+    transition: background ${dt("toggleswitch.transition.duration")}, color ${dt("toggleswitch.transition.duration")}, border-color ${dt("toggleswitch.transition.duration")}, outline-color ${dt("toggleswitch.transition.duration")}, box-shadow ${dt("toggleswitch.transition.duration")};
+    border-radius: ${dt("toggleswitch.border.radius")};
+    outline-color: transparent;
+    box-shadow: ${dt("toggleswitch.shadow")};
+}
+
+.p-toggleswitch-handle {
+    position: absolute;
+    top: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: ${dt("toggleswitch.handle.background")};
+    color: ${dt("toggleswitch.handle.color")};
+    width: ${dt("toggleswitch.handle.size")};
+    height: ${dt("toggleswitch.handle.size")};
+    inset-inline-start: ${dt("toggleswitch.gap")};
+    margin-block-start: calc(-1 * calc(${dt("toggleswitch.handle.size")} / 2));
+    border-radius: ${dt("toggleswitch.handle.border.radius")};
+    transition: background ${dt("toggleswitch.transition.duration")}, color ${dt("toggleswitch.transition.duration")}, inset-inline-start ${dt("toggleswitch.slide.duration")}, box-shadow ${dt("toggleswitch.slide.duration")};
+}
+
+.p-toggleswitch.p-toggleswitch-checked .p-toggleswitch-slider {
+    background: ${dt("toggleswitch.checked.background")};
+    border-color: ${dt("toggleswitch.checked.border.color")};
+}
+
+.p-toggleswitch.p-toggleswitch-checked .p-toggleswitch-handle {
+    background: ${dt("toggleswitch.handle.checked.background")};
+    color: ${dt("toggleswitch.handle.checked.color")};
+    inset-inline-start: calc(${dt("toggleswitch.width")} - calc(${dt("toggleswitch.handle.size")} + ${dt("toggleswitch.gap")}));
+}
+
+.p-toggleswitch:not(.p-disabled):has(.p-toggleswitch-input:hover) .p-toggleswitch-slider {
+    background: ${dt("toggleswitch.hover.background")};
+    border-color: ${dt("toggleswitch.hover.border.color")};
+}
+
+.p-toggleswitch:not(.p-disabled):has(.p-toggleswitch-input:hover) .p-toggleswitch-handle {
+    background: ${dt("toggleswitch.handle.hover.background")};
+    color: ${dt("toggleswitch.handle.hover.color")};
+}
+
+.p-toggleswitch:not(.p-disabled):has(.p-toggleswitch-input:hover).p-toggleswitch-checked .p-toggleswitch-slider {
+    background: ${dt("toggleswitch.checked.hover.background")};
+    border-color: ${dt("toggleswitch.checked.hover.border.color")};
+}
+
+.p-toggleswitch:not(.p-disabled):has(.p-toggleswitch-input:hover).p-toggleswitch-checked .p-toggleswitch-handle {
+    background: ${dt("toggleswitch.handle.checked.hover.background")};
+    color: ${dt("toggleswitch.handle.checked.hover.color")};
+}
+
+.p-toggleswitch:not(.p-disabled):has(.p-toggleswitch-input:focus-visible) .p-toggleswitch-slider {
+    box-shadow: ${dt("toggleswitch.focus.ring.shadow")};
+    outline: ${dt("toggleswitch.focus.ring.width")} ${dt("toggleswitch.focus.ring.style")} ${dt("toggleswitch.focus.ring.color")};
+    outline-offset: ${dt("toggleswitch.focus.ring.offset")};
+}
+
+.p-toggleswitch.p-invalid > .p-toggleswitch-slider {
+    border-color: ${dt("toggleswitch.invalid.border.color")};
+}
+
+.p-toggleswitch.p-disabled {
+    opacity: 1;
+}
+
+.p-toggleswitch.p-disabled .p-toggleswitch-slider {
+    background: ${dt("toggleswitch.disabled.background")};
+}
+
+.p-toggleswitch.p-disabled .p-toggleswitch-handle {
+    background: ${dt("toggleswitch.handle.disabled.background")};
+}
+
+/* For PrimeNG */
+
+p-toggleSwitch.ng-invalid.ng-dirty > .p-toggleswitch > .p-toggleswitch-slider,
+p-toggle-switch.ng-invalid.ng-dirty > .p-toggleswitch > .p-toggleswitch-slider,
+p-toggleswitch.ng-invalid.ng-dirty > .p-toggleswitch > .p-toggleswitch-slider {
+    border-color: ${dt("toggleswitch.invalid.border.color")};
+}`;
+var inlineStyles2 = {
+  root: {
+    position: "relative"
+  }
+};
+var classes11 = {
+  root: ({
+    instance
+  }) => ({
+    "p-toggleswitch p-component": true,
+    "p-toggleswitch-checked": instance.checked(),
+    "p-disabled": instance.disabled,
+    "p-invalid": instance.invalid
+  }),
+  input: "p-toggleswitch-input",
+  slider: "p-toggleswitch-slider",
+  handle: "p-toggleswitch-handle"
+};
+var ToggleSwitchStyle = class _ToggleSwitchStyle extends BaseStyle {
+  name = "toggleswitch";
+  theme = theme11;
+  classes = classes11;
+  inlineStyles = inlineStyles2;
+  static \u0275fac = /* @__PURE__ */ (() => {
+    let \u0275ToggleSwitchStyle_BaseFactory;
+    return function ToggleSwitchStyle_Factory(__ngFactoryType__) {
+      return (\u0275ToggleSwitchStyle_BaseFactory || (\u0275ToggleSwitchStyle_BaseFactory = \u0275\u0275getInheritedFactory(_ToggleSwitchStyle)))(__ngFactoryType__ || _ToggleSwitchStyle);
+    };
+  })();
+  static \u0275prov = /* @__PURE__ */ \u0275\u0275defineInjectable({
+    token: _ToggleSwitchStyle,
+    factory: _ToggleSwitchStyle.\u0275fac
+  });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(ToggleSwitchStyle, [{
+    type: Injectable
+  }], null, null);
+})();
+var ToggleSwitchClasses;
+(function(ToggleSwitchClasses2) {
+  ToggleSwitchClasses2["root"] = "p-toggleswitch";
+  ToggleSwitchClasses2["input"] = "p-toggleswitch-input";
+  ToggleSwitchClasses2["slider"] = "p-toggleswitch-slider";
+})(ToggleSwitchClasses || (ToggleSwitchClasses = {}));
+var TOGGLESWITCH_VALUE_ACCESSOR = {
+  provide: NG_VALUE_ACCESSOR,
+  useExisting: forwardRef(() => ToggleSwitch),
+  multi: true
+};
+var ToggleSwitch = class _ToggleSwitch extends BaseComponent {
+  /**
+   * Inline style of the component.
+   * @group Props
+   */
+  style;
+  /**
+   * Style class of the component.
+   * @group Props
+   */
+  styleClass;
+  /**
+   * Index of the element in tabbing order.
+   * @group Props
+   */
+  tabindex;
+  /**
+   * Identifier of the input element.
+   * @group Props
+   */
+  inputId;
+  /**
+   * Name of the input element.
+   * @group Props
+   */
+  name;
+  /**
+   * When present, it specifies that the element should be disabled.
+   * @group Props
+   */
+  disabled;
+  /**
+   * When present, it specifies that the component cannot be edited.
+   * @group Props
+   */
+  readonly;
+  /**
+   * Value in checked state.
+   * @group Props
+   */
+  trueValue = true;
+  /**
+   * Value in unchecked state.
+   * @group Props
+   */
+  falseValue = false;
+  /**
+   * Used to define a string that autocomplete attribute the current element.
+   * @group Props
+   */
+  ariaLabel;
+  /**
+   * Establishes relationships between the component and label(s) where its value should be one or more element IDs.
+   * @group Props
+   */
+  ariaLabelledBy;
+  /**
+   * When present, it specifies that the component should automatically get focus on load.
+   * @group Props
+   */
+  autofocus;
+  /**
+   * Callback to invoke when the on value change.
+   * @param {ToggleSwitchChangeEvent} event - Custom change event.
+   * @group Emits
+   */
+  onChange = new EventEmitter();
+  input;
+  /**
+   * Callback to invoke when the on value change.
+   * @type {TemplateRef<ToggleSwitchHandleTemplateContext>} context - Context of the template
+   * @example
+   * ```html
+   * <ng-template #handle let-checked="checked"> </ng-template>
+   * ```
+   * @see {@link ToggleSwitchHandleTemplateContext}
+   * @group Templates
+   */
+  handleTemplate;
+  _handleTemplate;
+  modelValue = false;
+  focused = false;
+  onModelChange = () => {
+  };
+  onModelTouched = () => {
+  };
+  _componentStyle = inject(ToggleSwitchStyle);
+  templates;
+  ngAfterContentInit() {
+    this.templates.forEach((item) => {
+      switch (item.getType()) {
+        case "handle":
+          this._handleTemplate = item.template;
+          break;
+        default:
+          this._handleTemplate = item.template;
+          break;
+      }
+    });
+  }
+  onClick(event) {
+    if (!this.disabled && !this.readonly) {
+      this.modelValue = this.checked() ? this.falseValue : this.trueValue;
+      this.onModelChange(this.modelValue);
+      this.onChange.emit({
+        originalEvent: event,
+        checked: this.modelValue
+      });
+      this.input.nativeElement.focus();
+    }
+  }
+  onFocus() {
+    this.focused = true;
+  }
+  onBlur() {
+    this.focused = false;
+    this.onModelTouched();
+  }
+  writeValue(value) {
+    this.modelValue = value;
+    this.cd.markForCheck();
+  }
+  registerOnChange(fn) {
+    this.onModelChange = fn;
+  }
+  registerOnTouched(fn) {
+    this.onModelTouched = fn;
+  }
+  setDisabledState(val) {
+    this.disabled = val;
+    this.cd.markForCheck();
+  }
+  checked() {
+    return this.modelValue === this.trueValue;
+  }
+  static \u0275fac = /* @__PURE__ */ (() => {
+    let \u0275ToggleSwitch_BaseFactory;
+    return function ToggleSwitch_Factory(__ngFactoryType__) {
+      return (\u0275ToggleSwitch_BaseFactory || (\u0275ToggleSwitch_BaseFactory = \u0275\u0275getInheritedFactory(_ToggleSwitch)))(__ngFactoryType__ || _ToggleSwitch);
+    };
+  })();
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({
+    type: _ToggleSwitch,
+    selectors: [["p-toggleswitch"], ["p-toggleSwitch"], ["p-toggle-switch"]],
+    contentQueries: function ToggleSwitch_ContentQueries(rf, ctx, dirIndex) {
+      if (rf & 1) {
+        \u0275\u0275contentQuery(dirIndex, _c015, 4);
+        \u0275\u0275contentQuery(dirIndex, PrimeTemplate, 4);
+      }
+      if (rf & 2) {
+        let _t;
+        \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx.handleTemplate = _t.first);
+        \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx.templates = _t);
+      }
+    },
+    viewQuery: function ToggleSwitch_Query(rf, ctx) {
+      if (rf & 1) {
+        \u0275\u0275viewQuery(_c114, 5);
+      }
+      if (rf & 2) {
+        let _t;
+        \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx.input = _t.first);
+      }
+    },
+    inputs: {
+      style: "style",
+      styleClass: "styleClass",
+      tabindex: [2, "tabindex", "tabindex", numberAttribute],
+      inputId: "inputId",
+      name: "name",
+      disabled: [2, "disabled", "disabled", booleanAttribute],
+      readonly: [2, "readonly", "readonly", booleanAttribute],
+      trueValue: "trueValue",
+      falseValue: "falseValue",
+      ariaLabel: "ariaLabel",
+      ariaLabelledBy: "ariaLabelledBy",
+      autofocus: [2, "autofocus", "autofocus", booleanAttribute]
+    },
+    outputs: {
+      onChange: "onChange"
+    },
+    features: [\u0275\u0275ProvidersFeature([TOGGLESWITCH_VALUE_ACCESSOR, ToggleSwitchStyle]), \u0275\u0275InheritDefinitionFeature],
+    decls: 6,
+    vars: 23,
+    consts: [["input", ""], [3, "click", "ngClass", "ngStyle"], ["type", "checkbox", "role", "switch", 3, "focus", "blur", "ngClass", "checked", "disabled", "pAutoFocus"], [3, "ngClass"], [4, "ngTemplateOutlet", "ngTemplateOutletContext"]],
+    template: function ToggleSwitch_Template(rf, ctx) {
+      if (rf & 1) {
+        const _r1 = \u0275\u0275getCurrentView();
+        \u0275\u0275elementStart(0, "div", 1);
+        \u0275\u0275listener("click", function ToggleSwitch_Template_div_click_0_listener($event) {
+          \u0275\u0275restoreView(_r1);
+          return \u0275\u0275resetView(ctx.onClick($event));
+        });
+        \u0275\u0275elementStart(1, "input", 2, 0);
+        \u0275\u0275listener("focus", function ToggleSwitch_Template_input_focus_1_listener() {
+          \u0275\u0275restoreView(_r1);
+          return \u0275\u0275resetView(ctx.onFocus());
+        })("blur", function ToggleSwitch_Template_input_blur_1_listener() {
+          \u0275\u0275restoreView(_r1);
+          return \u0275\u0275resetView(ctx.onBlur());
+        });
+        \u0275\u0275elementEnd();
+        \u0275\u0275elementStart(3, "span", 3)(4, "div", 3);
+        \u0275\u0275template(5, ToggleSwitch_Conditional_5_Template, 1, 4, "ng-container");
+        \u0275\u0275elementEnd()()();
+      }
+      if (rf & 2) {
+        \u0275\u0275styleMap(ctx.sx("root"));
+        \u0275\u0275classMap(ctx.styleClass);
+        \u0275\u0275property("ngClass", ctx.cx("root"))("ngStyle", ctx.style);
+        \u0275\u0275attribute("data-pc-name", "toggleswitch")("data-pc-section", "root");
+        \u0275\u0275advance();
+        \u0275\u0275property("ngClass", ctx.cx("input"))("checked", ctx.checked())("disabled", ctx.disabled)("pAutoFocus", ctx.autofocus);
+        \u0275\u0275attribute("id", ctx.inputId)("aria-checked", ctx.checked())("aria-labelledby", ctx.ariaLabelledBy)("aria-label", ctx.ariaLabel)("name", ctx.name)("tabindex", ctx.tabindex)("data-pc-section", "hiddenInput");
+        \u0275\u0275advance(2);
+        \u0275\u0275property("ngClass", ctx.cx("slider"));
+        \u0275\u0275attribute("data-pc-section", "slider");
+        \u0275\u0275advance();
+        \u0275\u0275property("ngClass", ctx.cx("handle"));
+        \u0275\u0275advance();
+        \u0275\u0275conditional(ctx.handleTemplate || ctx._handleTemplate ? 5 : -1);
+      }
+    },
+    dependencies: [CommonModule, NgClass, NgTemplateOutlet, NgStyle, AutoFocus, SharedModule],
+    encapsulation: 2,
+    changeDetection: 0
+  });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(ToggleSwitch, [{
+    type: Component,
+    args: [{
+      selector: "p-toggleswitch, p-toggleSwitch, p-toggle-switch",
+      standalone: true,
+      imports: [CommonModule, AutoFocus, SharedModule],
+      template: `
+        <div [ngClass]="cx('root')" [style]="sx('root')" [ngStyle]="style" [class]="styleClass" (click)="onClick($event)" [attr.data-pc-name]="'toggleswitch'" [attr.data-pc-section]="'root'">
+            <input
+                #input
+                [attr.id]="inputId"
+                type="checkbox"
+                role="switch"
+                [ngClass]="cx('input')"
+                [checked]="checked()"
+                [disabled]="disabled"
+                [attr.aria-checked]="checked()"
+                [attr.aria-labelledby]="ariaLabelledBy"
+                [attr.aria-label]="ariaLabel"
+                [attr.name]="name"
+                [attr.tabindex]="tabindex"
+                (focus)="onFocus()"
+                (blur)="onBlur()"
+                [attr.data-pc-section]="'hiddenInput'"
+                [pAutoFocus]="autofocus"
+            />
+            <span [ngClass]="cx('slider')" [attr.data-pc-section]="'slider'">
+                <div [ngClass]="cx('handle')">
+                    @if (handleTemplate || _handleTemplate) {
+                        <ng-container *ngTemplateOutlet="handleTemplate || _handleTemplate; context: { checked: checked() }" />
+                    }
+                </div>
+            </span>
+        </div>
+    `,
+      providers: [TOGGLESWITCH_VALUE_ACCESSOR, ToggleSwitchStyle],
+      changeDetection: ChangeDetectionStrategy.OnPush,
+      encapsulation: ViewEncapsulation.None
+    }]
+  }], null, {
+    style: [{
+      type: Input
+    }],
+    styleClass: [{
+      type: Input
+    }],
+    tabindex: [{
+      type: Input,
+      args: [{
+        transform: numberAttribute
+      }]
+    }],
+    inputId: [{
+      type: Input
+    }],
+    name: [{
+      type: Input
+    }],
+    disabled: [{
+      type: Input,
+      args: [{
+        transform: booleanAttribute
+      }]
+    }],
+    readonly: [{
+      type: Input,
+      args: [{
+        transform: booleanAttribute
+      }]
+    }],
+    trueValue: [{
+      type: Input
+    }],
+    falseValue: [{
+      type: Input
+    }],
+    ariaLabel: [{
+      type: Input
+    }],
+    ariaLabelledBy: [{
+      type: Input
+    }],
+    autofocus: [{
+      type: Input,
+      args: [{
+        transform: booleanAttribute
+      }]
+    }],
+    onChange: [{
+      type: Output
+    }],
+    input: [{
+      type: ViewChild,
+      args: ["input"]
+    }],
+    handleTemplate: [{
+      type: ContentChild,
+      args: ["handle", {
+        descendants: false
+      }]
+    }],
+    templates: [{
+      type: ContentChildren,
+      args: [PrimeTemplate]
+    }]
+  });
+})();
+var ToggleSwitchModule = class _ToggleSwitchModule {
+  static \u0275fac = function ToggleSwitchModule_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _ToggleSwitchModule)();
+  };
+  static \u0275mod = /* @__PURE__ */ \u0275\u0275defineNgModule({
+    type: _ToggleSwitchModule,
+    imports: [ToggleSwitch, SharedModule],
+    exports: [ToggleSwitch, SharedModule]
+  });
+  static \u0275inj = /* @__PURE__ */ \u0275\u0275defineInjector({
+    imports: [ToggleSwitch, SharedModule, SharedModule]
+  });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(ToggleSwitchModule, [{
+    type: NgModule,
+    args: [{
+      imports: [ToggleSwitch, SharedModule],
+      exports: [ToggleSwitch, SharedModule]
+    }]
+  }], null, null);
+})();
+
 // src/app/views/ia-assistant/components/link-list.component.ts
 function LinkListComponent_ng_container_0_div_4_p_iftalabel_1_Template(rf, ctx) {
   if (rf & 1) {
@@ -24698,61 +26240,439 @@ var LinkListComponent = class _LinkListComponent {
 })();
 
 // src/app/views/ia-assistant/ia-assistant.component.ts
-function IaAssistantComponent_ng_template_15_Template(rf, ctx) {
+function IaAssistantComponent_ng_template_16_p_table_9_ng_template_1_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "tr")(1, "th");
+    \u0275\u0275text(2, "Production URL");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(3, "th");
+    \u0275\u0275text(4, "Prototype URL");
+    \u0275\u0275elementEnd()();
+  }
+}
+function IaAssistantComponent_ng_template_16_p_table_9_ng_template_3_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "tr")(1, "td");
+    \u0275\u0275text(2);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(3, "td");
+    \u0275\u0275text(4);
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    const url_r4 = ctx.$implicit;
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(url_r4.production.href);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(url_r4.prototype == null ? null : url_r4.prototype.href);
+  }
+}
+function IaAssistantComponent_ng_template_16_p_table_9_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "p-table", 21);
+    \u0275\u0275template(1, IaAssistantComponent_ng_template_16_p_table_9_ng_template_1_Template, 5, 0, "ng-template", null, 1, \u0275\u0275templateRefExtractor)(3, IaAssistantComponent_ng_template_16_p_table_9_ng_template_3_Template, 5, 2, "ng-template", null, 2, \u0275\u0275templateRefExtractor);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r2 = \u0275\u0275nextContext(2);
+    \u0275\u0275property("value", ctx_r2.urlPairs)("scrollable", true);
+  }
+}
+function IaAssistantComponent_ng_template_16_p_chip_22_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r5 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "p-chip", 22);
+    \u0275\u0275listener("onRemove", function IaAssistantComponent_ng_template_16_p_chip_22_Template_p_chip_onRemove_0_listener() {
+      const term_r6 = \u0275\u0275restoreView(_r5).$implicit;
+      const ctx_r2 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r2.removeTerm(term_r6));
+    });
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const term_r6 = ctx.$implicit;
+    const ctx_r2 = \u0275\u0275nextContext(2);
+    \u0275\u0275property("label", term_r6.toString())("styleClass", ctx_r2.isRegex(term_r6) ? "bg-blue-100" : "bg-green-100")("removable", true);
+  }
+}
+function IaAssistantComponent_ng_template_16_p_button_24_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r7 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "p-button", 23);
+    \u0275\u0275listener("onClick", function IaAssistantComponent_ng_template_16_p_button_24_Template_p_button_onClick_0_listener() {
+      \u0275\u0275restoreView(_r7);
+      const ctx_r2 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r2.urlPairs = []);
+    });
+    \u0275\u0275elementEnd();
+  }
+}
+function IaAssistantComponent_ng_template_16_p_button_25_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r8 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "p-button", 24);
+    \u0275\u0275listener("onClick", function IaAssistantComponent_ng_template_16_p_button_25_Template_p_button_onClick_0_listener() {
+      \u0275\u0275restoreView(_r8);
+      const activateCallback_r9 = \u0275\u0275nextContext().activateCallback;
+      const ctx_r2 = \u0275\u0275nextContext();
+      ctx_r2.validateUrlPairs();
+      return \u0275\u0275resetView(activateCallback_r9(2));
+    });
+    \u0275\u0275elementEnd();
+  }
+}
+function IaAssistantComponent_ng_template_16_p_button_26_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r10 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "p-button", 25);
+    \u0275\u0275listener("onClick", function IaAssistantComponent_ng_template_16_p_button_26_Template_p_button_onClick_0_listener() {
+      \u0275\u0275restoreView(_r10);
+      const activateCallback_r9 = \u0275\u0275nextContext().activateCallback;
+      return \u0275\u0275resetView(activateCallback_r9(2));
+    });
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r2 = \u0275\u0275nextContext(2);
+    \u0275\u0275property("disabled", ctx_r2.urlPairs.length === 0);
+  }
+}
+function IaAssistantComponent_ng_template_16_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r2 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 7)(1, "h2", 8);
+    \u0275\u0275text(2, "Canada.ca URLs");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(3, "p", 9);
+    \u0275\u0275text(4, "Paste some relevant Canada.ca URLs to get started. These links will be crawled to find any child pages to include in your inventory. Each link should begin on a new line. If you have prototype links, you can paste both columns or separate them with a comma or semicolon.");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(5, "p-iftalabel")(6, "textarea", 10);
+    \u0275\u0275twoWayListener("ngModelChange", function IaAssistantComponent_ng_template_16_Template_textarea_ngModelChange_6_listener($event) {
+      \u0275\u0275restoreView(_r2);
+      const ctx_r2 = \u0275\u0275nextContext();
+      \u0275\u0275twoWayBindingSet(ctx_r2.rawUrls, $event) || (ctx_r2.rawUrls = $event);
+      return \u0275\u0275resetView($event);
+    });
+    \u0275\u0275listener("blur", function IaAssistantComponent_ng_template_16_Template_textarea_blur_6_listener() {
+      \u0275\u0275restoreView(_r2);
+      const ctx_r2 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r2.setUrlPairs());
+    })("paste", function IaAssistantComponent_ng_template_16_Template_textarea_paste_6_listener() {
+      \u0275\u0275restoreView(_r2);
+      const ctx_r2 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r2.onPasteUrls());
+    });
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(7, "label", 11);
+    \u0275\u0275text(8, "URLs");
+    \u0275\u0275elementEnd()();
+    \u0275\u0275template(9, IaAssistantComponent_ng_template_16_p_table_9_Template, 5, 2, "p-table", 12);
+    \u0275\u0275elementStart(10, "h2", 8);
+    \u0275\u0275text(11, "Search criteria");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(12, "p", 9);
+    \u0275\u0275text(13, 'Enter terms separated by commas, semicolons or new lines. These will be used to include additional pages in your result, even if there is no direct breadcrumb IA relationship between the pages. Regex patterns should begin with "regex:". The search is ');
+    \u0275\u0275elementStart(14, "strong");
+    \u0275\u0275text(15, "not");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(16, " case-sensitive.");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(17, "p-iftalabel")(18, "textarea", 13);
+    \u0275\u0275twoWayListener("ngModelChange", function IaAssistantComponent_ng_template_16_Template_textarea_ngModelChange_18_listener($event) {
+      \u0275\u0275restoreView(_r2);
+      const ctx_r2 = \u0275\u0275nextContext();
+      \u0275\u0275twoWayBindingSet(ctx_r2.rawTerms, $event) || (ctx_r2.rawTerms = $event);
+      return \u0275\u0275resetView($event);
+    });
+    \u0275\u0275listener("blur", function IaAssistantComponent_ng_template_16_Template_textarea_blur_18_listener() {
+      \u0275\u0275restoreView(_r2);
+      const ctx_r2 = \u0275\u0275nextContext();
+      ctx_r2.updateTerms();
+      return \u0275\u0275resetView(ctx_r2.updateRawTerms());
+    })("keydown", function IaAssistantComponent_ng_template_16_Template_textarea_keydown_18_listener($event) {
+      \u0275\u0275restoreView(_r2);
+      const ctx_r2 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r2.onKeydownTerm($event));
+    })("paste", function IaAssistantComponent_ng_template_16_Template_textarea_paste_18_listener() {
+      \u0275\u0275restoreView(_r2);
+      const ctx_r2 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r2.onPasteTerm());
+    });
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(19, "label", 14);
+    \u0275\u0275text(20, "Search terms (optional)");
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(21, "div", 15);
+    \u0275\u0275template(22, IaAssistantComponent_ng_template_16_p_chip_22_Template, 1, 3, "p-chip", 16);
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(23, "div", 17);
+    \u0275\u0275template(24, IaAssistantComponent_ng_template_16_p_button_24_Template, 1, 0, "p-button", 18)(25, IaAssistantComponent_ng_template_16_p_button_25_Template, 1, 0, "p-button", 19)(26, IaAssistantComponent_ng_template_16_p_button_26_Template, 1, 1, "p-button", 20);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r2 = \u0275\u0275nextContext();
+    \u0275\u0275advance(6);
+    \u0275\u0275twoWayProperty("ngModel", ctx_r2.rawUrls);
+    \u0275\u0275advance(3);
+    \u0275\u0275property("ngIf", ctx_r2.includePrototypeLinks);
+    \u0275\u0275advance(9);
+    \u0275\u0275twoWayProperty("ngModel", ctx_r2.rawTerms);
+    \u0275\u0275advance(4);
+    \u0275\u0275property("ngForOf", ctx_r2.terms);
+    \u0275\u0275advance(2);
+    \u0275\u0275property("ngIf", ctx_r2.urlPairs.length > 0 && ctx_r2.checkingUrls.length === 0);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r2.checkingUrls.length > 0);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r2.checkingUrls.length === 0);
+  }
+}
+function IaAssistantComponent_ng_template_19_ng_container_1_h2_1_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "h2");
+    \u0275\u0275text(1, "Validating links");
+    \u0275\u0275elementEnd();
+  }
+}
+function IaAssistantComponent_ng_template_19_ng_container_1_h2_2_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "h2");
+    \u0275\u0275text(1, "Validated links");
+    \u0275\u0275elementEnd();
+  }
+}
+function IaAssistantComponent_ng_template_19_ng_container_1_ng_template_4_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "span");
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const ctx_r1 = \u0275\u0275nextContext();
+    const ctx_r2 = \u0275\u0275nextContext(3);
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate2("", ctx_r1.urlChecked, "/", ctx_r1.urlTotal, "");
+    \u0275\u0275textInterpolate2("", ctx_r2.urlChecked, "/", ctx_r2.urlTotal, "");
   }
 }
-function IaAssistantComponent_ng_container_20_Template(rf, ctx) {
+function IaAssistantComponent_ng_template_19_ng_container_1_div_6_ng_container_1_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementContainerStart(0);
-    \u0275\u0275elementStart(1, "p-chip", 11);
-    \u0275\u0275element(2, "i", 12);
+    \u0275\u0275elementStart(1, "p-chip", 36);
+    \u0275\u0275element(2, "i", 37);
     \u0275\u0275elementStart(3, "span");
     \u0275\u0275text(4);
     \u0275\u0275elementEnd()();
     \u0275\u0275elementContainerEnd();
   }
   if (rf & 2) {
-    const url_r3 = ctx.$implicit;
+    const url_r12 = ctx.$implicit;
     \u0275\u0275advance(4);
-    \u0275\u0275textInterpolate(url_r3.href);
+    \u0275\u0275textInterpolate(url_r12.href);
   }
 }
-function IaAssistantComponent_ng_container_24_li_4_Template(rf, ctx) {
+function IaAssistantComponent_ng_template_19_ng_container_1_div_6_ng_container_2_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "li");
-    \u0275\u0275text(1);
+    \u0275\u0275elementContainerStart(0);
+    \u0275\u0275elementStart(1, "p-chip", 38);
+    \u0275\u0275element(2, "i", 37);
+    \u0275\u0275elementStart(3, "span");
+    \u0275\u0275text(4);
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementContainerEnd();
+  }
+  if (rf & 2) {
+    const url_r13 = ctx.$implicit;
+    \u0275\u0275advance(4);
+    \u0275\u0275textInterpolate(url_r13.href);
+  }
+}
+function IaAssistantComponent_ng_template_19_ng_container_1_div_6_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 34);
+    \u0275\u0275template(1, IaAssistantComponent_ng_template_19_ng_container_1_div_6_ng_container_1_Template, 5, 1, "ng-container", 35)(2, IaAssistantComponent_ng_template_19_ng_container_1_div_6_ng_container_2_Template, 5, 1, "ng-container", 35);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const url_r4 = ctx.$implicit;
+    const ctx_r2 = \u0275\u0275nextContext(3);
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate(url_r4.href);
+    \u0275\u0275property("ngForOf", ctx_r2.checkingUrls);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngForOf", ctx_r2.checkingProtoUrls);
   }
 }
-function IaAssistantComponent_ng_container_24_Template(rf, ctx) {
+function IaAssistantComponent_ng_template_19_ng_container_1_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementContainerStart(0);
-    \u0275\u0275elementStart(1, "h2", 13);
+    \u0275\u0275template(1, IaAssistantComponent_ng_template_19_ng_container_1_h2_1_Template, 2, 0, "h2", 26)(2, IaAssistantComponent_ng_template_19_ng_container_1_h2_2_Template, 2, 0, "h2", 26);
+    \u0275\u0275elementStart(3, "p-progressbar", 6);
+    \u0275\u0275template(4, IaAssistantComponent_ng_template_19_ng_container_1_ng_template_4_Template, 2, 2, "ng-template", null, 0, \u0275\u0275templateRefExtractor);
+    \u0275\u0275elementEnd();
+    \u0275\u0275template(6, IaAssistantComponent_ng_template_19_ng_container_1_div_6_Template, 3, 2, "div", 33);
+    \u0275\u0275elementContainerEnd();
+  }
+  if (rf & 2) {
+    const ctx_r2 = \u0275\u0275nextContext(2);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r2.checkingUrls.length > 0);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r2.checkingUrls.length === 0);
+    \u0275\u0275advance();
+    \u0275\u0275property("value", ctx_r2.urlPercent);
+    \u0275\u0275advance(3);
+    \u0275\u0275property("ngIf", ctx_r2.checkingUrls.length > 0 || ctx_r2.checkingProtoUrls.length > 0);
+  }
+}
+function IaAssistantComponent_ng_template_19_ca_link_list_3_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r14 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "ca-link-list", 39);
+    \u0275\u0275listener("approve", function IaAssistantComponent_ng_template_19_ca_link_list_3_Template_ca_link_list_approve_0_listener($event) {
+      \u0275\u0275restoreView(_r14);
+      const ctx_r2 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r2.approve($event.url, $event.event));
+    })("remove", function IaAssistantComponent_ng_template_19_ca_link_list_3_Template_ca_link_list_remove_0_listener($event) {
+      \u0275\u0275restoreView(_r14);
+      const ctx_r2 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r2.remove($event));
+    });
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r2 = \u0275\u0275nextContext(2);
+    \u0275\u0275property("links", ctx_r2.badUrls);
+  }
+}
+function IaAssistantComponent_ng_template_19_ca_link_list_4_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r15 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "ca-link-list", 40);
+    \u0275\u0275listener("approve", function IaAssistantComponent_ng_template_19_ca_link_list_4_Template_ca_link_list_approve_0_listener($event) {
+      \u0275\u0275restoreView(_r15);
+      const ctx_r2 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r2.approve($event.url, $event.event));
+    })("remove", function IaAssistantComponent_ng_template_19_ca_link_list_4_Template_ca_link_list_remove_0_listener($event) {
+      \u0275\u0275restoreView(_r15);
+      const ctx_r2 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r2.remove($event));
+    });
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r2 = \u0275\u0275nextContext(2);
+    \u0275\u0275property("links", ctx_r2.redirectedUrls);
+  }
+}
+function IaAssistantComponent_ng_template_19_ca_link_list_5_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r16 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "ca-link-list", 41);
+    \u0275\u0275listener("approve", function IaAssistantComponent_ng_template_19_ca_link_list_5_Template_ca_link_list_approve_0_listener($event) {
+      \u0275\u0275restoreView(_r16);
+      const ctx_r2 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r2.approve($event.url, $event.event));
+    })("remove", function IaAssistantComponent_ng_template_19_ca_link_list_5_Template_ca_link_list_remove_0_listener($event) {
+      \u0275\u0275restoreView(_r16);
+      const ctx_r2 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r2.remove($event));
+    });
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r2 = \u0275\u0275nextContext(2);
+    \u0275\u0275property("links", ctx_r2.blockedUrls);
+  }
+}
+function IaAssistantComponent_ng_template_19_ng_container_6_li_4_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "li");
+    \u0275\u0275element(1, "i", 44);
+    \u0275\u0275text(2);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const url_r17 = ctx.$implicit;
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(url_r17.href);
+  }
+}
+function IaAssistantComponent_ng_template_19_ng_container_6_li_5_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "li");
+    \u0275\u0275element(1, "i", 45);
+    \u0275\u0275text(2);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const url_r18 = ctx.$implicit;
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(url_r18.href);
+  }
+}
+function IaAssistantComponent_ng_template_19_ng_container_6_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementContainerStart(0);
+    \u0275\u0275elementStart(1, "h2", 42);
     \u0275\u0275text(2, "Valid links");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "ul", 14);
-    \u0275\u0275template(4, IaAssistantComponent_ng_container_24_li_4_Template, 2, 1, "li", 6);
+    \u0275\u0275elementStart(3, "ul", 43);
+    \u0275\u0275template(4, IaAssistantComponent_ng_template_19_ng_container_6_li_4_Template, 3, 1, "li", 35)(5, IaAssistantComponent_ng_template_19_ng_container_6_li_5_Template, 3, 1, "li", 35);
     \u0275\u0275elementEnd();
     \u0275\u0275elementContainerEnd();
   }
   if (rf & 2) {
-    const ctx_r1 = \u0275\u0275nextContext();
+    const ctx_r2 = \u0275\u0275nextContext(2);
     \u0275\u0275advance(4);
-    \u0275\u0275property("ngForOf", ctx_r1.okUrls);
+    \u0275\u0275property("ngForOf", ctx_r2.okUrls);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngForOf", ctx_r2.okProtoUrls);
+  }
+}
+function IaAssistantComponent_ng_template_19_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r11 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 7);
+    \u0275\u0275template(1, IaAssistantComponent_ng_template_19_ng_container_1_Template, 7, 4, "ng-container", 26);
+    \u0275\u0275element(2, "p-confirmpopup");
+    \u0275\u0275template(3, IaAssistantComponent_ng_template_19_ca_link_list_3_Template, 1, 1, "ca-link-list", 27)(4, IaAssistantComponent_ng_template_19_ca_link_list_4_Template, 1, 1, "ca-link-list", 28)(5, IaAssistantComponent_ng_template_19_ca_link_list_5_Template, 1, 1, "ca-link-list", 29)(6, IaAssistantComponent_ng_template_19_ng_container_6_Template, 6, 2, "ng-container", 26);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(7, "div", 30)(8, "p-button", 31);
+    \u0275\u0275listener("onClick", function IaAssistantComponent_ng_template_19_Template_p_button_onClick_8_listener() {
+      const activateCallback_r19 = \u0275\u0275restoreView(_r11).activateCallback;
+      return \u0275\u0275resetView(activateCallback_r19(1));
+    });
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(9, "p-button", 32);
+    \u0275\u0275listener("onClick", function IaAssistantComponent_ng_template_19_Template_p_button_onClick_9_listener() {
+      const activateCallback_r19 = \u0275\u0275restoreView(_r11).activateCallback;
+      return \u0275\u0275resetView(activateCallback_r19(3));
+    });
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    const ctx_r2 = \u0275\u0275nextContext();
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r2.urlPairs.length > 0);
+    \u0275\u0275advance(2);
+    \u0275\u0275property("ngIf", ctx_r2.badUrls.length > 0);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r2.redirectedUrls.length > 0);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r2.blockedUrls.length > 0);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r2.okUrls.length);
+  }
+}
+function IaAssistantComponent_ng_template_22_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r20 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 7);
+    \u0275\u0275text(1, " To do: set up progress bars & fxns for checking relationship between pasted links, crawling root URLs to create IA tree, & referring link/search term/url structure crawl (for unique links that aren't in the IA tree) ");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(2, "div", 46)(3, "p-button", 31);
+    \u0275\u0275listener("onClick", function IaAssistantComponent_ng_template_22_Template_p_button_onClick_3_listener() {
+      const activateCallback_r21 = \u0275\u0275restoreView(_r20).activateCallback;
+      return \u0275\u0275resetView(activateCallback_r21(2));
+    });
+    \u0275\u0275elementEnd()();
   }
 }
 var IaAssistantComponent = class _IaAssistantComponent {
@@ -24760,9 +26680,64 @@ var IaAssistantComponent = class _IaAssistantComponent {
   constructor(confirmationService) {
     this.confirmationService = confirmationService;
   }
+  //Step
+  activeStep = 1;
+  /****************
+   * SEARCH TERMS *
+   ****************/
+  rawTerms = "";
+  terms = [];
+  updateTerms() {
+    this.terms = this.rawTerms.split(/[,\n;\t]+/).map((term) => term.trim()).filter(Boolean).map((term) => {
+      if (term.startsWith("regex:")) {
+        const pattern = term.slice(6);
+        return new RegExp(pattern, "smi");
+      } else
+        return term.toLowerCase();
+    });
+    this.terms = Array.from(new Set(this.terms));
+  }
+  updateRawTerms() {
+    this.rawTerms = this.terms.map((term) => {
+      if (term instanceof RegExp) {
+        return `regex:${term.source}`;
+      } else {
+        return term;
+      }
+    }).join(", ");
+  }
+  onKeydownTerm(event) {
+    if (event.key === "," || event.key === ";" || event.key === "Enter" || event.key === "Tab") {
+      this.updateTerms();
+    }
+  }
+  onPasteTerm() {
+    setTimeout(() => this.updateTerms(), 0);
+  }
+  removeTerm(term) {
+    this.terms = this.terms.filter((t2) => t2 !== term);
+    console.log(this.terms);
+    this.updateRawTerms();
+  }
+  isRegex(term) {
+    return term instanceof RegExp;
+  }
+  /****************
+   *     URLS     *
+   ****************/
   rawUrls = "";
-  urls = [];
-  //Block unknown hosts
+  urlPairs = [];
+  includePrototypeLinks = false;
+  //for progress bar
+  urlTotal = 0;
+  urlChecked = 0;
+  urlPercent = 0;
+  resetProgress() {
+    this.urlTotal = this.urlPairs.length + this.urlPairs.filter((p2) => p2.prototype).length;
+    this.urlChecked = 0;
+    this.urlPercent = 0;
+  }
+  //Block unknown hosts <-- will probably separate canada.ca from GitHub repos so that only Canada.ca is crawled for the IA tree
   allowedHosts = /* @__PURE__ */ new Set([
     "cra-design.github.io",
     "cra-proto.github.io",
@@ -24770,38 +26745,30 @@ var IaAssistantComponent = class _IaAssistantComponent {
     "test.canada.ca",
     "www.canada.ca"
   ]);
-  //for progress bar
-  urlTotal = 0;
-  urlChecked = 0;
-  urlPercent = 0;
-  validateUrls() {
-    return __async(this, null, function* () {
-      const rawLinks = this.rawUrls.split(/\r?\n/).map((url) => url.trim().toLowerCase()).filter(Boolean);
-      const uniqueLinks = Array.from(new Set(rawLinks));
-      this.urls = uniqueLinks.map((url) => ({ href: url, status: "checking" }));
-      this.urlTotal = this.urls.length;
-      this.urlChecked = 0;
-      this.urlPercent = 0;
-      const urlsToCheck = this.urls.map((url) => this.checkStatus(url).finally(() => {
-        this.urlChecked++;
-        this.urlPercent = this.urlChecked / this.urlTotal * 100;
-      }));
-      yield Promise.all(urlsToCheck);
-      yield new Promise((resolve) => setTimeout(resolve, 1e3));
-      this.urlChecked -= this.badUrls.length;
-      for (const badUrl of this.badUrls) {
-        badUrl.status = "checking";
-        this.checkStatus(badUrl).finally(() => {
-          this.urlChecked++;
-          this.urlPercent = this.urlChecked / this.urlTotal * 100;
-        });
-      }
+  /*** Set URL pairs from user input & boolean if any prototypes were included ***/
+  setUrlPairs() {
+    this.urlPairs = this.rawUrls.split(/\r?\n/).map((line) => line.trim().toLowerCase()).filter(Boolean).map((line) => {
+      const [prod, proto] = line.split(/[\t,; ]+/);
+      const production = {
+        href: prod?.trim() || "",
+        status: "checking"
+      };
+      const prototype = proto ? { href: proto.trim(), status: "checking" } : void 0;
+      return { production, prototype };
     });
+    this.urlPairs = Array.from(new Map(this.urlPairs.map((p2) => [p2.production.href, p2])).values());
+    this.includePrototypeLinks = this.urlPairs.some((p2) => p2.prototype && p2.prototype.href !== "");
   }
+  onPasteUrls() {
+    setTimeout(() => this.setUrlPairs(), 0);
+  }
+  /*** Validate a single URL item ***/
   checkStatus(link) {
     return __async(this, null, function* () {
       try {
-        yield new Promise((resolve) => setTimeout(resolve, 500 + Math.random() * 1e3));
+        if (!environment.production) {
+          yield new Promise((resolve) => setTimeout(resolve, 500 + Math.random() * 1e3));
+        }
         const url = new URL(link.href);
         if (!this.allowedHosts.has(url.host)) {
           link.status = "blocked";
@@ -24822,31 +26789,80 @@ var IaAssistantComponent = class _IaAssistantComponent {
       }
     });
   }
+  /*** Validate a URL item array (half of the URL pair) ***/
+  validateUrlItems(urls) {
+    return __async(this, null, function* () {
+      const urlsToCheck = urls.map((url) => this.checkStatus(url).finally(() => {
+        this.urlChecked++;
+        this.urlPercent = this.urlChecked / this.urlTotal * 100;
+      }));
+      yield Promise.all(urlsToCheck);
+      yield new Promise((resolve) => setTimeout(resolve, 100));
+      const badUrls = urls.filter((url) => url.status === "bad");
+      badUrls.forEach((badUrl) => badUrl.status = "checking");
+      this.urlChecked -= badUrls.length;
+      const urlsToRecheck = badUrls.map((badUrl) => this.checkStatus(badUrl).finally(() => {
+        this.urlChecked++;
+        this.urlPercent = this.urlChecked / this.urlTotal * 100;
+      }));
+      yield Promise.all(urlsToRecheck);
+    });
+  }
+  /*** Validate URL pairs ***/
+  validateUrlPairs() {
+    return __async(this, null, function* () {
+      if (!this.urlPairs?.length)
+        return;
+      this.resetProgress();
+      yield this.validateUrlItems(this.urlPairs.map((p2) => p2.production));
+      if (this.includePrototypeLinks) {
+        yield this.validateUrlItems(this.urlPairs.map((p2) => p2.prototype).filter((p2) => !!p2));
+      }
+      this.goToStep3();
+    });
+  }
+  /*** Advance to step 3 if all URLs are good ***/
+  goToStep3() {
+    console.log(`Checking: ${this.checkingUrls.length}
+Bad: ${this.badUrls.length}
+Redirect: ${this.redirectedUrls.length}
+Blocked: ${this.blockedUrls.length}
+`);
+    if (this.checkingUrls.length === 0 && this.badUrls.length === 0 && this.redirectedUrls.length === 0 && this.blockedUrls.length === 0) {
+    }
+  }
   //Filter based on status
   get checkingUrls() {
-    return this.urls.filter((u) => u.status === "checking");
+    return this.urlPairs.map((p2) => p2.production).filter((u) => u.status === "checking");
+  }
+  get checkingProtoUrls() {
+    return this.urlPairs.map((p2) => p2.prototype).filter((u) => !!u && u.status === "checking");
   }
   get blockedUrls() {
-    return this.urls.filter((u) => u.status === "blocked");
+    return this.urlPairs.map((p2) => p2.production).filter((u) => u.status === "blocked");
   }
   get badUrls() {
-    return this.urls.filter((u) => u.status === "bad");
+    return this.urlPairs.map((p2) => p2.production).filter((u) => u.status === "bad");
   }
   get redirectedUrls() {
-    return this.urls.filter((u) => u.status === "redirect");
+    return this.urlPairs.map((p2) => p2.production).filter((u) => u.status === "redirect");
   }
   get okUrls() {
-    return this.urls.filter((u) => u.status === "ok");
+    return this.urlPairs.map((p2) => p2.production).filter((u) => u.status === "ok");
+  }
+  get okProtoUrls() {
+    return this.urlPairs.map((p2) => p2.prototype).filter((u) => !!u && u.status === "ok");
   }
   remove(link) {
-    this.urls = this.urls.filter((url) => url !== link);
+    this.urlPairs = this.urlPairs.filter((p2) => p2.production !== link);
     this.urlChecked -= 1;
     this.urlTotal -= 1;
     this.urlPercent = this.urlChecked / this.urlTotal * 100;
+    this.goToStep3();
   }
   approve(link, $event) {
     link.href = link.href.trim().toLowerCase();
-    const duplicate = this.urls.some((url) => url !== link && url.href === link.href);
+    const duplicate = this.urlPairs.map((p2) => p2.production).some((url) => url !== link && url.href === link.href);
     if (duplicate) {
       this.confirmDuplicate($event, link);
       return;
@@ -24857,6 +26873,7 @@ var IaAssistantComponent = class _IaAssistantComponent {
     this.checkStatus(link).finally(() => {
       this.urlChecked++;
       this.urlPercent = this.urlChecked / this.urlTotal * 100;
+      this.goToStep3();
     });
   }
   confirmDuplicate(event, link) {
@@ -24883,10 +26900,10 @@ var IaAssistantComponent = class _IaAssistantComponent {
   static \u0275fac = function IaAssistantComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _IaAssistantComponent)(\u0275\u0275directiveInject(ConfirmationService));
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _IaAssistantComponent, selectors: [["ca-ia-assistant"]], decls: 25, vars: 13, consts: [["content", ""], ["id", "wb-cont"], ["id", "urls", "autoResize", "true", "rows", "5", "pTextarea", "", "fluid", "", 3, "ngModelChange", "input", "ngModel"], ["for", "urls"], [3, "value"], [1, "flex", "flex-column", "gap-2"], [4, "ngFor", "ngForOf"], ["labelKey", "Broken", 3, "approve", "remove", "links"], ["labelKey", "Redirected", 3, "approve", "remove", "links"], ["labelKey", "Blocked", 3, "approve", "remove", "links"], [4, "ngIf"], ["styleClass", "bg-yellow-100", 1, "max-w-max"], [1, "pi", "pi-spin", "pi-spinner"], [1, "mb-0"], [1, "my-0"]], template: function IaAssistantComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _IaAssistantComponent, selectors: [["ca-ia-assistant"]], decls: 24, vars: 14, consts: [["content", ""], ["header", ""], ["body", ""], ["id", "wb-cont"], [3, "valueChange", "value", "linear"], [1, "-mx-4"], [3, "value"], [1, "flex", "flex-column", "gap-2", "p-3", "border-2", "border-dashed", "border-primary"], [1, "my-0"], [1, "my-0", "text-color-secondary", "text-xs"], ["id", "urls", "autoResize", "true", "rows", "5", "pTextarea", "", "fluid", "", 3, "ngModelChange", "blur", "paste", "ngModel"], ["for", "urls"], ["size", "small", "stripedRows", "", "scrollHeight", "400px", 3, "value", "scrollable", 4, "ngIf"], ["id", "search", "autoResize", "true", "rows", "2", "pTextarea", "", "fluid", "", "placeholder", "", 3, "ngModelChange", "blur", "keydown", "paste", "ngModel"], ["for", "search"], [1, "flex", "gap-2", "flex-wrap"], [3, "label", "styleClass", "removable", "onRemove", 4, "ngFor", "ngForOf"], [1, "flex", "pt-4", "gap-2", "justify-content-between"], ["label", "Reset", "icon", "pi pi-trash", "severity", "danger", 3, "onClick", 4, "ngIf"], ["label", "Validate URLs", "icon", "pi pi-arrow-right", "iconPos", "right", "class", "ml-auto", 3, "onClick", 4, "ngIf"], ["label", "Next", "icon", "pi pi-arrow-right", "iconPos", "right", "class", "ml-auto", 3, "disabled", "onClick", 4, "ngIf"], ["size", "small", "stripedRows", "", "scrollHeight", "400px", 3, "value", "scrollable"], [3, "onRemove", "label", "styleClass", "removable"], ["label", "Reset", "icon", "pi pi-trash", "severity", "danger", 3, "onClick"], ["label", "Validate URLs", "icon", "pi pi-arrow-right", "iconPos", "right", 1, "ml-auto", 3, "onClick"], ["label", "Next", "icon", "pi pi-arrow-right", "iconPos", "right", 1, "ml-auto", 3, "onClick", "disabled"], [4, "ngIf"], ["labelKey", "Broken", 3, "links", "approve", "remove", 4, "ngIf"], ["labelKey", "Redirected", 3, "links", "approve", "remove", 4, "ngIf"], ["labelKey", "Blocked", 3, "links", "approve", "remove", 4, "ngIf"], [1, "flex", "pt-4", "justify-content-between"], ["label", "Back", "severity", "secondary", "icon", "pi pi-arrow-left", 3, "onClick"], ["label", "Next", "icon", "pi pi-arrow-right", "iconPos", "right", 3, "onClick"], ["class", "flex flex-column gap-2 mt-3", 4, "ngIf"], [1, "flex", "flex-column", "gap-2", "mt-3"], [4, "ngFor", "ngForOf"], ["styleClass", "bg-yellow-100", 1, "max-w-max"], [1, "pi", "pi-spin", "pi-spinner"], ["styleClass", "bg-orange-100", 1, "max-w-max"], ["labelKey", "Broken", 3, "approve", "remove", "links"], ["labelKey", "Redirected", 3, "approve", "remove", "links"], ["labelKey", "Blocked", 3, "approve", "remove", "links"], [1, "mb-0"], [1, "my-0", "list-none"], [1, "pi", "pi-check", "text-green-500", "mr-2"], [1, "pi", "pi-check", "text-blue-500", "mr-2"], [1, "flex", "pt-4", "justify-content-start"]], template: function IaAssistantComponent_Template(rf, ctx) {
     if (rf & 1) {
       const _r1 = \u0275\u0275getCurrentView();
-      \u0275\u0275elementStart(0, "h1", 1);
+      \u0275\u0275elementStart(0, "h1", 3);
       \u0275\u0275text(1);
       \u0275\u0275pipe(2, "translate");
       \u0275\u0275elementEnd();
@@ -24894,85 +26911,53 @@ var IaAssistantComponent = class _IaAssistantComponent {
       \u0275\u0275text(4);
       \u0275\u0275pipe(5, "translate");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(6, "p");
-      \u0275\u0275text(7, "Paste some relevant URLs to get started.");
-      \u0275\u0275elementEnd();
-      \u0275\u0275element(8, "p-confirmpopup");
-      \u0275\u0275elementStart(9, "p-iftalabel")(10, "textarea", 2);
-      \u0275\u0275twoWayListener("ngModelChange", function IaAssistantComponent_Template_textarea_ngModelChange_10_listener($event) {
+      \u0275\u0275elementStart(6, "p-stepper", 4);
+      \u0275\u0275twoWayListener("valueChange", function IaAssistantComponent_Template_p_stepper_valueChange_6_listener($event) {
         \u0275\u0275restoreView(_r1);
-        \u0275\u0275twoWayBindingSet(ctx.rawUrls, $event) || (ctx.rawUrls = $event);
+        \u0275\u0275twoWayBindingSet(ctx.activeStep, $event) || (ctx.activeStep = $event);
         return \u0275\u0275resetView($event);
       });
-      \u0275\u0275listener("input", function IaAssistantComponent_Template_textarea_input_10_listener() {
-        \u0275\u0275restoreView(_r1);
-        return \u0275\u0275resetView(ctx.validateUrls());
-      });
+      \u0275\u0275elementStart(7, "p-step-list", 5)(8, "p-step", 6);
+      \u0275\u0275text(9, "Enter URLs and search criteria");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(11, "label", 3);
-      \u0275\u0275text(12, "URLs");
+      \u0275\u0275elementStart(10, "p-step", 6);
+      \u0275\u0275text(11, "Validate URLs");
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(12, "p-step", 6);
+      \u0275\u0275text(13, "Build IA Tree");
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementContainerStart(13);
-      \u0275\u0275elementStart(14, "p-progressbar", 4);
-      \u0275\u0275template(15, IaAssistantComponent_ng_template_15_Template, 2, 2, "ng-template", null, 0, \u0275\u0275templateRefExtractor);
+      \u0275\u0275elementStart(14, "p-step-panels")(15, "p-step-panel", 6);
+      \u0275\u0275template(16, IaAssistantComponent_ng_template_16_Template, 27, 7, "ng-template", null, 0, \u0275\u0275templateRefExtractor);
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(17, "h2");
-      \u0275\u0275text(18, "Validating links");
+      \u0275\u0275elementStart(18, "p-step-panel", 6);
+      \u0275\u0275template(19, IaAssistantComponent_ng_template_19_Template, 10, 5, "ng-template", null, 0, \u0275\u0275templateRefExtractor);
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(19, "div", 5);
-      \u0275\u0275template(20, IaAssistantComponent_ng_container_20_Template, 5, 1, "ng-container", 6);
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementContainerEnd();
-      \u0275\u0275elementStart(21, "ca-link-list", 7);
-      \u0275\u0275listener("approve", function IaAssistantComponent_Template_ca_link_list_approve_21_listener($event) {
-        \u0275\u0275restoreView(_r1);
-        return \u0275\u0275resetView(ctx.approve($event.url, $event.event));
-      })("remove", function IaAssistantComponent_Template_ca_link_list_remove_21_listener($event) {
-        \u0275\u0275restoreView(_r1);
-        return \u0275\u0275resetView(ctx.remove($event));
-      });
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(22, "ca-link-list", 8);
-      \u0275\u0275listener("approve", function IaAssistantComponent_Template_ca_link_list_approve_22_listener($event) {
-        \u0275\u0275restoreView(_r1);
-        return \u0275\u0275resetView(ctx.approve($event.url, $event.event));
-      })("remove", function IaAssistantComponent_Template_ca_link_list_remove_22_listener($event) {
-        \u0275\u0275restoreView(_r1);
-        return \u0275\u0275resetView(ctx.remove($event));
-      });
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(23, "ca-link-list", 9);
-      \u0275\u0275listener("approve", function IaAssistantComponent_Template_ca_link_list_approve_23_listener($event) {
-        \u0275\u0275restoreView(_r1);
-        return \u0275\u0275resetView(ctx.approve($event.url, $event.event));
-      })("remove", function IaAssistantComponent_Template_ca_link_list_remove_23_listener($event) {
-        \u0275\u0275restoreView(_r1);
-        return \u0275\u0275resetView(ctx.remove($event));
-      });
-      \u0275\u0275elementEnd();
-      \u0275\u0275template(24, IaAssistantComponent_ng_container_24_Template, 5, 1, "ng-container", 10);
+      \u0275\u0275elementStart(21, "p-step-panel", 6);
+      \u0275\u0275template(22, IaAssistantComponent_ng_template_22_Template, 4, 0, "ng-template", null, 0, \u0275\u0275templateRefExtractor);
+      \u0275\u0275elementEnd()()();
     }
     if (rf & 2) {
       \u0275\u0275advance();
-      \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(2, 9, "title.ia"));
+      \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(2, 10, "title.ia"));
       \u0275\u0275advance(3);
-      \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(5, 11, "ia.description"));
-      \u0275\u0275advance(6);
-      \u0275\u0275twoWayProperty("ngModel", ctx.rawUrls);
-      \u0275\u0275advance(4);
-      \u0275\u0275property("value", ctx.urlPercent);
-      \u0275\u0275advance(6);
-      \u0275\u0275property("ngForOf", ctx.checkingUrls);
-      \u0275\u0275advance();
-      \u0275\u0275property("links", ctx.badUrls);
-      \u0275\u0275advance();
-      \u0275\u0275property("links", ctx.redirectedUrls);
-      \u0275\u0275advance();
-      \u0275\u0275property("links", ctx.blockedUrls);
-      \u0275\u0275advance();
-      \u0275\u0275property("ngIf", ctx.okUrls.length);
+      \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(5, 12, "ia.description"));
+      \u0275\u0275advance(2);
+      \u0275\u0275twoWayProperty("value", ctx.activeStep);
+      \u0275\u0275property("linear", true);
+      \u0275\u0275advance(2);
+      \u0275\u0275property("value", 1);
+      \u0275\u0275advance(2);
+      \u0275\u0275property("value", 2);
+      \u0275\u0275advance(2);
+      \u0275\u0275property("value", 3);
+      \u0275\u0275advance(3);
+      \u0275\u0275property("value", 1);
+      \u0275\u0275advance(3);
+      \u0275\u0275property("value", 2);
+      \u0275\u0275advance(3);
+      \u0275\u0275property("value", 3);
     }
-  }, dependencies: [CommonModule, NgForOf, NgIf, FormsModule, DefaultValueAccessor, NgControlStatus, NgModel, TranslateModule, TranslatePipe, TextareaModule, Textarea, InputTextModule, IftaLabelModule, IftaLabel, ProgressBarModule, ProgressBar, ButtonModule, ButtonGroupModule, InputGroupModule, InputGroupAddonModule, ChipModule, Chip, ConfirmPopupModule, ConfirmPopup, LinkListComponent], encapsulation: 2 });
+  }, dependencies: [CommonModule, NgForOf, NgIf, FormsModule, DefaultValueAccessor, NgControlStatus, NgModel, TranslateModule, TranslatePipe, TextareaModule, Textarea, InputTextModule, IftaLabelModule, IftaLabel, ProgressBarModule, ProgressBar, ButtonModule, Button, ButtonGroupModule, InputGroupModule, InputGroupAddonModule, ChipModule, Chip, StepperModule, Stepper, StepList, StepPanels, StepPanel, Step, ConfirmPopupModule, ConfirmPopup, ToggleSwitchModule, TableModule, Table, LinkListComponent], encapsulation: 2 });
 };
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(IaAssistantComponent, [{
@@ -24990,164 +26975,157 @@ var IaAssistantComponent = class _IaAssistantComponent {
       InputGroupModule,
       InputGroupAddonModule,
       ChipModule,
-      Tooltip,
+      StepperModule,
       ConfirmPopupModule,
+      ToggleSwitchModule,
+      TableModule,
       LinkListComponent
     ], template: `<h1 id="wb-cont">{{ 'title.ia' | translate}}</h1>\r
 <p>{{'ia.description' | translate }}</p>\r
-<p>Paste some relevant URLs to get started.</p>\r
-<p-confirmpopup />\r
-<p-iftalabel>\r
-    <textarea id="urls" autoResize="true" rows="5" pTextarea [(ngModel)]="rawUrls" (input)="validateUrls()" fluid></textarea>\r
-    <label for="urls">URLs</label>\r
-</p-iftalabel>\r
 \r
-<!--div class="flex flex-column gap-2 mt-3">\r
-    <ng-container *ngFor="let url of urls">\r
-        <p-chip\r
-                [styleClass]="getChipClass(url.status)"\r
-                [removable]="isEditable(url.status)"\r
-                class="max-w-max">\r
-            <i [class]="getChipIcon(url.status)"></i>\r
-            <span>{{ url.href }}</span>\r
-            <i class="pi pi-pen-to-square cursor-pointer"\r
-               *ngIf="isEditable(url.status)"\r
-               (click)="edit(url.href)"></i>\r
-        </p-chip>\r
-    </ng-container>\r
-</div-->\r
+<p-stepper [(value)]="activeStep" [linear]="true">\r
+    <p-step-list class="-mx-4">\r
+        <p-step [value]="1">Enter URLs and search criteria</p-step>\r
+        <p-step [value]="2">Validate URLs</p-step>\r
+        <p-step [value]="3">Build IA Tree</p-step>\r
+    </p-step-list>\r
+    <p-step-panels>\r
 \r
-<ng-container>\r
-    <p-progressbar [value]="urlPercent">\r
-        <ng-template #content let-value>\r
-            <span>{{urlChecked}}/{{urlTotal}}</span>\r
-        </ng-template>\r
-    </p-progressbar>\r
-    <h2>Validating links</h2>\r
-    <div class="flex flex-column gap-2">\r
-        <ng-container *ngFor="let url of checkingUrls">\r
-            <p-chip styleClass="bg-yellow-100" class="max-w-max">\r
-                <i class="pi pi-spin pi-spinner"></i>\r
-                <span>{{ url.href }}</span>\r
-            </p-chip>\r
-        </ng-container>\r
-    </div>\r
-</ng-container>\r
+        <p-step-panel [value]="1">\r
+            <ng-template #content let-activateCallback="activateCallback">\r
+                <div class="flex flex-column gap-2 p-3 border-2 border-dashed border-primary">\r
+\r
+                    <h2 class="my-0">Canada.ca URLs</h2>\r
+                    <p class="my-0 text-color-secondary text-xs">Paste some relevant Canada.ca URLs to get started. These links will be crawled to find any child pages to include in your inventory. Each link should begin on a new line. If you have prototype links, you can paste both columns or separate them with a comma or semicolon.</p>\r
 \r
 \r
-<ca-link-list labelKey="Broken"\r
-              [links]="badUrls"\r
-              (approve)="approve($event.url, $event.event)"\r
-              (remove)="remove($event)">\r
-</ca-link-list>\r
-<ca-link-list labelKey="Redirected"\r
-              [links]="redirectedUrls"\r
-              (approve)="approve($event.url, $event.event)"\r
-              (remove)="remove($event)">\r
-</ca-link-list>\r
-<ca-link-list labelKey="Blocked"\r
-              [links]="blockedUrls"\r
-              (approve)="approve($event.url, $event.event)"\r
-              (remove)="remove($event)">\r
-</ca-link-list>\r
+                    <p-iftalabel>\r
+                        <textarea id="urls" autoResize="true" rows="5" pTextarea [(ngModel)]="rawUrls" (blur)="setUrlPairs()" (paste)="onPasteUrls()" fluid></textarea>\r
+                        <label for="urls">URLs</label>\r
+                    </p-iftalabel>\r
 \r
-<!--ng-container *ngIf="badUrls.length">\r
-    <h2 class="mb-0">Broken links</h2>\r
-    <div class="flex flex-column gap-2">\r
-        <ng-container *ngFor="let url of badUrls">\r
-            <p-inputgroup>\r
-                <p-iftalabel>\r
-                    <input type="text" id="broken" pInputText variant="outlined" [(ngModel)]="url.href" />\r
-                    <label for="broken">Broken URL</label>\r
-                </p-iftalabel>\r
-                <p-inputgroup-addon>\r
-                    <p-button icon="pi pi-check-circle" severity="success" variant="text" (click)="approve(url, $event)" />\r
-                </p-inputgroup-addon>\r
-                <p-inputgroup-addon>\r
-                    <p-button icon="pi pi-times-circle" severity="danger" variant="text" (click)="remove(url)" />\r
-                </p-inputgroup-addon>\r
-            </p-inputgroup>\r
-        </ng-container>\r
-    </div>\r
+                    <!--Only show url pairs if prototype links were included-->\r
+                    <p-table [value]="urlPairs" *ngIf="includePrototypeLinks" size="small" stripedRows [scrollable]="true" scrollHeight="400px">\r
+                        <ng-template #header>\r
+                            <tr>\r
+                                <th>Production URL</th>\r
+                                <th>Prototype URL</th>\r
+                            </tr>\r
+                        </ng-template>\r
+                        <ng-template #body let-url>\r
+                            <tr>\r
+                                <td>{{ url.production.href }}</td>\r
+                                <td>{{ url.prototype?.href }}</td>\r
+                            </tr>\r
+                        </ng-template>\r
+                    </p-table>\r
+                    <h2 class="my-0">Search criteria</h2>\r
+                    <p class="my-0 text-color-secondary text-xs">Enter terms separated by commas, semicolons or new lines. These will be used to include additional pages in your result, even if there is no direct breadcrumb IA relationship between the pages. Regex patterns should begin with "regex:". The search is <strong>not</strong> case-sensitive.</p>\r
+                    <p-iftalabel>\r
+                        <textarea id="search" autoResize="true" rows="2" pTextarea [(ngModel)]="rawTerms" (blur)="updateTerms(); updateRawTerms();" (keydown)="onKeydownTerm($event)" (paste)="onPasteTerm()" fluid\r
+                                  placeholder=""></textarea>\r
+                        <label for="search">Search terms (optional)</label>\r
+                    </p-iftalabel>\r
 \r
-</ng-container>\r
-<ng-container *ngIf="redirectedUrls.length">\r
-    <h2 class="mb-0">Redirected links</h2>\r
-    <div class="flex flex-column gap-2">\r
-        <div *ngFor="let url of redirectedUrls">\r
-            <p-iftalabel>\r
-                <input type="text" id="original" pInputText variant="outlined" [(ngModel)]="url.originalHref" pSize="small" class="ng-invalid ng-dirty bg-white" disabled="true" fluid />\r
-                <label for="original">Original URL</label>\r
-            </p-iftalabel>\r
-            <p-inputgroup>\r
-                <p-iftalabel>\r
-                    <input type="text" id="redirect" pInputText variant="outlined" [(ngModel)]="url.href" />\r
-                    <label for="redirect">Redirected URL</label>\r
-                </p-iftalabel>\r
-                <p-inputgroup-addon>\r
-                    <p-button icon="pi pi-check-circle" pTooltip="Revalidate" tooltipPosition="top" severity="success" variant="text" (click)="approve(url, $event)" />\r
-                </p-inputgroup-addon>\r
-                <p-inputgroup-addon>\r
-                    <p-button icon="pi pi-times-circle" pTooltip="Remove link" tooltipPosition="top" severity="danger" variant="text" (click)="remove(url)" />\r
-                </p-inputgroup-addon>\r
-            </p-inputgroup>\r
-        </div>\r
-    </div>\r
-</ng-container>\r
-<ng-container *ngIf="blockedUrls.length">\r
-    <h2 class="mb-0">Blocked links</h2>\r
-    <div class="flex flex-column gap-2">\r
-        <ng-container *ngFor="let url of blockedUrls">\r
-            <p-inputgroup>\r
-                <p-iftalabel>\r
-                    <input type="text" id="blocked" pInputText variant="outlined" [(ngModel)]="url.href" />\r
-                    <label for="blocked">Blocked URL</label>\r
-                </p-iftalabel>\r
-                <p-inputgroup-addon>\r
-                    <p-button icon="pi pi-check-circle" severity="success" variant="text" (click)="approve(url, $event)" />\r
-                </p-inputgroup-addon>\r
-                <p-inputgroup-addon>\r
-                    <p-button icon="pi pi-times-circle" severity="danger" variant="text" (click)="remove(url)" />\r
-                </p-inputgroup-addon>\r
-            </p-inputgroup>\r
-        </ng-container>\r
-    </div>\r
-    <p class="mb-0">Only links from the following domains are allowed:</p>\r
-    <ul class="my-0">\r
-        <li>www.canada.ca</li>\r
-        <li>test.canada.ca</li>\r
-        <li>gc-proto.github.io</li>\r
-        <li>cra-proto.github.io</li>\r
-        <li>cra-design.github.io</li>\r
-    </ul>\r
-</ng-container-->\r
-<ng-container *ngIf="okUrls.length">\r
-    <h2 class="mb-0">Valid links</h2>\r
-    <!--div class="flex flex-column gap-2">\r
-        <ng-container *ngFor="let url of okUrls">\r
-            <p-chip\r
-                    [styleClass]="getChipClass(url.status)"\r
-                    [removable]="isEditable(url.status)"\r
-                    class="max-w-max">\r
-                <i [class]="getChipIcon(url.status)"></i>\r
-                <span>{{ url.href }}</span>\r
-                <i class="pi pi-pen-to-square cursor-pointer"\r
-                   *ngIf="isEditable(url.status)"\r
-                   (click)="approve(url)"></i>\r
-                <i class="pi pi-check-square cursor-pointer"\r
-                   *ngIf="isRedirect(url.status)"\r
-                   (click)="approve(url)"></i>\r
-            </p-chip>\r
-        </ng-container>\r
-    </div-->\r
-    <ul class="my-0">\r
-        <li *ngFor="let url of okUrls">{{ url.href }}</li>\r
-    </ul>\r
-</ng-container>` }]
+                    <div class="flex gap-2 flex-wrap">\r
+                        <p-chip *ngFor="let term of terms" [label]="term.toString()" [styleClass]="isRegex(term) ? 'bg-blue-100' : 'bg-green-100'" [removable]="true" (onRemove)="removeTerm(term)"></p-chip>\r
+                    </div>\r
+\r
+                </div>\r
+                <!--FIX: blur event block button event if input is focused when button is clicked-->\r
+                <div class="flex pt-4 gap-2 justify-content-between">\r
+                    <p-button label="Reset" icon="pi pi-trash" severity="danger" (onClick)="urlPairs = []" *ngIf="urlPairs.length > 0 && checkingUrls.length === 0" />\r
+                    <p-button label="Validate URLs" icon="pi pi-arrow-right" iconPos="right" class="ml-auto" (onClick)="validateUrlPairs(); activateCallback(2)" *ngIf="checkingUrls.length > 0" />\r
+                    <p-button label="Next" icon="pi pi-arrow-right" iconPos="right" class="ml-auto" (onClick)="activateCallback(2)" *ngIf="checkingUrls.length === 0" [disabled]="urlPairs.length === 0" />\r
+                </div>\r
+            </ng-template>\r
+        </p-step-panel>\r
+\r
+        <p-step-panel [value]="2">\r
+            <ng-template #content let-activateCallback="activateCallback">\r
+                <div class="flex flex-column gap-2 p-3 border-2 border-dashed border-primary">\r
+\r
+                    <ng-container *ngIf="urlPairs.length > 0">\r
+                        <h2 *ngIf="checkingUrls.length > 0">Validating links</h2>\r
+                        <h2 *ngIf="checkingUrls.length === 0">Validated links</h2>\r
+\r
+                        <p-progressbar [value]="urlPercent">\r
+                            <ng-template #content let-value>\r
+                                <span>{{urlChecked}}/{{urlTotal}}</span>\r
+                            </ng-template>\r
+                        </p-progressbar>\r
+\r
+                        <div class="flex flex-column gap-2 mt-3" *ngIf="checkingUrls.length > 0 || checkingProtoUrls.length > 0">\r
+                            <ng-container *ngFor="let url of checkingUrls">\r
+                                <p-chip styleClass="bg-yellow-100" class="max-w-max">\r
+                                    <i class="pi pi-spin pi-spinner"></i>\r
+                                    <span>{{ url.href }}</span>\r
+                                </p-chip>\r
+                            </ng-container>\r
+                            <ng-container *ngFor="let url of checkingProtoUrls">\r
+                                <p-chip styleClass="bg-orange-100" class="max-w-max">\r
+                                    <i class="pi pi-spin pi-spinner"></i>\r
+                                    <span>{{ url.href }}</span>\r
+                                </p-chip>\r
+                            </ng-container>\r
+                        </div>\r
+                    </ng-container>\r
+\r
+                    <p-confirmpopup />\r
+                    <ca-link-list labelKey="Broken"\r
+                                  [links]="badUrls"\r
+                                  (approve)="approve($event.url, $event.event)"\r
+                                  (remove)="remove($event)"\r
+                                  *ngIf="badUrls.length > 0">\r
+                    </ca-link-list>\r
+                    <ca-link-list labelKey="Redirected"\r
+                                  [links]="redirectedUrls"\r
+                                  (approve)="approve($event.url, $event.event)"\r
+                                  (remove)="remove($event)"\r
+                                  *ngIf="redirectedUrls.length > 0">\r
+                    </ca-link-list>\r
+                    <ca-link-list labelKey="Blocked"\r
+                                  [links]="blockedUrls"\r
+                                  (approve)="approve($event.url, $event.event)"\r
+                                  (remove)="remove($event)"\r
+                                  *ngIf="blockedUrls.length > 0">\r
+                    </ca-link-list>\r
+\r
+                    <ng-container *ngIf="okUrls.length">\r
+                        <h2 class="mb-0">Valid links</h2>\r
+                        <ul class="my-0 list-none">\r
+                            <li *ngFor="let url of okUrls"><i class="pi pi-check text-green-500 mr-2"></i>{{ url.href }}</li>\r
+                            <li *ngFor="let url of okProtoUrls"><i class="pi pi-check text-blue-500 mr-2"></i>{{ url.href }}</li>\r
+                        </ul>\r
+                    </ng-container>\r
+\r
+                </div>\r
+                <div class="flex pt-4 justify-content-between">\r
+                    <p-button label="Back" severity="secondary" icon="pi pi-arrow-left" (onClick)="activateCallback(1)" />\r
+                    <p-button label="Next" icon="pi pi-arrow-right" iconPos="right" (onClick)="activateCallback(3)" />\r
+                </div>\r
+            </ng-template>\r
+        </p-step-panel>\r
+\r
+        <p-step-panel [value]="3">\r
+            <ng-template #content let-activateCallback="activateCallback">\r
+                <div class="flex flex-column gap-2 p-3 border-2 border-dashed border-primary">\r
+\r
+                    To do: set up progress bars & fxns for checking relationship between pasted links, crawling root URLs to create IA tree, & referring link/search term/url structure crawl (for unique links that aren't in the IA tree)\r
+\r
+                </div>\r
+                <div class="flex pt-4 justify-content-start">\r
+                    <p-button label="Back" severity="secondary" icon="pi pi-arrow-left" (onClick)="activateCallback(2)" />\r
+                </div>\r
+            </ng-template>\r
+        </p-step-panel>\r
+\r
+    </p-step-panels>\r
+</p-stepper>` }]
   }], () => [{ type: ConfirmationService }], null);
 })();
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(IaAssistantComponent, { className: "IaAssistantComponent", filePath: "src/app/views/ia-assistant/ia-assistant.component.ts", lineNumber: 30 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(IaAssistantComponent, { className: "IaAssistantComponent", filePath: "src/app/views/ia-assistant/ia-assistant.component.ts", lineNumber: 33 });
 })();
 
 // src/app/app.routes.ts
@@ -25169,7 +27147,7 @@ var routes = [
       }
       return true;
     }],
-    loadComponent: () => import("./chunk-XAC37KOY.js").then((m) => m.PageAssistantCompareComponent)
+    loadComponent: () => import("./chunk-MOZYBKKA.js").then((m) => m.PageAssistantCompareComponent)
   },
   {
     path: "page-assistant/share",
@@ -25314,10 +27292,10 @@ var HeaderComponent = class _HeaderComponent {
     return this.theme.darkMode() ? "cra-logo-dark.png" : "cra-logo.png";
   }
   // constructor(public langToggle: LangToggleService){} //putting the code below into a service works but we aren't calling it anywhere else
-  constructor(translate, localStore, theme10) {
+  constructor(translate, localStore, theme12) {
     this.translate = translate;
     this.localStore = localStore;
-    this.theme = theme10;
+    this.theme = theme12;
     var curLang = this.localStore.getData("lang") || this.translate.getBrowserLang() || "en";
     console.log(this.translate.getBrowserLang());
     this.translate.addLangs(["en", "fr"]);
@@ -25418,12 +27396,12 @@ var HeaderComponent = class _HeaderComponent {
 })();
 
 // src/app/template/sidebar.component.ts
-var _c014 = () => ["/"];
-var _c113 = () => ["/page-assistant"];
-var _c24 = () => ["/image-assistant"];
-var _c34 = () => ["/translation-assistant"];
-var _c44 = () => ["/inventory-assistant"];
-var _c54 = () => ["/metadata-assistant"];
+var _c016 = () => ["/"];
+var _c115 = () => ["/page-assistant"];
+var _c26 = () => ["/image-assistant"];
+var _c35 = () => ["/translation-assistant"];
+var _c45 = () => ["/inventory-assistant"];
+var _c55 = () => ["/metadata-assistant"];
 var _c64 = () => ["/about-us"];
 var SidebarComponent = class _SidebarComponent {
   // Section toggle state
@@ -25534,7 +27512,7 @@ var SidebarComponent = class _SidebarComponent {
     }
     if (rf & 2) {
       \u0275\u0275advance(3);
-      \u0275\u0275property("routerLink", \u0275\u0275pureFunction0(52, _c014));
+      \u0275\u0275property("routerLink", \u0275\u0275pureFunction0(52, _c016));
       \u0275\u0275advance(4);
       \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(8, 28, "title.landing"));
       \u0275\u0275advance(5);
@@ -25544,15 +27522,15 @@ var SidebarComponent = class _SidebarComponent {
       \u0275\u0275advance();
       \u0275\u0275classProp("hidden", !ctx.isExpanded.main);
       \u0275\u0275advance();
-      \u0275\u0275property("routerLink", \u0275\u0275pureFunction0(53, _c113));
+      \u0275\u0275property("routerLink", \u0275\u0275pureFunction0(53, _c115));
       \u0275\u0275advance(4);
       \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(22, 32, "menu.page"));
       \u0275\u0275advance(2);
-      \u0275\u0275property("routerLink", \u0275\u0275pureFunction0(54, _c24));
+      \u0275\u0275property("routerLink", \u0275\u0275pureFunction0(54, _c26));
       \u0275\u0275advance(4);
       \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(28, 34, "menu.image"));
       \u0275\u0275advance(2);
-      \u0275\u0275property("routerLink", \u0275\u0275pureFunction0(55, _c34));
+      \u0275\u0275property("routerLink", \u0275\u0275pureFunction0(55, _c35));
       \u0275\u0275advance(4);
       \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(34, 36, "menu.translation"));
       \u0275\u0275advance(5);
@@ -25562,11 +27540,11 @@ var SidebarComponent = class _SidebarComponent {
       \u0275\u0275advance();
       \u0275\u0275classProp("hidden", !ctx.isExpanded.project);
       \u0275\u0275advance();
-      \u0275\u0275property("routerLink", \u0275\u0275pureFunction0(56, _c44));
+      \u0275\u0275property("routerLink", \u0275\u0275pureFunction0(56, _c45));
       \u0275\u0275advance(4);
       \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(48, 40, "menu.inventory"));
       \u0275\u0275advance(2);
-      \u0275\u0275property("routerLink", \u0275\u0275pureFunction0(57, _c54));
+      \u0275\u0275property("routerLink", \u0275\u0275pureFunction0(57, _c55));
       \u0275\u0275advance(4);
       \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(54, 42, "menu.metadata"));
       \u0275\u0275advance(5);
@@ -25674,8 +27652,8 @@ var SidebarComponent = class _SidebarComponent {
 // src/app/template/footer.component.ts
 var FooterComponent = class _FooterComponent {
   theme;
-  constructor(theme10) {
-    this.theme = theme10;
+  constructor(theme12) {
+    this.theme = theme12;
   }
   get logoSrc() {
     return this.theme.darkMode() ? "canada-logo-dark.png" : "canada-logo.png";
