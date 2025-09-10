@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["angular:styles/component:css;49a6573b5384514cd7691e34ae77690c7832d93287784bea6bcab8477465a06c;C:/AmberDev/content-assistant/src/app/views/image-assistant/components/file-upload/file-upload.component.ts"],
-  "sourcesContent": ["\n    .file-upload-container {\n      border: 2px dashed #ccc;\n      border-radius: 8px;\n      padding: 2rem;\n      text-align: center;\n      cursor: pointer;\n      transition: all 0.3s ease;\n      margin-top: 1rem;\n    }\n    \n    .file-upload-container:hover {\n      border-color: #a7a72e;\n      background-color: #f5f5f5;\n    }\n    \n    .file-upload-container.dragover {\n      border-color: #a7a72e;\n      background-color: #f0f0f0;\n    }\n    \n    input[type=\"file\"] {\n      display: none;\n    }\n    \n    .upload-icon {\n      font-size: 3rem;\n      color: #a7a72e;\n      margin-bottom: 1rem;\n    }\n    \n    fieldset {\n      border: none;\n      padding: 0;\n      margin: 0;\n    }\n    \n    legend {\n      font-weight: bold;\n      margin-bottom: 0.5rem;\n    }\n  "],
-  "mappings": ";AACI,CAAC;AACC,UAAQ,IAAI,OAAO;AACnB,iBAAe;AACf,WAAS;AACT,cAAY;AACZ,UAAQ;AACR,cAAY,IAAI,KAAK;AACrB,cAAY;AACd;AAEA,CAVC,qBAUqB;AACpB,gBAAc;AACd,oBAAkB;AACpB;AAEA,CAfC,qBAeqB,CAAC;AACrB,gBAAc;AACd,oBAAkB;AACpB;AAEA,KAAK,CAAC;AACJ,WAAS;AACX;AAEA,CAAC;AACC,aAAW;AACX,SAAO;AACP,iBAAe;AACjB;AAEA;AACE,UAAQ;AACR,WAAS;AACT,UAAQ;AACV;AAEA;AACE,eAAa;AACb,iBAAe;AACjB;",
-  "names": []
-}
