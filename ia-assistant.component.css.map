@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["angular:styles/component:css;33040c1ada4ad5aecf3275114e9bbeb5a402f0cc3f079f9d87d8cf50bdcd0b05;C:/AmberDev/content-assistant/src/app/views/ia-assistant/ia-assistant.component.ts"],
+  "sourcesContent": ["\n  :host ::ng-deep .p-breadcrumb .p-menuitem-link {\n  justify-content: flex-start !important;\n}\n\n:host ::ng-deep .custom-breadcrumb-link {\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n  gap: 0.5rem; /* matches gap-2 */\n}\n\n:host ::ng-deep .p-breadcrumb .p-breadcrumb-item > a {\n  justify-content: flex-start !important;\n}\n  "],
+  "mappings": ";AACE,MAAM,UAAU,CAAC,aAAa,CAAC;AAC/B,mBAAiB;AACnB;AAEA,MAAM,UAAU,CAAC;AACf,WAAS;AACT,mBAAiB;AACjB,eAAa;AACb,OAAK;AACP;AAEA,MAAM,UAAU,CAXG,aAWW,CAAC,kBAAkB,EAAE;AACjD,mBAAiB;AACnB;",
+  "names": []
+}

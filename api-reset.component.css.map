@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["angular:styles/component:css;3a79632ccf9b2a1bf9b85450cd9ee1a91b4c6a930bfce5ba9d88905c12f7b962;C:/AmberDev/content-assistant/src/app/template/api-reset.component.ts"],
+  "sourcesContent": ["\n  ::ng-deep .api-button-size {\n    width: 13rem !important;\n  }\n  @media (max-width: 768px) {\n   ::ng-deep .api-button-size {\n      width: auto !important;\n      padding: 10px !important;\n    }\n    ::ng-deep .api-button .p-button-label {\n      display: none;\n    }\n  }\n ::ng-deep .api-button:hover .p-button-icon {\n    color: var(--p-primary-400) !important;\n  }\n\n  ::ng-deep html.dark-mode .api-button:hover .p-button-icon {\n    color: var(--p-primary-200) !important;\n  }"],
+  "mappings": ";AACE,UAAU,CAAC;AACT,SAAO;AACT;AACA,OAAO,CAAC,SAAS,EAAE;AAClB,YAAU,CAJA;AAKP,WAAO;AACP,aAAS;AACX;AACA,YAAU,CAAC,WAAW,CAAC;AACrB,aAAS;AACX;AACF;AACD,UAAU,CAJI,UAIO,OAAO,CAAC;AAC1B,SAAO,IAAI;AACb;AAEA,UAAU,IAAI,CAAC,UAAU,CARZ,UAQuB,OAAO,CAJf;AAK1B,SAAO,IAAI;AACb;",
+  "names": []
+}
