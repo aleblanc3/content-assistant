@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["angular:styles/component:css;fbb9b1e938c6e536662de9e9abb3c037d6f99e568d5c1313dece8acd203a770f;C:/AmberDev/content-assistant/src/app/views/page-assistant/components/tools/link-report.component.ts"],
-  "sourcesContent": ["\n      .text-ok {\n        color: #16a34a;\n      } /* \u2714 green */\n      .text-bad {\n        color: #dc2626;\n      } /* \u2716 red   */\n      .text-unk {\n        color: #64748b;\n      } /* ? gray  */\n      .break-all {\n        word-break: break-all;\n      }\n      .muted {\n        color: #6b7280;\n        font-size: 12px;\n      }\n      .flex {\n        display: flex;\n      }\n      .justify-center {\n        justify-content: center;\n      }\n    "],
-  "mappings": ";AACM,CAAC;AACC,SAAO;AACT;AACA,CAAC;AACC,SAAO;AACT;AACA,CAAC;AACC,SAAO;AACT;AACA,CAAC;AACC,cAAY;AACd;AACA,CAAC;AACC,SAAO;AACP,aAAW;AACb;AACA,CAAC;AACC,WAAS;AACX;AACA,CAAC;AACC,mBAAiB;AACnB;",
-  "names": []
-}

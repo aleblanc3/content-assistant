@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["angular:styles/component:css;3626b4fd80763a0a8c7fd3ac85e8e2b1a9ea83f9e1ae2febc71f6ef0fd0f4baa;C:/AmberDev/content-assistant/src/app/components/progress-indicator/progress-indicator.component.ts"],
-  "sourcesContent": ["\n    .progress-container {\n      margin-top: 1.5rem;\n      padding: 1rem;\n      background-color: #f8f9fa;\n      border-radius: 8px;\n    }\n    \n    .progress-text {\n      display: flex;\n      align-items: center;\n      gap: 0.5rem;\n      margin-bottom: 1rem;\n    }\n    \n    .spinner {\n      width: 24px;\n      height: 24px;\n      border: 4px solid #ccc;\n      border-top-color: #a7a72e;\n      border-radius: 50%;\n      animation: spin 1s linear infinite;\n    }\n    \n    @keyframes spin {\n      from { transform: rotate(0deg); }\n      to { transform: rotate(360deg); }\n    }\n  "],
-  "mappings": ";AACI,CAAC;AACC,cAAY;AACZ,WAAS;AACT,oBAAkB;AAClB,iBAAe;AACjB;AAEA,CAAC;AACC,WAAS;AACT,eAAa;AACb,OAAK;AACL,iBAAe;AACjB;AAEA,CAAC;AACC,SAAO;AACP,UAAQ;AACR,UAAQ,IAAI,MAAM;AAClB,oBAAkB;AAClB,iBAAe;AACf,aAAW,KAAK,GAAG,OAAO;AAC5B;AAEA,WAHa;AAIX;AAAO,eAAW,OAAO;AAAO;AAChC;AAAK,eAAW,OAAO;AAAS;AAClC;",
-  "names": []
-}
