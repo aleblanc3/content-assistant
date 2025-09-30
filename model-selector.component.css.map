@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["src/app/components/model-selector/model-selector.component.css"],
-  "sourcesContent": [".model-selector-container {\r\n  width: 100%;\r\n}\r\n\r\n.model-selector-content {\r\n  padding: 0;\r\n}\r\n\r\n.field label {\r\n  color: var(--text-color);\r\n}\r\n\r\n:host ::ng-deep .p-dropdown {\r\n  width: 100%;\r\n  min-width: 300px;\r\n}\r\n\r\n.cursor-pointer {\r\n  cursor: pointer;\r\n}\r\n\r\n.text-500 {\r\n  color: var(--text-color-secondary);\r\n}"],
-  "mappings": ";AAAA,CAAC;AACC,SAAO;AACT;AAEA,CAAC;AACC,WAAS;AACX;AAEA,CAAC,MAAM;AACL,SAAO,IAAI;AACb;AAEA,MAAM,UAAU,CAAC;AACf,SAAO;AACP,aAAW;AACb;AAEA,CAAC;AACC,UAAQ;AACV;AAEA,CAAC;AACC,SAAO,IAAI;AACb;",
-  "names": []
-}
