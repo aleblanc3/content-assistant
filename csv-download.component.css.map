@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["angular:styles/component:css;1c997a74d74a98c53de94cd1b23dcec12d9454b472a147986b6d5799e58fa7ae;C:/AmberDev/content-assistant/src/app/views/image-assistant/components/csv-download/csv-download.component.ts"],
+  "sourcesContent": ["\n    .csv-download-container {\n      margin-top: 2rem;\n      padding: 1rem;\n      background-color: var(--surface-100);\n      border-radius: 8px;\n    }\n  "],
+  "mappings": ";AACI,CAAC;AACC,cAAY;AACZ,WAAS;AACT,oBAAkB,IAAI;AACtB,iBAAe;AACjB;",
+  "names": []
+}
