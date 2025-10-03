@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["angular:styles/component:css;09dc9166e46b9e7aabdb069b1dc488d36e7e0913816855e9dc9912d983b17aa9;C:/AmberDev/content-assistant/src/app/views/image-assistant/image-assistant.component.ts"],
+  "sourcesContent": ["\n    .results-section {\n      margin-top: 2rem;\n    }\n  "],
+  "mappings": ";AACI,CAAC;AACC,cAAY;AACd;",
+  "names": []
+}

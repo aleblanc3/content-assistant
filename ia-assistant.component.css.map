@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["angular:styles/component:css;59d84de9e62055b88cf35acb7b824d1f3f6cb65bf585bd8213d7e42f57354ff4;C:/AmberDev/content-assistant/src/app/views/ia-assistant/ia-assistant.component.ts"],
+  "sourcesContent": ["\n  ::ng-deep .upload-secondary-outline .p-button {\n  border: 1px solid var(--p-zinc-200) !important;\n  background-color: transparent !important;\n color: var(--p-button-secondary-color);\n  }\n  ::ng-deep .upload-secondary-outline .p-button:hover {\n  background-color: var(--p-button-outlined-secondary-hover-background);\n  color: var(--p-button-secondary-hover-color);\n}\n  \n  ::ng-deep .upload-secondary-outline .p-button-label {\n    display: none;\n  }\n "],
+  "mappings": ";AACE,UAAU,CAAC,yBAAyB,CAAC;AACrC,UAAQ,IAAI,MAAM,IAAI;AACtB,oBAAkB;AACnB,SAAO,IAAI;AACV;AACA,UAAU,CALC,yBAKyB,CALC,QAKQ;AAC7C,oBAAkB,IAAI;AACtB,SAAO,IAAI;AACb;AAEE,UAAU,CAVC,yBAUyB,CAAC;AACnC,WAAS;AACX;",
+  "names": []
+}
