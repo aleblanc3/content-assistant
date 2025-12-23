@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["angular:styles/component:css;19ceb5ac9df98086b129e963aa1391530b725e22715988600140fc11941cb360;D:/AmberDev/content-assistant/src/app/views/page-assistant/components/upload/upload-word.component.ts"],
+  "sourcesContent": ["\n    :host {\n      display: block;\n    }\n    :host ::ng-deep .p-fileupload-header {\n      background: transparent;\n      box-shadow: none;\n      padding: 0;\n      border: none;\n    }\n    :host ::ng-deep .p-fileupload-content {\n      background: transparent;\n      box-shadow: none;\n      padding: 0;\n      border: none;\n    }\n    :host ::ng-deep .p-fileupload .p-progressbar {\n  margin: 0 !important;\n  padding: 0 !important;\n  height: 0 !important;\n  display: none !important;\n  border: none !important;\n}\n::ng-deep .p-fileupload {\n  --p-fileupload-content-gap: 0.0rem;\n}\n  "],
+  "mappings": ";AACI;AACE,WAAS;AACX;AACA,MAAM,UAAU,CAAC;AACf,cAAY;AACZ,cAAY;AACZ,WAAS;AACT,UAAQ;AACV;AACA,MAAM,UAAU,CAAC;AACf,cAAY;AACZ,cAAY;AACZ,WAAS;AACT,UAAQ;AACV;AACA,MAAM,UAAU,CAAC,aAAa,CAAC;AACjC,UAAQ;AACR,WAAS;AACT,UAAQ;AACR,WAAS;AACT,UAAQ;AACV;AACA,UAAU,CAPW;AAQnB,8BAA4B;AAC9B;",
+  "names": []
+}

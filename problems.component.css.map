@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["angular:styles/component:css;6b9035aeccebb8e4c84e29a4b5f612916f33954446739eb3118b52eabe00dd4a;D:/AmberDev/content-assistant/src/app/views/page-assistant/components/problems.component.ts"],
+  "sourcesContent": ["\n      :host ::ng-deep .p-accordion-header-content {\n        display: flex;\n        align-items: center;\n      }\n\n      /* takes up remaining space so the badge sits just before the caret */\n      .flex-spacer {\n        flex: 1 1 auto;\n      }\n\n      /* bigger red dot, tight to the caret */\n      .feature-badge {\n        width: 1rem; /* bigger circle */\n        height: 1rem;\n        border-radius: 9999px;\n        background: #ef4444; /* red */\n        margin-right: 0.25rem; /* tiny gap before caret */\n        display: inline-block;\n        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06) inset;\n      }\n    "],
+  "mappings": ";AACM,MAAM,UAAU,CAAC;AACf,WAAS;AACT,eAAa;AACf;AAGA,CAAC;AACC,QAAM,EAAE,EAAE;AACZ;AAGA,CAAC;AACC,SAAO;AACP,UAAQ;AACR,iBAAe;AACf,cAAY;AACZ,gBAAc;AACd,WAAS;AACT,cAAY,EAAE,EAAE,EAAE,IAAI,KAAK,CAAC,EAAE,CAAC,EAAE,CAAC,EAAE,MAAM;AAC5C;",
+  "names": []
+}

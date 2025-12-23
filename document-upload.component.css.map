@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/views/metadata-assistant/components/document-upload/document-upload.component.css"],
+  "sourcesContent": ["/* Minimal CSS for upload zone states that PrimeNG doesn't cover */\r\n.upload-zone {\r\n  transition: all 0.3s ease;\r\n  cursor: pointer;\r\n  min-height: 200px;\r\n}\r\n\r\n.upload-zone:hover {\r\n  background-color: var(--surface-200);\r\n  border-color: var(--primary-color);\r\n}\r\n\r\n.upload-zone.dragging {\r\n  border-color: var(--primary-color);\r\n  background-color: var(--primary-50);\r\n}\r\n\r\n.upload-zone.has-file {\r\n  border-color: var(--green-500);\r\n  background-color: var(--green-50);\r\n}\r\n\r\n/* Dark mode adjustments */\r\n:host-context(.dark-mode) .upload-zone:hover {\r\n  background-color: var(--surface-700);\r\n}\r\n\r\n:host-context(.dark-mode) .upload-zone.has-file {\r\n  background-color: var(--green-900);\r\n  border-color: var(--green-400);\r\n}\r\n"],
+  "mappings": ";AACA,CAAC;AACC,cAAY,IAAI,KAAK;AACrB,UAAQ;AACR,cAAY;AACd;AAEA,CANC,WAMW;AACV,oBAAkB,IAAI;AACtB,gBAAc,IAAI;AACpB;AAEA,CAXC,WAWW,CAAC;AACX,gBAAc,IAAI;AAClB,oBAAkB,IAAI;AACxB;AAEA,CAhBC,WAgBW,CAAC;AACX,gBAAc,IAAI;AAClB,oBAAkB,IAAI;AACxB;AAGA,cAAc,CAAC,WAAW,CAtBzB,WAsBqC;AACpC,oBAAkB,IAAI;AACxB;AAEA,cAAc,CAAC,WAAW,CA1BzB,WA0BqC,CAVzB;AAWX,oBAAkB,IAAI;AACtB,gBAAc,IAAI;AACpB;",
+  "names": []
+}

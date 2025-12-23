@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["angular:styles/component:css;e992d0220d8014662a34d6bbd390e6d18a472faf96c08badf44a3626bf397ba7;D:/AmberDev/content-assistant/src/app/template/header.component.ts"],
+  "sourcesContent": ["\n  ::ng-deep .p-toolbar {\n      background-color: transparent !important;\n      border: none !important;\n       \n    }\n  header {\n      border-bottom-style: solid;\n      border-bottom-color: var(--p-gray-400);\n      border-width: 1px;\n      margin-top: -4rem;\n    }\n    \n  ::ng-deep .darkmode-toggle:hover .p-button-icon {\n    color: var(--p-cyan-400) !important;\n  }\n\n  ::ng-deep html.dark-mode .darkmode-toggle:hover .p-button-icon {\n    color: var(--p-amber-400) !important;\n  }\n    "],
+  "mappings": ";AACE,UAAU,CAAC;AACP,oBAAkB;AAClB,UAAQ;AAEV;AACF;AACI,uBAAqB;AACrB,uBAAqB,IAAI;AACzB,gBAAc;AACd,cAAY;AACd;AAEF,UAAU,CAAC,eAAe,OAAO,CAAC;AAChC,SAAO,IAAI;AACb;AAEA,UAAU,IAAI,CAAC,UAAU,CAJd,eAI8B,OAAO,CAJd;AAKhC,SAAO,IAAI;AACb;",
+  "names": []
+}

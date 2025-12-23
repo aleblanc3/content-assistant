@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["angular:styles/component:css;0fa652a1c86377aee4ef825a2bb99ad0e448461d03666f6bb8c80d6b3ad3fe3e;D:/AmberDev/content-assistant/src/app/views/page-assistant/components/upload/upload-url.component.ts"],
+  "sourcesContent": ["\n    :host {\n      display: block;\n    }\n    ::ng-deep button.p-button.nohover:hover {\n    background-color: transparent !important;\n    }\n    ::ng-deep button.p-button.nohover {\n    border: none !important;\n    }\n  "],
+  "mappings": ";AACI;AACE,WAAS;AACX;AACA,UAAU,MAAM,CAAC,QAAQ,CAAC,OAAO;AACjC,oBAAkB;AAClB;AACA,UAAU,MAAM,CAHC,QAGQ,CAHC;AAI1B,UAAQ;AACR;",
+  "names": []
+}

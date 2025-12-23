@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/views/metadata-assistant/components/url-input/url-input.component.css"],
+  "sourcesContent": ["/* Minimal CSS for textarea monospace (URL-specific need) */\r\ntextarea {\r\n  font-family: monospace;\r\n}\r\n\r\n/* PrimeNG component overrides for compact chip display */\r\n:host ::ng-deep .p-chip {\r\n  padding: 0.25rem 0.5rem;\r\n}"],
+  "mappings": ";AACA;AACE,eAAa;AACf;AAGA,MAAM,UAAU,CAAC;AACf,WAAS,QAAQ;AACnB;",
+  "names": []
+}

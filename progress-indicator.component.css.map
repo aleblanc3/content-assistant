@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["angular:styles/component:css;c3bb16d0364923b6efed8b9b7d045d7b234b1302e11161c1b75c8078ba88866e;D:/AmberDev/content-assistant/src/app/components/progress-indicator/progress-indicator.component.ts"],
+  "sourcesContent": ["\n    .spinner {\n      width: 24px;\n      height: 24px;\n      border: 4px solid var(--surface-300);\n      border-top-color: var(--primary-color);\n      border-radius: 50%;\n      animation: spin 1s linear infinite;\n    }\n\n    @keyframes spin {\n      from { transform: rotate(0deg); }\n      to { transform: rotate(360deg); }\n    }\n  "],
+  "mappings": ";AACI,CAAC;AACC,SAAO;AACP,UAAQ;AACR,UAAQ,IAAI,MAAM,IAAI;AACtB,oBAAkB,IAAI;AACtB,iBAAe;AACf,aAAW,KAAK,GAAG,OAAO;AAC5B;AAEA,WAHa;AAIX;AAAO,eAAW,OAAO;AAAO;AAChC;AAAK,eAAW,OAAO;AAAS;AAClC;",
+  "names": []
+}

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/components/model-selector/model-selector.component.css"],
+  "sourcesContent": ["/* Only deep selectors that can't be done with PrimeNG utilities */\r\n:host ::ng-deep .p-dropdown {\r\n  width: 100%;\r\n  min-width: 300px;\r\n}"],
+  "mappings": ";AACA,MAAM,UAAU,CAAC;AACf,SAAO;AACP,aAAW;AACb;",
+  "names": []
+}

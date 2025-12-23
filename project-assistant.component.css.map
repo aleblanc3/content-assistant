@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/views/project-assistant/project-assistant.component.css"],
+  "sourcesContent": [".loading-dots {\r\n    display: inline-block;\r\n    width: 1em;\r\n    text-align: left;\r\n}\r\n\r\n.loading-dots::after {\r\n    content: '...';\r\n    animation: dots 1s steps(5, end) infinite;\r\n}\r\n\r\n@keyframes dots {\r\n\r\n    0% {\r\n        content: '';\r\n    }\r\n\r\n    20% {\r\n        content: '.';\r\n    }\r\n\r\n    40% {\r\n        content: '..';\r\n    }\r\n\r\n    60% {\r\n        content: '...';\r\n    }\r\n\r\n    80%,\r\n    100% {\r\n        content: '....';\r\n    }\r\n}\r\n\r\n/*Override full width for split buttons*/\r\n:host ::ng-deep .p-splitbutton {\r\n    width: 100% !important;\r\n}\r\n\r\n:host ::ng-deep .p-splitbutton .p-button {\r\n    width: 100%;\r\n}\r\n\r\n:host ::ng-deep .p-splitbutton .p-splitbutton-dropdown {\r\n    width: 3rem;\r\n}"],
+  "mappings": ";AAAA,CAAC;AACG,WAAS;AACT,SAAO;AACP,cAAY;AAChB;AAEA,CANC,YAMY;AACT,WAAS;AACT,aAAW,KAAK,GAAG,MAAM,CAAC,EAAE,KAAK;AACrC;AAEA,WAHe;AAKX;AACI,aAAS;AACb;AAEA;AACI,aAAS;AACb;AAEA;AACI,aAAS;AACb;AAEA;AACI,aAAS;AACb;AAEA;AAEI,aAAS;AACb;AACJ;AAGA,MAAM,UAAU,CAAC;AACb,SAAO;AACX;AAEA,MAAM,UAAU,CAJC,cAIc,CAAC;AAC5B,SAAO;AACX;AAEA,MAAM,UAAU,CARC,cAQc,CAAC;AAC5B,SAAO;AACX;",
+  "names": []
+}

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/views/image-assistant/components/file-upload/file-upload.component.css"],
+  "sourcesContent": ["/* PrimeNG file upload customization - necessary for component styling */\r\n:host ::ng-deep .p-fileupload {\r\n  margin-top: 1rem;\r\n}\r\n\r\n:host ::ng-deep .p-fileupload-content {\r\n  border: 2px dashed var(--surface-border);\r\n  border-radius: var(--border-radius);\r\n  padding: 3rem 2rem;\r\n  text-align: center;\r\n  background: var(--surface-card);\r\n  transition: all 0.3s ease;\r\n  min-height: 200px;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n}\r\n\r\n:host ::ng-deep .p-fileupload-content:hover {\r\n  border-color: var(--primary-color);\r\n  background-color: var(--surface-50);\r\n}\r\n\r\n:host ::ng-deep .p-fileupload-buttonbar {\r\n  display: none;\r\n}\r\n"],
+  "mappings": ";AACA,MAAM,UAAU,CAAC;AACf,cAAY;AACd;AAEA,MAAM,UAAU,CAAC;AACf,UAAQ,IAAI,OAAO,IAAI;AACvB,iBAAe,IAAI;AACnB,WAAS,KAAK;AACd,cAAY;AACZ,cAAY,IAAI;AAChB,cAAY,IAAI,KAAK;AACrB,cAAY;AACZ,WAAS;AACT,eAAa;AACb,mBAAiB;AACnB;AAEA,MAAM,UAAU,CAbC,oBAaoB;AACnC,gBAAc,IAAI;AAClB,oBAAkB,IAAI;AACxB;AAEA,MAAM,UAAU,CAAC;AACf,WAAS;AACX;",
+  "names": []
+}
