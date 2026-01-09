@@ -27,13 +27,13 @@ export class FetchService {
     url: string,
     hostMode: "prod" | "proto" | "both" | "none"
   ): string {
-    url = url.trim().toLowerCase();
+    url = url.trim();
 
     let hostname: string;
     try {
       const parsedUrl = new URL(url);
       if (parsedUrl.protocol !== "https:" || /\s/.test(url)) throw new Error();
-      hostname = parsedUrl.hostname;
+      hostname = parsedUrl.hostname.toLowerCase();
     } catch {
       throw new Error(`Invalid URL: ${url}`)
     }
